@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>QUINIELAS ROMA — JORNADA 10</title>
+<style>
+* {box-sizing:border-box; margin:0; padding:0;}
+html {width:100%;}
+body {
+  font-family: Arial, sans-serif;
+  background:#f0f2f5;
+  padding:6px;
+  width:100%;
+}
+.contenedor {
+  max-width:420px;
+  width:100%;
+  margin:0 auto;
+}
+.encabezado {
+  background:#000;
+  color:#fff;
+  padding:10px;
+  border-radius:8px;
+  text-align:center;
+  margin-bottom:8px;
+}
+.encabezado h2 {font-size:16px; margin-bottom:3px;}
+.encabezado p {font-size:11px; opacity:0.85;}
+
+.recuadro-nombre {
+  border:2px solid #ccc;
+  background:#fff;
+  border-radius:8px;
+  padding:10px 14px;
+  margin-bottom:8px;
+}
+.etiqueta-nombre {
+  font-size:14px;
+  font-weight:bold;
+  display:block;
+  margin-bottom:4px;
+}
+.input-nombre {
+  width:100%;
+  border:none;
+  border-bottom:2px solid #999;
+  font-size:18px;
+  font-weight:bold;
+  outline:none;
+  padding:5px 3px;
+  text-transform:uppercase;
+  background:transparent;
+}
+
+.fecha-grupo {
+  font-size:11px;
+  color:#fff;
+  background:#333;
+  padding:5px 10px;
+  border-radius:6px;
+  margin:5px 0 3px 0;
+  font-weight:bold;
+}
+.partido {
+  background:#fff;
+  border-radius:6px;
+  padding:8px 10px;
+  margin-bottom:3px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border:1px solid #ddd;
+}
+.emoji {font-size:17px; line-height:1;}
+.equipo {font-size:13px; font-weight:bold;}
+.equipo-izq {text-align:right; flex:1; padding-right:6px;}
+.equipo-der {text-align:left; flex:1; padding-left:6px;}
+.marcador {
+  display:flex;
+  gap:6px;
+  align-items:center;
+  font-weight:bold;
+  font-size:19px;
+}
+.marcador input {
+  width:40px;
+  height:40px;
+  border:2px solid #000;
+  border-radius:6px;
+  font-size:17px;
+  font-weight:bold;
+  text-align:center;
+  outline:none;
+}
+.pago {
+  background:#fffbf0;
+  border-radius:6px;
+  padding:9px;
+  margin-top:8px;
+  text-align:center;
+  border:1px solid #ffc107;
+  cursor:pointer;
+}
+.pago-text {font-size:13px; font-weight:bold; color:#b36b00;}
+.pago-datos {font-size:11px; margin-top:3px; color:#555;}
+.botones {
+  margin-top:8px;
+  display:flex; flex-direction:column; gap:6px;
+}
+.btn-whatsapp {
+  background:#25D366; color:#000; border:none; border-radius:6px;
+  padding:10px; font-size:14px; font-weight:bold; cursor:pointer; width:100%;
+}
+.btn-copiar {
+  background:#FFC107; color:#000; border:none; border-radius:6px;
+  padding:10px; font-size:13px; font-weight:bold; cursor:pointer; width:100%;
+}
+.btn-borrar {
+  background:#ff4444; color:#fff; border:none; border-radius:6px;
+  padding:10px; font-size:14px; font-weight:bold; cursor:pointer; width:100%;
+}
+.aviso {
+  margin-top:5px; font-size:12px; text-align:center; color:#555;
+  min-height:20px;
+}
+</style>
+</head>
+<body>
+<div class="contenedor">
+
+  <div class="encabezado">
+    <h2>🥅 QUINIELAS ROMA</h2>
+    <p>JORNADA 10 — $30 • CIERRE: VIERNES 25 SEP • 2:00 PM</p>
+  </div>
+
+  <div class="recuadro-nombre">
+    <span class="etiqueta-nombre">NOMBRE:</span>
+    <input type="text" id="nombre" class="input-nombre" oninput="this.value=this.value.toUpperCase()">
+  </div>
+
+  <div class="fecha-grupo">📅 VIERNES 25 DE SEPTIEMBRE</div>
+  <div class="partido">
+    <span class="emoji">🐴</span>
+    <span class="equipo equipo-izq">ATLANTE</span>
+    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g1"> – <input type="number" inputmode="numeric" min="0" id="g2"></div>
+    <span class="equipo equipo-der">RAYADOS</span>
+    <span class="emoji">🤠</span>
+  </div>
+  <div class="partido">
+    <span class="emoji">🐺</span>
+    <span class="equipo equipo-izq">TIJUANA</span>
+    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g3"> – <input type="number" inputmode="numeric" min="0" id="g4"></div>
+    <span class="equipo equipo-der">ATLAS</span>
+    <span class="emoji">🦊</span>
+  </div>
+
+  <div class="fecha-grupo">📅 SÁBADO 26 DE SEPTIEMBRE</div>
+  <div class="partido">
+    <span class="emoji">🚂</span>
+    <span class="equipo equipo-izq">CRUZ AZUL</span>
+    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g5"> – <input type="number" inputmode="numeric" min="0" id="g6"></div>
+    <span class="equipo equipo-der">TOLUCA</span>
+    <span class="emoji">👹</span>
+  </div>
+  <div class="partido">
+    <span class="emoji">🐐</span>
+    <span class="equipo equipo-izq">CHIVAS</span>
+    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g7"> – <input type="number" inputmode="numeric" min="0" id="g8"></div>
+    <span class="equipo equipo-der">QUERÉTARO</span>
+    <span class="emoji">🐔</span>
+  </div>
+  <div class="partido">
+    <span class="emoji">👼🏾</span>
+    <span class="equipo equipo-izq">SANTOS</span>
+    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g9"> – <input type="number" inputmode="numeric" min="0" id="g10"></div>
+    <span class="equipo equipo-der">PACHUCA</span>
+    <span class="emoji">🐹</span>
+  </div>
+  <div class="partido">
+    <span class="emoji">🐯</span>
+    <span class="equipo equipo-izq">TIGRES</span>
+    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g11"> – <input type="number" inputmode="numeric" min="0" id="g12"></div>
+    <span class="equipo equipo-der">PUEBLA</span>
+    <span class="emoji">🍠</span>
+  </div>
+
+  <div class="fecha-grupo">📅 DOMINGO 27 DE SEPTIEMBRE</div>
+  <div class="partido">
+    <span class="emoji">🐱</span>
+    <span class="equipo equipo-izq">PUMAS</span>
+    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g13"> – <input type="number" inputmode="numeric" min="0" id="g14"></div>
+    <span class="equipo equipo-der">SAN LUIS</span>
+    <span class="emoji">🌵</span>
+  </div>
+  <div class="partido">
+    <span class="emoji">🦁</span>
+    <span class="equipo equipo-izq">LEÓN</span>
+    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g15"> – <input type="number" inputmode="numeric" min="0" id="g16"></div>
+    <span class="equipo equipo-der">JUÁREZ</span>
+    <span class="emoji">🦮</span>
+  </div>
+  <div class="partido">
+    <span class="emoji">⚡</span>
+    <span class="equipo equipo-izq">NECAXA</span>
+    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g17"> – <input type="number" inputmode="numeric" min="0" id="g18"></div>
+    <span class="equipo equipo-der">AMÉRICA</span>
+    <span class="emoji">🦅</span>
+  </div>
+
+  <div class="pago" onclick="copiarTarjeta()">
+    <div class="pago-text">💳 PAGO — SPIN BY OXXO</div>
+    <div class="pago-datos">4217 4702 7509 9253<br>FELIPE RODRÍGUEZ</div>
+    <div style="font-size:10px; margin-top:3px; color:#888;">Toca para copiar</div>
+  </div>
+
+  <div class="botones">
+    <button class="btn-whatsapp" onclick="enviarWhatsApp()">📲 ENVIAR A WHATSAPP</button>
+    <button class="btn-copiar" onclick="copiarTexto()">📋 COPIAR Y ENVÍA AL GRUPO</button>
+    <button class="btn-borrar" onclick="borrarTodo()">🗑️ BORRAR TODO</button>
+  </div>
+  <p class="aviso" id="mensaje-aviso"></p>
+</div>
+
+<script>
+const NUMERO_WHATSAPP = "526678248973";
+const TARJETA_SPIN = "4217470275099253";
+const NOMBRE_TITULAR = "FELIPE RODRÍGUEZ";
+
+const partidos = [
+  ["ATLANTE", "RAYADOS"],
+  ["TIJUANA", "ATLAS"],
+  ["CRUZ AZUL", "TOLUCA"],
+  ["CHIVAS", "QUERÉTARO"],
+  ["SANTOS", "PACHUCA"],
+  ["TIGRES", "PUEBLA"],
+  ["PUMAS", "SAN LUIS"],
+  ["LEÓN", "JUÁREZ"],
+  ["NECAXA", "AMÉRICA"]
+];
+
+function alinear(texto, ancho) {
+  while (texto.length < ancho) texto += " ";
+  return texto;
+}
+
+function validarNombre() {
+  const n = document.getElementById("nombre").value.trim();
+  return n || "____________________";
+}
+
+function validarMarcadores() {
+  for (let i = 1; i <= 18; i++) {
+    if (!document.getElementById("g"+i).value) {
+      alert("⚽ LLENA TODOS LOS MARCADORES");
+      return false;
+    }
+  }
+  return true;
+}
+
+function armarTexto() {
+  const nombre = validarNombre();
+  let texto = "NOMBRE: " + nombre + "\n\n";
+  for (let i = 0; i < partidos.length; i++) {
+    const e1 = partidos[i][0], e2 = partidos[i][1];
+    const g1 = document.getElementById("g"+(i*2+1)).value;
+    const g2 = document.getElementById("g"+(i*2+2)).value;
+    texto += alinear(e1, 10) + g1 + " - " + g2 + "    " + e2 + "\n";
+  }
+  return texto;
+}
+
+function enviarWhatsApp() {
+  if (!validarMarcadores()) return;
+  const texto = armarTexto();
+  window.open("https://wa.me/" + NUMERO_WHATSAPP + "?text=" + encodeURIComponent(texto), "_blank");
+}
+
+async function copiarTexto() {
+  if (!validarMarcadores()) return;
+  const texto = armarTexto();
+  try {
+    await navigator.clipboard.writeText(texto);
+    document.getElementById("mensaje-aviso").textContent = "✅ COPIADO — pega y envía";
+  } catch {
+    const t = document.createElement("textarea");
+    t.value = texto; t.style.position="fixed"; t.style.opacity="0";
+    document.body.appendChild(t); t.select(); document.execCommand("copy");
+    document.body.removeChild(t);
+    document.getElementById("mensaje-aviso").textContent = "✅ COPIADO — pega y envía";
+  }
+}
+
+async function copiarTarjeta() {
+  try {
+    await navigator.clipboard.writeText(TARJETA_SPIN);
+    alert("✅ COPIADO\nSPIN BY OXXO\n" + NOMBRE_TITULAR);
+  } catch {
+    const i = document.createElement("input");
+    i.value = TARJETA_SPIN; document.body.appendChild(i);
+    i.select(); document.execCommand("copy"); document.body.removeChild(i);
+    alert("✅ COPIADO\nSPIN BY OXXO\n" + NOMBRE_TITULAR);
+  }
+}
+
+function borrarTodo() {
+  document.getElementById("nombre").value = "";
+  for (let i = 1; i <= 18; i++) document.getElementById("g"+i).value = "";
+  document.getElementById("mensaje-aviso").textContent = "";
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
