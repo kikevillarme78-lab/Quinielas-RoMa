@@ -119,6 +119,16 @@ body{
 .btn-whatsapp{background:#25D366;color:#fff;}
 .btn-copiar{background:#FFC107;color:#000;}
 .btn-borrar{background:#ff4444;color:#fff;}
+
+.info-nums{
+    background:#e8f5e9;
+    padding:10px;
+    border-radius:6px;
+    margin-top:10px;
+    text-align:center;
+    font-size:13px;
+    color:#2e7d32;
+}
 </style>
 </head>
 <body>
@@ -238,10 +248,13 @@ A nombre de: FELIPE RODRÍGUEZ
 <button class="boton btn-copiar" onclick="copiarTodo()">📋 COPIAR → VE AL GRUPO, PEGA Y ENVÍA</button>
 <button class="boton btn-borrar" onclick="borrarTodo()">🗑️ BORRAR TODO</button>
 
+<div class="info-nums" id="infoNums" style="display:none;">
+Se abrirán 2 ventanas de WhatsApp
+</div>
+
 </div>
 
 <script>
-// ✅ TUS 2 NÚMEROS CORRECTOS CON CÓDIGO DE MÉXICO
 const NUMERO1 = "529342771745";
 const NUMERO2 = "526678248973";
 
@@ -260,6 +273,7 @@ for(let c of campos){
 return true;
 }
 
+// ✅ SOLO NOMBRE Y JUEGOS — SIN DATOS DE PAGO
 function armarTexto(){
 const n=document.getElementById("nombre").value.toUpperCase();
 return `NOMBRE: ${n}
@@ -272,22 +286,23 @@ SANTOS      ${valor("santos")} - ${valor("pachuca")}     PACHUCA
 TIGRES      ${valor("tigres")} - ${valor("puebla")}     PUEBLA
 PUMAS       ${valor("pumas")} - ${valor("sanluis")}     SAN LUIS
 LEÓN        ${valor("leon")} - ${valor("juarez")}     JUÁREZ
-NECAXA      ${valor("necaxa")} - ${valor("america")}     AMÉRICA
-
-💳 PAGO SPINN OXXO:
-4217 4702 7509 9253
-A nombre de: FELIPE RODRÍGUEZ`;
+NECAXA      ${valor("necaxa")} - ${valor("america")}     AMÉRICA`;
 }
 
 function enviarTodo(){
 if(!validar()) return;
 const texto=armarTexto();
-// ✅ ABRE EL PRIMER NÚMERO
-window.open(`https://wa.me/${NUMERO1}?text=${encodeURIComponent(texto)}`, "_blank");
-// ✅ ABRE EL SEGUNDO CASI AL INSTANTE
-setTimeout(()=>{
-window.open(`https://wa.me/${NUMERO2}?text=${encodeURIComponent(texto)}`, "_blank");
-}, 200);
+const enlace1 = `https://wa.me/${NUMERO1}?text=${encodeURIComponent(texto)}`;
+const enlace2 = `https://wa.me/${NUMERO2}?text=${encodeURIComponent(texto)}`;
+
+document.getElementById("infoNums").style.display="block";
+
+// Abre el primero
+window.open(enlace1, "_blank");
+// Abre el segundo con un poquito más de tiempo para que no lo bloquee
+setTimeout(() => {
+    window.open(enlace2, "_blank");
+}, 600);
 }
 
 function copiarTodo(){
@@ -310,6 +325,7 @@ function borrarTodo(){
 document.getElementById("nombre").value="";
 document.querySelectorAll(".caja-gol").forEach(i=>i.value="");
 document.getElementById("aviso").style.display="none";
+document.getElementById("infoNums").style.display="none";
 }
 </script>
 </body>
