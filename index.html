@@ -2,107 +2,230 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>QUINIELAS ROMA — JORNADA 10</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 html{width:100%;}
-body{font-family:Arial,sans-serif;background:#f0f2f5;padding:6px;width:100%;}
-.contenedor{max-width:420px;width:100%;margin:0 auto;}
-.cabecera{background:#000;color:#fff;padding:12px;text-align:center;border-radius:10px;margin-bottom:15px;}
-.cabecera h1{font-size:20px;}
-.linea-nombre{border:none;border-bottom:2px solid #000;font-size:18px;width:100%;padding:8px 0;outline:none;margin-bottom:15px;}
-.grupo-fecha{background:#e0e0e0;padding:6px 10px;border-radius:6px;margin:10px 0 5px;font-weight:bold;font-size:14px;}
-.partido{background:#fff;padding:12px;margin-bottom:8px;border-radius:8px;display:flex;align-items:center;justify-content:space-between;}
-.equipo{display:flex;align-items:center;gap:10px;font-weight:bold;font-size:15px;}
-.escudo{width:45px;height:45px;object-fit:contain;}
-.marcador{display:flex;align-items:center;gap:10px;}
-.marcador input{width:50px;height:50px;text-align:center;font-size:20px;font-weight:bold;border:2px solid #000;border-radius:6px;}
-.boton-borrar{width:100%;padding:12px;background:#FFC107;color:#000;font-size:17px;font-weight:bold;border:none;border-radius:10px;cursor:pointer;margin-top:10px;}
-.boton-enviar{width:100%;padding:14px;background:#25D366;color:#fff;font-size:18px;font-weight:bold;border:none;border-radius:10px;cursor:pointer;margin-top:10px;}
-.boton-enviar:hover{background:#128C7E;}
+body{
+    font-family:Arial,sans-serif;
+    background:#f0f2f5;
+    padding:4px;
+    width:100%;
+}
+.contenedor{max-width:400px;width:100%;margin:0 auto;}
+
+.cabecera{
+    background:#000;
+    color:#fff;
+    padding:8px;
+    text-align:center;
+    border-radius:8px;
+    margin-bottom:8px;
+}
+.cabecera h1{font-size:17px;}
+
+.nombre-linea{
+    width:100%;
+    border:none;
+    border-bottom:2px solid #000;
+    font-size:16px;
+    padding:6px 0;
+    margin-bottom:8px;
+    text-align:center;
+    outline:none;
+}
+
+.fecha{
+    background:#ddd;
+    padding:4px 8px;
+    margin:8px 0 4px;
+    font-weight:bold;
+    font-size:13px;
+    border-radius:4px;
+}
+
+.partido{
+    background:#fff;
+    padding:8px 6px;
+    margin-bottom:4px;
+    border-radius:6px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+}
+
+.escudo{
+    width:32px;
+    height:32px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.eq-der{justify-content:flex-start;}
+.eq-izq{justify-content:flex-end;}
+
+.nombre-eq{
+    font-weight:bold;
+    font-size:13px;
+    white-space:nowrap;
+}
+
+.caja-gol{
+    width:40px;
+    height:40px;
+    text-align:center;
+    font-size:18px;
+    font-weight:bold;
+    border:2px solid #000;
+    border-radius:4px;
+    margin:0 4px;
+}
+
+.botones{display:flex;gap:8px;margin-top:10px;}
+.boton-borrar{
+    flex:1;
+    padding:10px;
+    background:#FFC107;
+    color:#000;
+    font-size:15px;
+    font-weight:bold;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+.boton-enviar{
+    flex:2;
+    padding:10px;
+    background:#25D366;
+    color:#fff;
+    font-size:15px;
+    font-weight:bold;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
 </style>
 </head>
 <body>
 <div class="contenedor">
-<div class="cabecera">
-<h1>QUINIELAS ROMA — JORNADA 10</h1>
-</div>
 
-<input type="text" id="nombre" class="linea-nombre" placeholder="">
+<div class="cabecera"><h1>QUINIELAS ROMA — JORNADA 10</h1></div>
+<input type="text" class="nombre-linea" placeholder="NOMBRE">
 
-<div class="grupo-fecha">VIERNES 25 DE SEPTIEMBRE</div>
+<div class="fecha">VIERNES 25 DE SEPTIEMBRE</div>
 
 <div class="partido">
-<div class="equipo"><img src="atlante.png" class="escudo" alt="Atlante"> ATLANTE</div>
-<div class="marcador"><input type="number" id="atlante" min="0"> - <input type="number" id="monterrey" min="0"></div>
-<div class="equipo">RAYADOS <img src="monterrey.png" class="escudo" alt="Rayados"></div>
-</div>
-
-<div class="partido">
-<div class="equipo"><img src="tijuana.png" class="escudo" alt="Tijuana"> TIJUANA</div>
-<div class="marcador"><input type="number" id="tijuana" min="0"> - <input type="number" id="atlas" min="0"></div>
-<div class="equipo">ATLAS <img src="atlas.png" class="escudo" alt="Atlas"></div>
-</div>
-
-<div class="grupo-fecha">SÁBADO 26 DE SEPTIEMBRE</div>
-
-<div class="partido">
-<div class="equipo"><img src="cruzazul.png" class="escudo" alt="Cruz Azul"> CRUZ AZUL</div>
-<div class="marcador"><input type="number" id="cruzazul" min="0"> - <input type="number" id="toluca" min="0"></div>
-<div class="equipo">TOLUCA <img src="toluca.png" class="escudo" alt="Toluca"></div>
+<img src="atlante.png" class="escudo">
+<span class="nombre-eq">ATLANTE</span>
+<input type="number" class="caja-gol" id="atlante" min="0">
+<span>-</span>
+<input type="number" class="caja-gol" id="monterrey" min="0">
+<span class="nombre-eq">RAYADOS</span>
+<img src="monterrey.png" class="escudo">
 </div>
 
 <div class="partido">
-<div class="equipo"><img src="chivas.png" class="escudo" alt="Chivas"> CHIVAS</div>
-<div class="marcador"><input type="number" id="chivas" min="0"> - <input type="number" id="queretaro" min="0"></div>
-<div class="equipo">QUERÉTARO <img src="queretaro.png" class="escudo" alt="Querétaro"></div>
+<img src="tijuana.png" class="escudo">
+<span class="nombre-eq">TIJUANA</span>
+<input type="number" class="caja-gol" id="tijuana" min="0">
+<span>-</span>
+<input type="number" class="caja-gol" id="atlas" min="0">
+<span class="nombre-eq">ATLAS</span>
+<img src="atlas.png" class="escudo">
+</div>
+
+<div class="fecha">SÁBADO 26 DE SEPTIEMBRE</div>
+
+<div class="partido">
+<img src="cruzazul.png" class="escudo">
+<span class="nombre-eq">CRUZ AZUL</span>
+<input type="number" class="caja-gol" id="cruzazul" min="0">
+<span>-</span>
+<input type="number" class="caja-gol" id="toluca" min="0">
+<span class="nombre-eq">TOLUCA</span>
+<img src="toluca.png" class="escudo">
 </div>
 
 <div class="partido">
-<div class="equipo"><img src="santos.png" class="escudo" alt="Santos"> SANTOS</div>
-<div class="marcador"><input type="number" id="santos" min="0"> - <input type="number" id="pachuca" min="0"></div>
-<div class="equipo">PACHUCA <img src="pachuca.png" class="escudo" alt="Pachuca"></div>
+<img src="chivas.png" class="escudo">
+<span class="nombre-eq">CHIVAS</span>
+<input type="number" class="caja-gol" id="chivas" min="0">
+<span>-</span>
+<input type="number" class="caja-gol" id="queretaro" min="0">
+<span class="nombre-eq">QUERÉTARO</span>
+<img src="queretaro.png" class="escudo">
 </div>
 
 <div class="partido">
-<div class="equipo"><img src="tigres.png" class="escudo" alt="Tigres"> TIGRES</div>
-<div class="marcador"><input type="number" id="tigres" min="0"> - <input type="number" id="puebla" min="0"></div>
-<div class="equipo">PUEBLA <img src="puebla.png" class="escudo" alt="Puebla"></div>
-</div>
-
-<div class="grupo-fecha">DOMINGO 27 DE SEPTIEMBRE</div>
-
-<div class="partido">
-<div class="equipo"><img src="pumas.png" class="escudo" alt="Pumas"> PUMAS</div>
-<div class="marcador"><input type="number" id="pumas" min="0"> - <input type="number" id="sanluis" min="0"></div>
-<div class="equipo">SAN LUIS <img src="sanluis.png" class="escudo" alt="San Luis"></div>
+<img src="santos.png" class="escudo">
+<span class="nombre-eq">SANTOS</span>
+<input type="number" class="caja-gol" id="santos" min="0">
+<span>-</span>
+<input type="number" class="caja-gol" id="pachuca" min="0">
+<span class="nombre-eq">PACHUCA</span>
+<img src="pachuca.png" class="escudo">
 </div>
 
 <div class="partido">
-<div class="equipo"><img src="leon.png" class="escudo" alt="León"> LEÓN</div>
-<div class="marcador"><input type="number" id="leon" min="0"> - <input type="number" id="juarez" min="0"></div>
-<div class="equipo">JUÁREZ <img src="juarez.png" class="escudo" alt="Juárez"></div>
+<img src="tigres.png" class="escudo">
+<span class="nombre-eq">TIGRES</span>
+<input type="number" class="caja-gol" id="tigres" min="0">
+<span>-</span>
+<input type="number" class="caja-gol" id="puebla" min="0">
+<span class="nombre-eq">PUEBLA</span>
+<img src="puebla.png" class="escudo">
+</div>
+
+<div class="fecha">DOMINGO 27 DE SEPTIEMBRE</div>
+
+<div class="partido">
+<img src="pumas.png" class="escudo">
+<span class="nombre-eq">PUMAS</span>
+<input type="number" class="caja-gol" id="pumas" min="0">
+<span>-</span>
+<input type="number" class="caja-gol" id="sanluis" min="0">
+<span class="nombre-eq">SAN LUIS</span>
+<img src="sanluis.png" class="escudo">
 </div>
 
 <div class="partido">
-<div class="equipo"><img src="necaxa.png" class="escudo" alt="Necaxa"> NECAXA</div>
-<div class="marcador"><input type="number" id="necaxa" min="0"> - <input type="number" id="america" min="0"></div>
-<div class="equipo">AMÉRICA <img src="america.png" class="escudo" alt="América"></div>
+<img src="leon.png" class="escudo">
+<span class="nombre-eq">LEÓN</span>
+<input type="number" class="caja-gol" id="leon" min="0">
+<span>-</span>
+<input type="number" class="caja-gol" id="juarez" min="0">
+<span class="nombre-eq">JUÁREZ</span>
+<img src="juarez.png" class="escudo">
 </div>
 
-<button class="boton-borrar" onclick="borrarTodo()">🟡 Borrar todo</button>
-<button class="boton-enviar" onclick="enviarWhatsApp()">📲 Enviar a WhatsApp</button>
+<div class="partido">
+<img src="necaxa.png" class="escudo">
+<span class="nombre-eq">NECAXA</span>
+<input type="number" class="caja-gol" id="necaxa" min="0">
+<span>-</span>
+<input type="number" class="caja-gol" id="america" min="0">
+<span class="nombre-eq">AMÉRICA</span>
+<img src="america.png" class="escudo">
+</div>
+
+<div class="botones">
+<button class="boton-borrar" onclick="borrarTodo()">🟡 Borrar</button>
+<button class="boton-enviar" onclick="enviarTodo()">📲 Enviar a WhatsApp</button>
+</div>
+
 </div>
 
 <script>
 const NUMERO1 = "529342771745";
 const NUMERO2 = "526678248973";
 
-function valor(id){return document.getElementById(id).value||"?";}
+function valor(id){return document.getElementById(id).value||"-";}
 
-function enviarWhatsApp(){
-const n=document.getElementById("nombre").value.toUpperCase()||"SIN NOMBRE";
+function enviarTodo(){
+const n=document.querySelector(".nombre-linea").value.toUpperCase()||"SIN NOMBRE";
+
 let texto=`NOMBRE: ${n}\n\n`;
 texto+=`ATLANTE     ${valor("atlante")} - ${valor("monterrey")}     RAYADOS\n`;
 texto+=`TIJUANA     ${valor("tijuana")} - ${valor("atlas")}     ATLAS\n`;
@@ -121,10 +244,9 @@ window.open(`https://wa.me/${NUMERO2}?text=${encodeURIComponent(texto)}`, "_blan
 }
 
 function borrarTodo(){
-document.getElementById("nombre").value="";
-document.querySelectorAll("input[type=number]").forEach(i=>i.value="");
+document.querySelector(".nombre-linea").value="";
+document.querySelectorAll(".caja-gol").forEach(i=>i.value="");
 }
 </script>
 </body>
-                                                                    </html>
-                                                                    
+</html>
