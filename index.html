@@ -119,16 +119,6 @@ body{
 .btn-whatsapp{background:#25D366;color:#fff;}
 .btn-copiar{background:#FFC107;color:#000;}
 .btn-borrar{background:#ff4444;color:#fff;}
-
-.info-nums{
-    background:#e8f5e9;
-    padding:10px;
-    border-radius:6px;
-    margin-top:10px;
-    text-align:center;
-    font-size:13px;
-    color:#2e7d32;
-}
 </style>
 </head>
 <body>
@@ -248,10 +238,6 @@ A nombre de: FELIPE RODRÍGUEZ
 <button class="boton btn-copiar" onclick="copiarTodo()">📋 COPIAR → VE AL GRUPO, PEGA Y ENVÍA</button>
 <button class="boton btn-borrar" onclick="borrarTodo()">🗑️ BORRAR TODO</button>
 
-<div class="info-nums" id="infoNums" style="display:none;">
-Se abrirán 2 ventanas de WhatsApp
-</div>
-
 </div>
 
 <script>
@@ -290,43 +276,4 @@ NECAXA      ${valor("necaxa")} - ${valor("america")}     AMÉRICA`;
 }
 
 function enviarTodo(){
-if(!validar()) return;
-const texto=armarTexto();
-const enlace1 = `https://wa.me/${NUMERO1}?text=${encodeURIComponent(texto)}`;
-const enlace2 = `https://wa.me/${NUMERO2}?text=${encodeURIComponent(texto)}`;
-
-document.getElementById("infoNums").style.display="block";
-
-// Abre el primero
-window.open(enlace1, "_blank");
-// Abre el segundo con un poquito más de tiempo para que no lo bloquee
-setTimeout(() => {
-    window.open(enlace2, "_blank");
-}, 600);
-}
-
-function copiarTodo(){
-if(!validar()) return;
-navigator.clipboard.writeText(armarTexto()).then(()=>{
-    mostrarAviso("✅ ¡Copiado! Ve y pega en el grupo");
-}).catch(()=>{
-    mostrarAviso("No se pudo copiar, intenta de nuevo");
-});
-}
-
-function mostrarAviso(mensaje){
-    const aviso=document.getElementById("aviso");
-    aviso.textContent=mensaje;
-    aviso.style.display="block";
-    setTimeout(()=>aviso.style.display="none", 3500);
-}
-
-function borrarTodo(){
-document.getElementById("nombre").value="";
-document.querySelectorAll(".caja-gol").forEach(i=>i.value="");
-document.getElementById("aviso").style.display="none";
-document.getElementById("infoNums").style.display="none";
-}
-</script>
-</body>
-</html>
+if(!validar()) return
