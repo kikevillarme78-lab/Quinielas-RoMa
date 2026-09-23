@@ -96,7 +96,8 @@ body{font-family:Arial,sans-serif;background:#f0f2f5;padding:6px;width:100%;}
 </div>
 
 <script>
-const NUMERO = "529342771745";
+const NUMERO1 = "529342771745";
+const NUMERO2 = "526678248973";
 
 function valor(id){return document.getElementById(id).value||"?";}
 
@@ -113,8 +114,10 @@ texto+=`PUMAS       ${valor("pumas")} - ${valor("sanluis")}     SAN LUIS\n`;
 texto+=`LEÓN        ${valor("leon")} - ${valor("juarez")}     JUÁREZ\n`;
 texto+=`NECAXA      ${valor("necaxa")} - ${valor("america")}     AMÉRICA\n`;
 
-const url=`https://wa.me/${NUMERO}?text=${encodeURIComponent(texto)}`;
-window.open(url,"_blank");
+window.open(`https://wa.me/${NUMERO1}?text=${encodeURIComponent(texto)}`, "_blank");
+setTimeout(()=>{
+window.open(`https://wa.me/${NUMERO2}?text=${encodeURIComponent(texto)}`, "_blank");
+}, 800);
 }
 
 function borrarTodo(){
@@ -123,5 +126,5 @@ document.querySelectorAll("input[type=number]").forEach(i=>i.value="");
 }
 </script>
 </body>
-  </html>
-  
+                                                                    </html>
+                                                                    
