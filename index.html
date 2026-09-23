@@ -241,8 +241,8 @@ A nombre de: FELIPE RODRÍGUEZ
 </div>
 
 <script>
-const NUMERO1 = "529342771745";
-const NUMERO2 = "526678248973";
+// ✅ SOLO EL NÚMERO 2
+const NUMERO = "526678248973";
 
 function valor(id){return document.getElementById(id).value;}
 
@@ -276,4 +276,32 @@ NECAXA      ${valor("necaxa")} - ${valor("america")}     AMÉRICA`;
 }
 
 function enviarTodo(){
-if(!validar()) return
+if(!validar()) return;
+const texto=armarTexto();
+window.open(`https://wa.me/${NUMERO}?text=${encodeURIComponent(texto)}`, "_blank");
+}
+
+function copiarTodo(){
+if(!validar()) return;
+navigator.clipboard.writeText(armarTexto()).then(()=>{
+    mostrarAviso("✅ ¡Copiado! Ve y pega en el grupo");
+}).catch(()=>{
+    mostrarAviso("No se pudo copiar, intenta de nuevo");
+});
+}
+
+function mostrarAviso(mensaje){
+    const aviso=document.getElementById("aviso");
+    aviso.textContent=mensaje;
+    aviso.style.display="block";
+    setTimeout(()=>aviso.style.display="none", 3500);
+}
+
+function borrarTodo(){
+document.getElementById("nombre").value="";
+document.querySelectorAll(".caja-gol").forEach(i=>i.value="");
+document.getElementById("aviso").style.display="none";
+}
+</script>
+</body>
+</html>
