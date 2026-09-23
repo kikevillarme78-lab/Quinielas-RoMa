@@ -21,9 +21,6 @@ body{font-family:Arial,sans-serif;background:#f0f2f5;padding:6px;width:100%;}
 .boton-borrar{width:100%;padding:12px;background:#FFC107;color:#000;font-size:17px;font-weight:bold;border:none;border-radius:10px;cursor:pointer;margin-top:10px;}
 .boton-enviar{width:100%;padding:14px;background:#25D366;color:#fff;font-size:18px;font-weight:bold;border:none;border-radius:10px;cursor:pointer;margin-top:10px;}
 .boton-enviar:hover{background:#128C7E;}
-.tarjeta{background:#fff;border:1px solid #ddd;border-radius:10px;padding:15px;margin-top:15px;display:none;}
-.tarjeta.visible{display:block;}
-.resultado{font-weight:bold;font-size:16px;}
 </style>
 </head>
 <body>
@@ -34,82 +31,68 @@ body{font-family:Arial,sans-serif;background:#f0f2f5;padding:6px;width:100%;}
 
 <input type="text" id="nombre" class="linea-nombre" placeholder="">
 
-<div class="grupo-fecha">VIERNES 25 DE SEPTIEMBRE — 19:00 / 21:00 hrs</div>
+<div class="grupo-fecha">VIERNES 25 DE SEPTIEMBRE</div>
 
 <div class="partido">
 <div class="equipo"><img src="atlante.png" class="escudo" alt="Atlante"> ATLANTE</div>
-<div class="marcador"><input type="number" id="atlante" min="0"><span class="resultado">-</span><input type="number" id="monterrey" min="0"></div>
-<div class="equipo">RAYADOS <img src="monterrey.png" class="escudo" alt="Monterrey"></div>
+<div class="marcador"><input type="number" id="atlante" min="0"> - <input type="number" id="monterrey" min="0"></div>
+<div class="equipo">RAYADOS <img src="monterrey.png" class="escudo" alt="Rayados"></div>
 </div>
 
 <div class="partido">
 <div class="equipo"><img src="tijuana.png" class="escudo" alt="Tijuana"> TIJUANA</div>
-<div class="marcador"><input type="number" id="tijuana" min="0"><span class="resultado">-</span><input type="number" id="atlas" min="0"></div>
+<div class="marcador"><input type="number" id="tijuana" min="0"> - <input type="number" id="atlas" min="0"></div>
 <div class="equipo">ATLAS <img src="atlas.png" class="escudo" alt="Atlas"></div>
 </div>
 
-<div class="grupo-fecha">SÁBADO 26 DE SEPTIEMBRE — 16:50 / 17:07 / 21:05 / 21:10 hrs</div>
+<div class="grupo-fecha">SÁBADO 26 DE SEPTIEMBRE</div>
 
 <div class="partido">
 <div class="equipo"><img src="cruzazul.png" class="escudo" alt="Cruz Azul"> CRUZ AZUL</div>
-<div class="marcador"><input type="number" id="cruzazul" min="0"><span class="resultado">-</span><input type="number" id="toluca" min="0"></div>
+<div class="marcador"><input type="number" id="cruzazul" min="0"> - <input type="number" id="toluca" min="0"></div>
 <div class="equipo">TOLUCA <img src="toluca.png" class="escudo" alt="Toluca"></div>
 </div>
 
 <div class="partido">
 <div class="equipo"><img src="chivas.png" class="escudo" alt="Chivas"> CHIVAS</div>
-<div class="marcador"><input type="number" id="chivas" min="0"><span class="resultado">-</span><input type="number" id="queretaro" min="0"></div>
+<div class="marcador"><input type="number" id="chivas" min="0"> - <input type="number" id="queretaro" min="0"></div>
 <div class="equipo">QUERÉTARO <img src="queretaro.png" class="escudo" alt="Querétaro"></div>
 </div>
 
 <div class="partido">
 <div class="equipo"><img src="santos.png" class="escudo" alt="Santos"> SANTOS</div>
-<div class="marcador"><input type="number" id="santos" min="0"><span class="resultado">-</span><input type="number" id="pachuca" min="0"></div>
+<div class="marcador"><input type="number" id="santos" min="0"> - <input type="number" id="pachuca" min="0"></div>
 <div class="equipo">PACHUCA <img src="pachuca.png" class="escudo" alt="Pachuca"></div>
 </div>
 
 <div class="partido">
 <div class="equipo"><img src="tigres.png" class="escudo" alt="Tigres"> TIGRES</div>
-<div class="marcador"><input type="number" id="tigres" min="0"><span class="resultado">-</span><input type="number" id="puebla" min="0"></div>
+<div class="marcador"><input type="number" id="tigres" min="0"> - <input type="number" id="puebla" min="0"></div>
 <div class="equipo">PUEBLA <img src="puebla.png" class="escudo" alt="Puebla"></div>
 </div>
 
-<div class="grupo-fecha">DOMINGO 27 DE SEPTIEMBRE — 12:00 / 19:00 / 21:10 hrs</div>
+<div class="grupo-fecha">DOMINGO 27 DE SEPTIEMBRE</div>
 
 <div class="partido">
 <div class="equipo"><img src="pumas.png" class="escudo" alt="Pumas"> PUMAS</div>
-<div class="marcador"><input type="number" id="pumas" min="0"><span class="resultado">-</span><input type="number" id="sanluis" min="0"></div>
+<div class="marcador"><input type="number" id="pumas" min="0"> - <input type="number" id="sanluis" min="0"></div>
 <div class="equipo">SAN LUIS <img src="sanluis.png" class="escudo" alt="San Luis"></div>
 </div>
 
 <div class="partido">
 <div class="equipo"><img src="leon.png" class="escudo" alt="León"> LEÓN</div>
-<div class="marcador"><input type="number" id="leon" min="0"><span class="resultado">-</span><input type="number" id="juarez" min="0"></div>
+<div class="marcador"><input type="number" id="leon" min="0"> - <input type="number" id="juarez" min="0"></div>
 <div class="equipo">JUÁREZ <img src="juarez.png" class="escudo" alt="Juárez"></div>
 </div>
 
 <div class="partido">
 <div class="equipo"><img src="necaxa.png" class="escudo" alt="Necaxa"> NECAXA</div>
-<div class="marcador"><input type="number" id="necaxa" min="0"><span class="resultado">-</span><input type="number" id="america" min="0"></div>
+<div class="marcador"><input type="number" id="necaxa" min="0"> - <input type="number" id="america" min="0"></div>
 <div class="equipo">AMÉRICA <img src="america.png" class="escudo" alt="América"></div>
 </div>
 
 <button class="boton-borrar" onclick="borrarTodo()">🟡 Borrar todo</button>
 <button class="boton-enviar" onclick="enviarWhatsApp()">📲 Enviar a WhatsApp</button>
-
-<div id="tarjeta" class="tarjeta">
-<strong>QUINIELAS ROMA — JORNADA 10</strong><br>
-Nombre: <span id="t-nombre"></span><br><br>
-Atlante - Rayados: <strong><span id="t1"></span></strong><br>
-Tijuana - Atlas: <strong><span id="t2"></span></strong><br>
-Cruz Azul - Toluca: <strong><span id="t3"></span></strong><br>
-Chivas - Querétaro: <strong><span id="t4"></span></strong><br>
-Santos - Pachuca: <strong><span id="t5"></span></strong><br>
-Tigres - Puebla: <strong><span id="t6"></span></strong><br>
-Pumas - San Luis: <strong><span id="t7"></span></strong><br>
-León - Juárez: <strong><span id="t8"></span></strong><br>
-Necaxa - América: <strong><span id="t9"></span></strong>
-</div>
 </div>
 
 <script>
@@ -118,29 +101,17 @@ const NUMERO = "529342771745";
 function valor(id){return document.getElementById(id).value||"?";}
 
 function enviarWhatsApp(){
-const n=document.getElementById("nombre").value||"Sin nombre";
-let texto=`*QUINIELAS ROMA — JORNADA 10*\nNombre: ${n}\n\n`;
-texto+=`Atlante - Rayados: *${valor("atlante")} - ${valor("monterrey")}*\n`;
-texto+=`Tijuana - Atlas: *${valor("tijuana")} - ${valor("atlas")}*\n`;
-texto+=`Cruz Azul - Toluca: *${valor("cruzazul")} - ${valor("toluca")}*\n`;
-texto+=`Chivas - Querétaro: *${valor("chivas")} - ${valor("queretaro")}*\n`;
-texto+=`Santos - Pachuca: *${valor("santos")} - ${valor("pachuca")}*\n`;
-texto+=`Tigres - Puebla: *${valor("tigres")} - ${valor("puebla")}*\n`;
-texto+=`Pumas - San Luis: *${valor("pumas")} - ${valor("sanluis")}*\n`;
-texto+=`León - Juárez: *${valor("leon")} - ${valor("juarez")}*\n`;
-texto+=`Necaxa - América: *${valor("necaxa")} - ${valor("america")}*\n`;
-
-document.getElementById("t-nombre").textContent=n;
-document.getElementById("t1").textContent=`${valor("atlante")} - ${valor("monterrey")}`;
-document.getElementById("t2").textContent=`${valor("tijuana")} - ${valor("atlas")}`;
-document.getElementById("t3").textContent=`${valor("cruzazul")} - ${valor("toluca")}`;
-document.getElementById("t4").textContent=`${valor("chivas")} - ${valor("queretaro")}`;
-document.getElementById("t5").textContent=`${valor("santos")} - ${valor("pachuca")}`;
-document.getElementById("t6").textContent=`${valor("tigres")} - ${valor("puebla")}`;
-document.getElementById("t7").textContent=`${valor("pumas")} - ${valor("sanluis")}`;
-document.getElementById("t8").textContent=`${valor("leon")} - ${valor("juarez")}`;
-document.getElementById("t9").textContent=`${valor("necaxa")} - ${valor("america")}`;
-document.getElementById("tarjeta").classList.add("visible");
+const n=document.getElementById("nombre").value.toUpperCase()||"SIN NOMBRE";
+let texto=`NOMBRE: ${n}\n\n`;
+texto+=`ATLANTE     ${valor("atlante")} - ${valor("monterrey")}     RAYADOS\n`;
+texto+=`TIJUANA     ${valor("tijuana")} - ${valor("atlas")}     ATLAS\n`;
+texto+=`CRUZ AZUL   ${valor("cruzazul")} - ${valor("toluca")}     TOLUCA\n`;
+texto+=`CHIVAS      ${valor("chivas")} - ${valor("queretaro")}     QUERÉTARO\n`;
+texto+=`SANTOS      ${valor("santos")} - ${valor("pachuca")}     PACHUCA\n`;
+texto+=`TIGRES      ${valor("tigres")} - ${valor("puebla")}     PUEBLA\n`;
+texto+=`PUMAS       ${valor("pumas")} - ${valor("sanluis")}     SAN LUIS\n`;
+texto+=`LEÓN        ${valor("leon")} - ${valor("juarez")}     JUÁREZ\n`;
+texto+=`NECAXA      ${valor("necaxa")} - ${valor("america")}     AMÉRICA\n`;
 
 const url=`https://wa.me/${NUMERO}?text=${encodeURIComponent(texto)}`;
 window.open(url,"_blank");
@@ -149,9 +120,8 @@ window.open(url,"_blank");
 function borrarTodo(){
 document.getElementById("nombre").value="";
 document.querySelectorAll("input[type=number]").forEach(i=>i.value="");
-document.getElementById("tarjeta").classList.remove("visible");
 }
 </script>
 </body>
-                               </html>
-                               
+  </html>
+  
