@@ -2,315 +2,143 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QUINIELAS ROMA — JORNADA 10</title>
 <style>
-* {box-sizing:border-box; margin:0; padding:0;}
-html {width:100%;}
-body {
-  font-family: Arial, sans-serif;
-  background:#f0f2f5;
-  padding:6px;
-  width:100%;
-}
-.contenedor {
-  max-width:420px;
-  width:100%;
-  margin:0 auto;
-}
-.encabezado {
-  background:#000;
-  color:#fff;
-  padding:10px;
-  border-radius:8px;
-  text-align:center;
-  margin-bottom:8px;
-}
-.encabezado h2 {font-size:16px; margin-bottom:3px;}
-.encabezado p {font-size:11px; opacity:0.85;}
-
-.recuadro-nombre {
-  border:2px solid #ccc;
-  background:#fff;
-  border-radius:8px;
-  padding:10px 14px;
-  margin-bottom:8px;
-}
-.etiqueta-nombre {
-  font-size:14px;
-  font-weight:bold;
-  display:block;
-  margin-bottom:4px;
-}
-.input-nombre {
-  width:100%;
-  border:none;
-  border-bottom:2px solid #999;
-  font-size:18px;
-  font-weight:bold;
-  outline:none;
-  padding:5px 3px;
-  text-transform:uppercase;
-  background:transparent;
-}
-
-.fecha-grupo {
-  font-size:11px;
-  color:#fff;
-  background:#333;
-  padding:5px 10px;
-  border-radius:6px;
-  margin:5px 0 3px 0;
-  font-weight:bold;
-}
-.partido {
-  background:#fff;
-  border-radius:6px;
-  padding:8px 10px;
-  margin-bottom:3px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  border:1px solid #ddd;
-}
-.emoji {font-size:17px; line-height:1;}
-.equipo {font-size:13px; font-weight:bold;}
-.equipo-izq {text-align:right; flex:1; padding-right:6px;}
-.equipo-der {text-align:left; flex:1; padding-left:6px;}
-.marcador {
-  display:flex;
-  gap:6px;
-  align-items:center;
-  font-weight:bold;
-  font-size:19px;
-}
-.marcador input {
-  width:40px;
-  height:40px;
-  border:2px solid #000;
-  border-radius:6px;
-  font-size:17px;
-  font-weight:bold;
-  text-align:center;
-  outline:none;
-}
-.pago {
-  background:#fffbf0;
-  border-radius:6px;
-  padding:9px;
-  margin-top:8px;
-  text-align:center;
-  border:1px solid #ffc107;
-  cursor:pointer;
-}
-.pago-text {font-size:13px; font-weight:bold; color:#b36b00;}
-.pago-datos {font-size:11px; margin-top:3px; color:#555;}
-.botones {
-  margin-top:8px;
-  display:flex; flex-direction:column; gap:6px;
-}
-.btn-whatsapp {
-  background:#25D366; color:#000; border:none; border-radius:6px;
-  padding:10px; font-size:14px; font-weight:bold; cursor:pointer; width:100%;
-}
-.btn-copiar {
-  background:#FFC107; color:#000; border:none; border-radius:6px;
-  padding:10px; font-size:13px; font-weight:bold; cursor:pointer; width:100%;
-}
-.btn-borrar {
-  background:#ff4444; color:#fff; border:none; border-radius:6px;
-  padding:10px; font-size:14px; font-weight:bold; cursor:pointer; width:100%;
-}
-.aviso {
-  margin-top:5px; font-size:12px; text-align:center; color:#555;
-  min-height:20px;
-}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{width:100%;}
+body{font-family:Arial,sans-serif;background:#f0f2f5;padding:6px;width:100%;}
+.contenedor{max-width:420px;width:100%;margin:0 auto;}
+.cabecera{background:#000;color:#fff;padding:12px;text-align:center;border-radius:10px;margin-bottom:15px;}
+.cabecera h1{font-size:20px;}
+.linea-nombre{border:none;border-bottom:2px solid #000;font-size:18px;width:100%;padding:8px 0;outline:none;margin-bottom:15px;}
+.fecha{text-align:center;color:#d32f2f;margin:12px 0 4px 0;font-size:14px;font-weight:bold;}
+.partido{background:#fff;padding:10px;margin-bottom:8px;border-radius:8px;display:flex;align-items:center;justify-content:space-between;}
+.equipo{display:flex;align-items:center;gap:8px;font-weight:bold;font-size:14px;}
+.escudo{width:32px;height:32px;object-fit:contain;}
+.marcador input{width:42px;padding:6px;text-align:center;font-size:15px;border:1px solid #ccc;border-radius:5px;}
+.boton-borrar{width:100%;padding:10px;background:#FFC107;color:#000;font-size:16px;font-weight:bold;border:none;border-radius:10px;cursor:pointer;margin-top:8px;}
+.boton-enviar{width:100%;padding:14px;background:#25D366;color:#fff;font-size:18px;font-weight:bold;border:none;border-radius:10px;cursor:pointer;margin-top:10px;}
+.boton-enviar:hover{background:#128C7E;}
+.tarjeta{background:#fff;border:1px solid #ddd;border-radius:10px;padding:15px;margin-top:15px;display:none;}
+.tarjeta.visible{display:block;}
 </style>
 </head>
 <body>
 <div class="contenedor">
+<div class="cabecera">
+<h1>QUINIELAS ROMA — JORNADA 10</h1>
+</div>
 
-  <div class="encabezado">
-    <h2>🥅 QUINIELAS ROMA</h2>
-    <p>JORNADA 10 — $30 • CIERRE: VIERNES 25 SEP • 2:00 PM</p>
-  </div>
+<input type="text" id="nombre" class="linea-nombre" placeholder="">
 
-  <div class="recuadro-nombre">
-    <span class="etiqueta-nombre">NOMBRE:</span>
-    <input type="text" id="nombre" class="input-nombre" oninput="this.value=this.value.toUpperCase()">
-  </div>
+<div class="fecha">SÁBADO 27 DE SEPTIEMBRE</div>
 
-  <div class="fecha-grupo">📅 VIERNES 25 DE SEPTIEMBRE</div>
-  <div class="partido">
-    <span class="emoji">🐴</span>
-    <span class="equipo equipo-izq">ATLANTE</span>
-    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g1"> – <input type="number" inputmode="numeric" min="0" id="g2"></div>
-    <span class="equipo equipo-der">RAYADOS</span>
-    <span class="emoji">🤠</span>
-  </div>
-  <div class="partido">
-    <span class="emoji">🐺</span>
-    <span class="equipo equipo-izq">TIJUANA</span>
-    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g3"> – <input type="number" inputmode="numeric" min="0" id="g4"></div>
-    <span class="equipo equipo-der">ATLAS</span>
-    <span class="emoji">🦊</span>
-  </div>
+<div class="partido">
+<div class="equipo"><img src="toluca.png" class="escudo" alt="Toluca"> Toluca</div>
+<span class="marcador"><input type="number" id="toluca" min="0"> - <input type="number" id="santos" min="0"></span>
+<div class="equipo">Santos <img src="santos.png" class="escudo" alt="Santos"></div>
+</div>
 
-  <div class="fecha-grupo">📅 SÁBADO 26 DE SEPTIEMBRE</div>
-  <div class="partido">
-    <span class="emoji">🚂</span>
-    <span class="equipo equipo-izq">CRUZ AZUL</span>
-    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g5"> – <input type="number" inputmode="numeric" min="0" id="g6"></div>
-    <span class="equipo equipo-der">TOLUCA</span>
-    <span class="emoji">👹</span>
-  </div>
-  <div class="partido">
-    <span class="emoji">🐐</span>
-    <span class="equipo equipo-izq">CHIVAS</span>
-    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g7"> – <input type="number" inputmode="numeric" min="0" id="g8"></div>
-    <span class="equipo equipo-der">QUERÉTARO</span>
-    <span class="emoji">🐔</span>
-  </div>
-  <div class="partido">
-    <span class="emoji">👼🏾</span>
-    <span class="equipo equipo-izq">SANTOS</span>
-    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g9"> – <input type="number" inputmode="numeric" min="0" id="g10"></div>
-    <span class="equipo equipo-der">PACHUCA</span>
-    <span class="emoji">🐹</span>
-  </div>
-  <div class="partido">
-    <span class="emoji">🐯</span>
-    <span class="equipo equipo-izq">TIGRES</span>
-    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g11"> – <input type="number" inputmode="numeric" min="0" id="g12"></div>
-    <span class="equipo equipo-der">PUEBLA</span>
-    <span class="emoji">🍠</span>
-  </div>
+<div class="partido">
+<div class="equipo"><img src="atlas.png" class="escudo" alt="Atlas"> Atlas</div>
+<span class="marcador"><input type="number" id="atlas" min="0"> - <input type="number" id="leon" min="0"></span>
+<div class="equipo">León <img src="leon.png" class="escudo" alt="León"></div>
+</div>
 
-  <div class="fecha-grupo">📅 DOMINGO 27 DE SEPTIEMBRE</div>
-  <div class="partido">
-    <span class="emoji">🐱</span>
-    <span class="equipo equipo-izq">PUMAS</span>
-    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g13"> – <input type="number" inputmode="numeric" min="0" id="g14"></div>
-    <span class="equipo equipo-der">SAN LUIS</span>
-    <span class="emoji">🌵</span>
-  </div>
-  <div class="partido">
-    <span class="emoji">🦁</span>
-    <span class="equipo equipo-izq">LEÓN</span>
-    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g15"> – <input type="number" inputmode="numeric" min="0" id="g16"></div>
-    <span class="equipo equipo-der">JUÁREZ</span>
-    <span class="emoji">🦮</span>
-  </div>
-  <div class="partido">
-    <span class="emoji">⚡</span>
-    <span class="equipo equipo-izq">NECAXA</span>
-    <div class="marcador"><input type="number" inputmode="numeric" min="0" id="g17"> – <input type="number" inputmode="numeric" min="0" id="g18"></div>
-    <span class="equipo equipo-der">AMÉRICA</span>
-    <span class="emoji">🦅</span>
-  </div>
+<div class="partido">
+<div class="equipo"><img src="puebla.png" class="escudo" alt="Puebla"> Puebla</div>
+<span class="marcador"><input type="number" id="puebla" min="0"> - <input type="number" id="necaxa" min="0"></span>
+<div class="equipo">Necaxa <img src="necaxa.png" class="escudo" alt="Necaxa"></div>
+</div>
 
-  <div class="pago" onclick="copiarTarjeta()">
-    <div class="pago-text">💳 PAGO — SPIN BY OXXO</div>
-    <div class="pago-datos">4217 4702 7509 9253<br>FELIPE RODRÍGUEZ</div>
-    <div style="font-size:10px; margin-top:3px; color:#888;">Toca para copiar</div>
-  </div>
+<div class="partido">
+<div class="equipo"><img src="queretaro.png" class="escudo" alt="Querétaro"> Querétaro</div>
+<span class="marcador"><input type="number" id="queretaro" min="0"> - <input type="number" id="sanluis" min="0"></span>
+<div class="equipo">San Luis <img src="sanluis.png" class="escudo" alt="San Luis"></div>
+</div>
 
-  <div class="botones">
-    <button class="btn-whatsapp" onclick="enviarWhatsApp()">📲 ENVIAR A WHATSAPP</button>
-    <button class="btn-copiar" onclick="copiarTexto()">📋 COPIAR Y ENVÍA AL GRUPO</button>
-    <button class="btn-borrar" onclick="borrarTodo()">🗑️ BORRAR TODO</button>
-  </div>
-  <p class="aviso" id="mensaje-aviso"></p>
+<div class="partido">
+<div class="equipo"><img src="tigres.png" class="escudo" alt="Tigres"> Tigres</div>
+<span class="marcador"><input type="number" id="tigres" min="0"> - <input type="number" id="pachuca" min="0"></span>
+<div class="equipo">Pachuca <img src="pachuca.png" class="escudo" alt="Pachuca"></div>
+</div>
+
+<div class="fecha">DOMINGO 28 DE SEPTIEMBRE</div>
+
+<div class="partido">
+<div class="equipo"><img src="america.png" class="escudo" alt="América"> América</div>
+<span class="marcador"><input type="number" id="america" min="0"> - <input type="number" id="chivas" min="0"></span>
+<div class="equipo">Chivas <img src="chivas.png" class="escudo" alt="Chivas"></div>
+</div>
+
+<div class="partido">
+<div class="equipo"><img src="monterrey.png" class="escudo" alt="Monterrey"> Monterrey</div>
+<span class="marcador"><input type="number" id="monterrey" min="0"> - <input type="number" id="tijuana" min="0"></span>
+<div class="equipo">Tijuana <img src="tijuana.png" class="escudo" alt="Tijuana"></div>
+</div>
+
+<div class="partido">
+<div class="equipo"><img src="cruzazul.png" class="escudo" alt="Cruz Azul"> Cruz Azul</div>
+<span class="marcador"><input type="number" id="cruzazul" min="0"> - <input type="number" id="juarez" min="0"></span>
+<div class="equipo">Juárez <img src="juarez.png" class="escudo" alt="Juárez"></div>
+</div>
+
+<button class="boton-borrar" onclick="borrarTodo()">🟡 Borrar todo</button>
+<button class="boton-enviar" onclick="enviarWhatsApp()">📲 Enviar a WhatsApp</button>
+
+<div id="tarjeta" class="tarjeta">
+<strong>QUINIELAS ROMA — JORNADA 10</strong><br>
+Nombre: <span id="t-nombre"></span><br><br>
+Toluca - Santos: <span id="t1"></span><br>
+Atlas - León: <span id="t2"></span><br>
+Puebla - Necaxa: <span id="t3"></span><br>
+Querétaro - San Luis: <span id="t4"></span><br>
+Tigres - Pachuca: <span id="t5"></span><br>
+América - Chivas: <span id="t6"></span><br>
+Monterrey - Tijuana: <span id="t7"></span><br>
+Cruz Azul - Juárez: <span id="t8"></span>
+</div>
 </div>
 
 <script>
-const NUMERO_WHATSAPP = "529342771745";
-const TARJETA_SPIN = "4217470275099253";
-const NOMBRE_TITULAR = "FELIPE RODRÍGUEZ";
+const NUMERO = "529342771745";
 
-const partidos = [
-  ["ATLANTE", "RAYADOS"],
-  ["TIJUANA", "ATLAS"],
-  ["CRUZ AZUL", "TOLUCA"],
-  ["CHIVAS", "QUERÉTARO"],
-  ["SANTOS", "PACHUCA"],
-  ["TIGRES", "PUEBLA"],
-  ["PUMAS", "SAN LUIS"],
-  ["LEÓN", "JUÁREZ"],
-  ["NECAXA", "AMÉRICA"]
-];
+function valor(id){return document.getElementById(id).value||"?";}
 
-function alinear(texto, ancho) {
-  while (texto.length < ancho) texto += " ";
-  return texto;
+function enviarWhatsApp(){
+const n=document.getElementById("nombre").value||"Sin nombre";
+let texto=`*QUINIELAS ROMA — JORNADA 10*\nNombre: ${n}\n\n`;
+texto+=`Toluca - Santos: ${valor("toluca")} - ${valor("santos")}\n`;
+texto+=`Atlas - León: ${valor("atlas")} - ${valor("leon")}\n`;
+texto+=`Puebla - Necaxa: ${valor("puebla")} - ${valor("necaxa")}\n`;
+texto+=`Querétaro - San Luis: ${valor("queretaro")} - ${valor("sanluis")}\n`;
+texto+=`Tigres - Pachuca: ${valor("tigres")} - ${valor("pachuca")}\n`;
+texto+=`América - Chivas: ${valor("america")} - ${valor("chivas")}\n`;
+texto+=`Monterrey - Tijuana: ${valor("monterrey")} - ${valor("tijuana")}\n`;
+texto+=`Cruz Azul - Juárez: ${valor("cruzazul")} - ${valor("juarez")}\n`;
+
+document.getElementById("t-nombre").textContent=n;
+document.getElementById("t1").textContent=`${valor("toluca")} - ${valor("santos")}`;
+document.getElementById("t2").textContent=`${valor("atlas")} - ${valor("leon")}`;
+document.getElementById("t3").textContent=`${valor("puebla")} - ${valor("necaxa")}`;
+document.getElementById("t4").textContent=`${valor("queretaro")} - ${valor("sanluis")}`;
+document.getElementById("t5").textContent=`${valor("tigres")} - ${valor("pachuca")}`;
+document.getElementById("t6").textContent=`${valor("america")} - ${valor("chivas")}`;
+document.getElementById("t7").textContent=`${valor("monterrey")} - ${valor("tijuana")}`;
+document.getElementById("t8").textContent=`${valor("cruzazul")} - ${valor("juarez")}`;
+document.getElementById("tarjeta").classList.add("visible");
+
+const url=`https://wa.me/${NUMERO}?text=${encodeURIComponent(texto)}`;
+window.open(url,"_blank");
 }
 
-function validarNombre() {
-  const n = document.getElementById("nombre").value.trim();
-  return n || "____________________";
-}
-
-function validarMarcadores() {
-  for (let i = 1; i <= 18; i++) {
-    if (!document.getElementById("g"+i).value) {
-      alert("⚽ LLENA TODOS LOS MARCADORES");
-      return false;
-    }
-  }
-  return true;
-}
-
-function armarTexto() {
-  const nombre = validarNombre();
-  let texto = "NOMBRE: " + nombre + "\n\n";
-  for (let i = 0; i < partidos.length; i++) {
-    const e1 = partidos[i][0], e2 = partidos[i][1];
-    const g1 = document.getElementById("g"+(i*2+1)).value;
-    const g2 = document.getElementById("g"+(i*2+2)).value;
-    texto += alinear(e1, 10) + g1 + " - " + g2 + "    " + e2 + "\n";
-  }
-  return texto;
-}
-
-function enviarWhatsApp() {
-  if (!validarMarcadores()) return;
-  const texto = armarTexto();
-  window.open("https://wa.me/" + NUMERO_WHATSAPP + "?text=" + encodeURIComponent(texto), "_blank");
-}
-
-async function copiarTexto() {
-  if (!validarMarcadores()) return;
-  const texto = armarTexto();
-  try {
-    await navigator.clipboard.writeText(texto);
-    document.getElementById("mensaje-aviso").textContent = "✅ COPIADO — pega y envía";
-  } catch {
-    const t = document.createElement("textarea");
-    t.value = texto; t.style.position="fixed"; t.style.opacity="0";
-    document.body.appendChild(t); t.select(); document.execCommand("copy");
-    document.body.removeChild(t);
-    document.getElementById("mensaje-aviso").textContent = "✅ COPIADO — pega y envía";
-  }
-}
-
-async function copiarTarjeta() {
-  try {
-    await navigator.clipboard.writeText(TARJETA_SPIN);
-    alert("✅ COPIADO\nSPIN BY OXXO\n" + NOMBRE_TITULAR);
-  } catch {
-    const i = document.createElement("input");
-    i.value = TARJETA_SPIN; document.body.appendChild(i);
-    i.select(); document.execCommand("copy"); document.body.removeChild(i);
-    alert("✅ COPIADO\nSPIN BY OXXO\n" + NOMBRE_TITULAR);
-  }
-}
-
-function borrarTodo() {
-  document.getElementById("nombre").value = "";
-  for (let i = 1; i <= 18; i++) document.getElementById("g"+i).value = "";
-  document.getElementById("mensaje-aviso").textContent = "";
-  window.scrollTo(0,0);
+function borrarTodo(){
+document.getElementById("nombre").value="";
+document.querySelectorAll("input[type=number]").forEach(i=>i.value="");
+document.getElementById("tarjeta").classList.remove("visible");
 }
 </script>
 </body>
-  </html>
+</html>
+
