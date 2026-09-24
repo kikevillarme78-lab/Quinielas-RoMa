@@ -46,6 +46,16 @@ body{
     margin-bottom:10px;
     display:none;
 }
+.aviso-exito{
+    background:#d4edda;
+    color:#155724;
+    padding:10px;
+    border-radius:6px;
+    text-align:center;
+    font-weight:bold;
+    margin-bottom:10px;
+    display:none;
+}
 
 .fecha-bloque{
     background:#222;
@@ -67,21 +77,13 @@ body{
     justify-content:space-between;
 }
 
-.escudo{
-    width:40px;
-    height:40px;
-    object-fit:contain;
-    flex-shrink:0;
-}
-
 .eq-nombre{
     font-weight:bold;
     font-size:16px;
     flex:1;
     margin:0 8px;
 }
-.izq{text-align:left;}
-.der{text-align:right;}
+.izq{text-align:left;}.der{text-align:right;}
 
 .caja-gol{
     width:55px;
@@ -102,9 +104,6 @@ body{
     border-radius:10px;
     text-align:center;
 }
-.pago-titulo{font-weight:bold;font-size:16px;margin-bottom:8px;}
-.pago-datos{font-size:15px;line-height:1.5;}
-.pago-numero{font-weight:bold;font-size:17px;color:#000;}
 
 .boton{
     width:100%;
@@ -116,9 +115,52 @@ body{
     cursor:pointer;
     margin-top:8px;
 }
-.btn-whatsapp{background:#25D366;color:#fff;}
-.btn-copiar{background:#FFC107;color:#000;}
+.btn-enviar{background:#25D366;color:#fff;}
+.btn-guardar{background:#FFC107;color:#000;}
 .btn-borrar{background:#ff4444;color:#fff;}
+
+.lista-quinielas{
+    margin-top:20px;
+    border-top:2px solid #ccc;
+    padding-top:15px;
+}
+.titulo-lista{
+    font-size:18px;
+    font-weight:bold;
+    text-align:center;
+    margin-bottom:10px;
+}
+.tarjeta-quiniela{
+    background:#fff;
+    border-radius:8px;
+    padding:12px;
+    margin-bottom:8px;
+    border-left:4px solid #25D366;
+}
+.nombre-guardado{
+    font-weight:bold;
+    font-size:16px;
+    margin-bottom:5px;
+}
+.fecha-guardado{
+    font-size:12px;
+    color:#666;
+    margin-bottom:8px;
+}
+.borrar-una{
+    background:transparent;
+    border:none;
+    color:#ff4444;
+    font-size:12px;
+    cursor:pointer;
+    padding:4px;
+    margin-top:5px;
+}
+.vacio{
+    text-align:center;
+    color:#888;
+    padding:15px;
+}
 </style>
 </head>
 <body>
@@ -127,121 +169,100 @@ body{
 <div class="cabecera"><h1>QUINIELAS ROMA — JORNADA 10</h1></div>
 
 <div id="aviso" class="aviso">⚠️ Completa todos los marcadores y tu nombre</div>
+<div id="avisoExito" class="aviso-exito">✅ ¡Guardada! Se agregó abajo</div>
 
 <input type="text" class="nombre-linea" id="nombre" placeholder="NOMBRE">
 
 <div class="fecha-bloque">VIERNES 25 DE SEPTIEMBRE</div>
-
 <div class="partido">
-<img src="atlante.png" class="escudo" alt="Atlante">
 <span class="eq-nombre izq">ATLANTE</span>
 <input type="number" class="caja-gol" id="atlante" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="monterrey" min="0">
 <span class="eq-nombre der">RAYADOS</span>
-<img src="monterrey.png" class="escudo" alt="Monterrey">
 </div>
-
 <div class="partido">
-<img src="tijuana.png" class="escudo" alt="Tijuana">
 <span class="eq-nombre izq">TIJUANA</span>
 <input type="number" class="caja-gol" id="tijuana" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="atlas" min="0">
 <span class="eq-nombre der">ATLAS</span>
-<img src="atlas.png" class="escudo" alt="Atlas">
 </div>
 
 <div class="fecha-bloque">SÁBADO 26 DE SEPTIEMBRE — 17:00 / 17:07 / 19:00 hrs</div>
-
 <div class="partido">
-<img src="cruzazul.png" class="escudo" alt="Cruz Azul">
 <span class="eq-nombre izq">CRUZ AZUL</span>
 <input type="number" class="caja-gol" id="cruzazul" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="toluca" min="0">
 <span class="eq-nombre der">TOLUCA</span>
-<img src="toluca.png" class="escudo" alt="Toluca">
 </div>
-
 <div class="partido">
-<img src="chivas.png" class="escudo" alt="Chivas">
 <span class="eq-nombre izq">CHIVAS</span>
 <input type="number" class="caja-gol" id="chivas" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="queretaro" min="0">
 <span class="eq-nombre der">QUERÉTARO</span>
-<img src="queretaro.png" class="escudo" alt="Querétaro">
 </div>
-
 <div class="partido">
-<img src="santos.png" class="escudo" alt="Santos">
 <span class="eq-nombre izq">SANTOS</span>
 <input type="number" class="caja-gol" id="santos" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="pachuca" min="0">
 <span class="eq-nombre der">PACHUCA</span>
-<img src="pachuca.png" class="escudo" alt="Pachuca">
 </div>
-
 <div class="partido">
-<img src="tigres.png" class="escudo" alt="Tigres">
 <span class="eq-nombre izq">TIGRES</span>
 <input type="number" class="caja-gol" id="tigres" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="puebla" min="0">
 <span class="eq-nombre der">PUEBLA</span>
-<img src="puebla.png" class="escudo" alt="Puebla">
 </div>
 
 <div class="fecha-bloque">DOMINGO 27 DE SEPTIEMBRE — 12:00 / 19:00 / 21:00 hrs</div>
-
 <div class="partido">
-<img src="pumas.png" class="escudo" alt="Pumas">
 <span class="eq-nombre izq">PUMAS</span>
 <input type="number" class="caja-gol" id="pumas" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="sanluis" min="0">
 <span class="eq-nombre der">SAN LUIS</span>
-<img src="sanluis.png" class="escudo" alt="San Luis">
 </div>
-
 <div class="partido">
-<img src="leon.png" class="escudo" alt="León">
 <span class="eq-nombre izq">LEÓN</span>
 <input type="number" class="caja-gol" id="leon" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="juarez" min="0">
 <span class="eq-nombre der">JUÁREZ</span>
-<img src="juarez.png" class="escudo" alt="Juárez">
 </div>
-
 <div class="partido">
-<img src="necaxa.png" class="escudo" alt="Necaxa">
 <span class="eq-nombre izq">NECAXA</span>
 <input type="number" class="caja-gol" id="necaxa" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="america" min="0">
 <span class="eq-nombre der">AMÉRICA</span>
-<img src="america.png" class="escudo" alt="América">
 </div>
 
 <div class="pago-caja">
-<div class="pago-titulo">💳 PAGO — SPINN BY OXXO</div>
-<div class="pago-datos">
-<span class="pago-numero">4217 4702 7509 9253</span><br>
+💳 PAGO — SPINN BY OXXO<br>
+<strong>4217 4702 7509 9253</strong><br>
 A nombre de: FELIPE RODRÍGUEZ
 </div>
-</div>
 
-<button class="boton btn-whatsapp" onclick="enviarTodo()">📱 ENVIAR A WHATSAPP</button>
-<button class="boton btn-copiar" onclick="copiarTodo()">📋 COPIAR → VE AL GRUPO, PEGA Y ENVÍA</button>
+<button class="boton btn-enviar" onclick="enviarWhatsApp()">📱 ENVIAR A WHATSAPP</button>
+<button class="boton btn-guardar" onclick="guardarQuiniela()">💾 GUARDAR</button>
 <button class="boton btn-borrar" onclick="borrarTodo()">🗑️ BORRAR TODO</button>
+
+<div class="lista-quinielas">
+<h3 class="titulo-lista">📋 TODAS LAS QUINIELAS</h3>
+<div id="listaGuardadas">
+<p class="vacio">Aún no hay ninguna guardada</p>
+</div>
+</div>
 
 </div>
 
 <script>
-const NUMERO = "526678248973";
+const NUMERO = "529342771745";
 
 function valor(id){return document.getElementById(id).value;}
 
@@ -273,17 +294,94 @@ LEÓN        ${valor("leon")} - ${valor("juarez")}     JUÁREZ
 NECAXA      ${valor("necaxa")} - ${valor("america")}     AMÉRICA`;
 }
 
-function enviarTodo(){
+function enviarWhatsApp(){
 if(!validar()) return;
 const texto=armarTexto();
 window.open(`https://wa.me/${NUMERO}?text=${encodeURIComponent(texto)}`, "_blank");
 }
 
-function copiarTodo(){
+function guardarQuiniela(){
 if(!validar()) return;
-navigator.clipboard.writeText(armarTexto()).then(()=>{
-    mostrarAviso("✅ ¡Copiado! Ve y pega en el grupo");
+
+const datos={
+    nombre: document.getElementById("nombre").value.toUpperCase(),
+    atlante: valor("atlante"),
+    monterrey: valor("monterrey"),
+    tijuana: valor("tijuana"),
+    atlas: valor("atlas"),
+    cruzazul: valor("cruzazul"),
+    toluca: valor("toluca"),
+    chivas: valor("chivas"),
+    queretaro: valor("queretaro"),
+    santos: valor("santos"),
+    pachuca: valor("pachuca"),
+    tigres: valor("tigres"),
+    puebla: valor("puebla"),
+    pumas: valor("pumas"),
+    sanluis: valor("sanluis"),
+    leon: valor("leon"),
+    juarez: valor("juarez"),
+    necaxa: valor("necaxa"),
+    america: valor("america"),
+    fecha: new Date().toLocaleString("es-MX")
+};
+
+let lista=JSON.parse(localStorage.getItem("quinielas") || "[]");
+lista.unshift(datos);
+localStorage.setItem("quinielas", JSON.stringify(lista));
+
+mostrarAvisoExito();
+renderizarLista();
+borrarFormulario();
+}
+
+function renderizarLista(){
+const contenedor=document.getElementById("listaGuardadas");
+const lista=JSON.parse(localStorage.getItem("quinielas") || "[]");
+
+if(lista.length===0){
+    contenedor.innerHTML='<p class="vacio">Aún no hay ninguna guardada</p>';
+    return;
+}
+
+contenedor.innerHTML="";
+lista.forEach((q, i)=>{
+    const tarjeta=document.createElement("div");
+    tarjeta.className="tarjeta-quiniela";
+    tarjeta.innerHTML=`
+        <div class="nombre-guardado">${q.nombre}</div>
+        <div class="fecha-guardado">${q.fecha}</div>
+        <div>ATL:${q.atlante} - RAY:${q.monterrey}</div>
+        <div>TIJ:${q.tijuana} - ATL:${q.atlas}</div>
+        <div>CA:${q.cruzazul} - TOL:${q.toluca}</div>
+        <div>CHI:${q.chivas} - QRO:${q.queretaro}</div>
+        <div>SAN:${q.santos} - PAC:${q.pachuca}</div>
+        <div>TIG:${q.tigres} - PUE:${q.puebla}</div>
+        <div>PUM:${q.pumas} - SL:${q.sanluis}</div>
+        <div>LEO:${q.leon} - JUA:${q.juarez}</div>
+        <div>NEC:${q.necaxa} - AME:${q.america}</div>
+        <button class="borrar-una" onclick="borrarUna(${i})">🗑️ Borrar esta</button>
+    `;
+    contenedor.appendChild(tarjeta);
 });
+}
+
+function borrarUna(indice){
+let lista=JSON.parse(localStorage.getItem("quinielas") || "[]");
+lista.splice(indice,1);
+localStorage.setItem("quinielas", JSON.stringify(lista));
+renderizarLista();
+}
+
+function borrarTodo(){
+document.getElementById("nombre").value="";
+document.querySelectorAll(".caja-gol").forEach(i=>i.value="");
+document.getElementById("aviso").style.display="none";
+}
+
+function borrarFormulario(){
+document.getElementById("nombre").value="";
+document.querySelectorAll(".caja-gol").forEach(i=>i.value="");
 }
 
 function mostrarAviso(mensaje){
@@ -293,11 +391,13 @@ aviso.style.display="block";
 setTimeout(()=>aviso.style.display="none", 3500);
 }
 
-function borrarTodo(){
-document.getElementById("nombre").value="";
-document.querySelectorAll(".caja-gol").forEach(i=>i.value="");
-document.getElementById("aviso").style.display="none";
+function mostrarAvisoExito(){
+const aviso=document.getElementById("avisoExito");
+aviso.style.display="block";
+setTimeout(()=>aviso.style.display="none", 2500);
 }
+
+renderizarLista();
 </script>
 </body>
 </html>
