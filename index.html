@@ -2,25 +2,120 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>QUINIELAS ROMA — JORNADA 10</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 html{width:100%;}
-body{font-family:Arial,sans-serif;background:#f0f2f5;padding:8px;width:100%;}
+body{
+    font-family:Arial,sans-serif;
+    background:#f0f2f5;
+    padding:8px;
+    width:100%;
+}
 .contenedor{max-width:420px;width:100%;margin:0 auto;}
-.cabecera{background:#000;color:#fff;padding:12px;text-align:center;border-radius:10px;margin-bottom:12px;}
-.cabecera h1{font-size:20px;}
-.nombre-linea{width:100%;border:none;border-bottom:2px solid #000;font-size:18px;padding:8px 0;margin-bottom:12px;text-align:center;outline:none;}
-.aviso{background:#fff3cd;color:#856404;padding:10px;border-radius:6px;text-align:center;font-weight:bold;margin-bottom:10px;display:none;}
-.fecha-bloque{background:#222;color:#fff;padding:8px 12px;margin:12px 0 6px;font-weight:bold;font-size:14px;border-radius:6px;}
-.partido{background:#fff;padding:12px 10px;margin-bottom:6px;border-radius:8px;display:flex;align-items:center;justify-content:space-between;}
-.eq-nombre{font-weight:bold;font-size:16px;flex:1;margin:0 8px;}
-.izq{text-align:left;}.der{text-align:right;}
-.caja-gol{width:50px;height:50px;text-align:center;font-size:20px;font-weight:bold;border:2px solid #000;border-radius:6px;}
-.separador{padding:0 4px;font-weight:bold;}
-.pago-caja{background:#fff9e6;border:2px solid #f5c500;padding:15px;margin:15px 0 10px;border-radius:10px;text-align:center;}
-.boton{width:100%;padding:14px;font-size:17px;font-weight:bold;border:none;border-radius:8px;cursor:pointer;margin-top:8px;}
+
+.cabecera{
+    background:#000;
+    color:#fff;
+    padding:12px;
+    text-align:center;
+    border-radius:10px;
+    margin-bottom:12px;
+}
+.cabecera h1{font-size:20px;font-weight:bold;}
+
+.nombre-linea{
+    width:100%;
+    border:none;
+    border-bottom:2px solid #000;
+    font-size:18px;
+    padding:8px 0;
+    margin-bottom:12px;
+    text-align:center;
+    outline:none;
+}
+
+.aviso{
+    background:#fff3cd;
+    color:#856404;
+    padding:10px;
+    border-radius:6px;
+    text-align:center;
+    font-weight:bold;
+    margin-bottom:10px;
+    display:none;
+}
+
+.fecha-bloque{
+    background:#222;
+    color:#fff;
+    padding:8px 12px;
+    margin:12px 0 6px;
+    font-weight:bold;
+    font-size:14px;
+    border-radius:6px;
+}
+
+.partido{
+    background:#fff;
+    padding:12px 10px;
+    margin-bottom:6px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.escudo{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.eq-nombre{
+    font-weight:bold;
+    font-size:16px;
+    flex:1;
+    margin:0 8px;
+}
+.izq{text-align:left;}
+.der{text-align:right;}
+
+.caja-gol{
+    width:55px;
+    height:55px;
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+    border:2px solid #000;
+    border-radius:6px;
+}
+.separador{padding:0 4px;font-weight:bold;font-size:18px;}
+
+.pago-caja{
+    background:#fff9e6;
+    border:2px solid #f5c500;
+    padding:15px;
+    margin:15px 0 10px;
+    border-radius:10px;
+    text-align:center;
+}
+.pago-titulo{font-weight:bold;font-size:16px;margin-bottom:8px;}
+.pago-datos{font-size:15px;line-height:1.5;}
+.pago-numero{font-weight:bold;font-size:17px;color:#000;}
+
+.boton{
+    width:100%;
+    padding:14px;
+    font-size:17px;
+    font-weight:bold;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-top:8px;
+}
 .btn-whatsapp{background:#25D366;color:#fff;}
 .btn-copiar{background:#FFC107;color:#000;}
 .btn-borrar{background:#ff4444;color:#fff;}
@@ -30,82 +125,113 @@ body{font-family:Arial,sans-serif;background:#f0f2f5;padding:8px;width:100%;}
 <div class="contenedor">
 
 <div class="cabecera"><h1>QUINIELAS ROMA — JORNADA 10</h1></div>
+
 <div id="aviso" class="aviso">⚠️ Completa todos los marcadores y tu nombre</div>
+
 <input type="text" class="nombre-linea" id="nombre" placeholder="NOMBRE">
 
 <div class="fecha-bloque">VIERNES 25 DE SEPTIEMBRE</div>
+
 <div class="partido">
+<img src="atlante.png" class="escudo" alt="Atlante">
 <span class="eq-nombre izq">ATLANTE</span>
 <input type="number" class="caja-gol" id="atlante" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="monterrey" min="0">
 <span class="eq-nombre der">RAYADOS</span>
+<img src="monterrey.png" class="escudo" alt="Monterrey">
 </div>
+
 <div class="partido">
+<img src="tijuana.png" class="escudo" alt="Tijuana">
 <span class="eq-nombre izq">TIJUANA</span>
 <input type="number" class="caja-gol" id="tijuana" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="atlas" min="0">
 <span class="eq-nombre der">ATLAS</span>
+<img src="atlas.png" class="escudo" alt="Atlas">
 </div>
 
 <div class="fecha-bloque">SÁBADO 26 DE SEPTIEMBRE — 17:00 / 17:07 / 19:00 hrs</div>
+
 <div class="partido">
+<img src="cruzazul.png" class="escudo" alt="Cruz Azul">
 <span class="eq-nombre izq">CRUZ AZUL</span>
 <input type="number" class="caja-gol" id="cruzazul" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="toluca" min="0">
 <span class="eq-nombre der">TOLUCA</span>
+<img src="toluca.png" class="escudo" alt="Toluca">
 </div>
+
 <div class="partido">
+<img src="chivas.png" class="escudo" alt="Chivas">
 <span class="eq-nombre izq">CHIVAS</span>
 <input type="number" class="caja-gol" id="chivas" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="queretaro" min="0">
 <span class="eq-nombre der">QUERÉTARO</span>
+<img src="queretaro.png" class="escudo" alt="Querétaro">
 </div>
+
 <div class="partido">
+<img src="santos.png" class="escudo" alt="Santos">
 <span class="eq-nombre izq">SANTOS</span>
 <input type="number" class="caja-gol" id="santos" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="pachuca" min="0">
 <span class="eq-nombre der">PACHUCA</span>
+<img src="pachuca.png" class="escudo" alt="Pachuca">
 </div>
+
 <div class="partido">
+<img src="tigres.png" class="escudo" alt="Tigres">
 <span class="eq-nombre izq">TIGRES</span>
 <input type="number" class="caja-gol" id="tigres" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="puebla" min="0">
 <span class="eq-nombre der">PUEBLA</span>
+<img src="puebla.png" class="escudo" alt="Puebla">
 </div>
 
 <div class="fecha-bloque">DOMINGO 27 DE SEPTIEMBRE — 12:00 / 19:00 / 21:00 hrs</div>
+
 <div class="partido">
+<img src="pumas.png" class="escudo" alt="Pumas">
 <span class="eq-nombre izq">PUMAS</span>
 <input type="number" class="caja-gol" id="pumas" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="sanluis" min="0">
 <span class="eq-nombre der">SAN LUIS</span>
+<img src="sanluis.png" class="escudo" alt="San Luis">
 </div>
+
 <div class="partido">
+<img src="leon.png" class="escudo" alt="León">
 <span class="eq-nombre izq">LEÓN</span>
 <input type="number" class="caja-gol" id="leon" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="juarez" min="0">
 <span class="eq-nombre der">JUÁREZ</span>
+<img src="juarez.png" class="escudo" alt="Juárez">
 </div>
+
 <div class="partido">
+<img src="necaxa.png" class="escudo" alt="Necaxa">
 <span class="eq-nombre izq">NECAXA</span>
 <input type="number" class="caja-gol" id="necaxa" min="0">
 <span class="separador">-</span>
 <input type="number" class="caja-gol" id="america" min="0">
 <span class="eq-nombre der">AMÉRICA</span>
+<img src="america.png" class="escudo" alt="América">
 </div>
 
 <div class="pago-caja">
-💳 PAGO — SPINN BY OXXO<br>
-<strong>4217 4702 7509 9253</strong><br>
+<div class="pago-titulo">💳 PAGO — SPINN BY OXXO</div>
+<div class="pago-datos">
+<span class="pago-numero">4217 4702 7509 9253</span><br>
 A nombre de: FELIPE RODRÍGUEZ
+</div>
 </div>
 
 <button class="boton btn-whatsapp" onclick="enviarTodo()">📱 ENVIAR A WHATSAPP</button>
@@ -116,14 +242,22 @@ A nombre de: FELIPE RODRÍGUEZ
 
 <script>
 const NUMERO = "526678248973";
+
 function valor(id){return document.getElementById(id).value;}
+
 function validar(){
 const n=document.getElementById("nombre").value.trim();
 if(!n){mostrarAviso("Escribe tu nombre");return false;}
 const campos=["atlante","monterrey","tijuana","atlas","cruzazul","toluca","chivas","queretaro","santos","pachuca","tigres","puebla","pumas","sanluis","leon","juarez","necaxa","america"];
-for(let c of campos){if(!document.getElementById(c).value){mostrarAviso("Completa todos los marcadores");return false;}}
+for(let c of campos){
+    if(!document.getElementById(c).value){
+        mostrarAviso("Completa todos los marcadores");
+        return false;
+    }
+}
 return true;
 }
+
 function armarTexto(){
 const n=document.getElementById("nombre").value.toUpperCase();
 return `NOMBRE: ${n}
@@ -138,20 +272,27 @@ PUMAS       ${valor("pumas")} - ${valor("sanluis")}     SAN LUIS
 LEÓN        ${valor("leon")} - ${valor("juarez")}     JUÁREZ
 NECAXA      ${valor("necaxa")} - ${valor("america")}     AMÉRICA`;
 }
+
 function enviarTodo(){
 if(!validar()) return;
 const texto=armarTexto();
 window.open(`https://wa.me/${NUMERO}?text=${encodeURIComponent(texto)}`, "_blank");
 }
+
 function copiarTodo(){
 if(!validar()) return;
-navigator.clipboard.writeText(armarTexto()).then(()=>{mostrarAviso("✅ ¡Copiado! Ve y pega en el grupo");});
+navigator.clipboard.writeText(armarTexto()).then(()=>{
+    mostrarAviso("✅ ¡Copiado! Ve y pega en el grupo");
+});
 }
+
 function mostrarAviso(mensaje){
 const aviso=document.getElementById("aviso");
-aviso.textContent=mensaje;aviso.style.display="block";
+aviso.textContent=mensaje;
+aviso.style.display="block";
 setTimeout(()=>aviso.style.display="none", 3500);
 }
+
 function borrarTodo(){
 document.getElementById("nombre").value="";
 document.querySelectorAll(".caja-gol").forEach(i=>i.value="");
