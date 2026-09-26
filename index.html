@@ -5,176 +5,281 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <title>QUINIELAS ROMA — JORNADA 11</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#050806;
+  --card:#0b1510;
+  --card2:#101a13;
+  --green:#19e66d;
+  --green2:#00ff70;
+  --gold:#ffd21a;
+  --gold2:#fff078;
+  --line:#1c5b32;
+}
 body{
-  font-family:Arial,sans-serif;
-  background:#0a0f0a;
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 50% -10%,#18361f 0,#091109 35%,#030504 75%);
   color:#fff;
-  padding:10px;
-  max-width:460px;
-  margin:0 auto;
+  padding:9px 7px 28px;
+  max-width:500px;
+  margin:auto;
 }
 .top-bar{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:12px;
+  gap:8px;
+  margin-bottom:10px;
 }
 .left-top{
   display:flex;
   align-items:center;
-  gap:6px;
-  color:#00c853;
-  font-weight:bold;
-  font-size:15px;
+  gap:7px;
+  color:var(--green);
+  font-weight:900;
+  font-size:13px;
+  letter-spacing:.4px;
 }
 .dot{
-  width:10px;
-  height:10px;
-  background:#00c853;
+  width:9px;height:9px;background:var(--green);
   border-radius:50%;
+  box-shadow:0 0 10px var(--green);
   animation:blink 1s infinite;
 }
-@keyframes blink{
-  0%,100%{opacity:1;}
-  50%{opacity:.4;}
-}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
 .right-top{
-  background:#00c853;
-  color:#000;
-  padding:4px 12px;
+  background:#0e351d;
+  color:#52f38d;
+  border:1px solid #25d969;
+  box-shadow:0 0 10px rgba(25,230,109,.18);
+  padding:6px 12px;
   border-radius:20px;
-  font-weight:bold;
-  font-size:13px;
+  font-weight:900;
+  font-size:11px;
 }
 h1{
   text-align:center;
-  font-size:21px;
-  color:#ffd700;
-  margin-bottom:12px;
+  font-size:22px;
+  color:var(--gold);
+  margin-bottom:11px;
+  letter-spacing:1.7px;
+  text-shadow:0 0 13px rgba(255,210,26,.35);
 }
 .name-row{
-  background:#1a2b1a;
-  border:1px solid #b8860b;
-  border-radius:10px;
-  padding:12px 15px;
-  margin-bottom:14px;
+  background:linear-gradient(145deg,#101c13,#081009);
+  border:1px solid #4f5517;
+  border-radius:17px;
+  padding:10px;
+  margin-bottom:13px;
   display:flex;
   align-items:center;
+  box-shadow:inset 0 0 18px rgba(255,210,26,.035);
 }
 .name-label{
-  font-weight:bold;
-  font-size:15px;
-  color:#ffd700;
+  font-weight:900;
+  font-size:13px;
+  color:var(--gold);
   white-space:nowrap;
 }
 #nombre{
   flex:1;
-  margin-left:10px;
-  padding:10px 12px;
+  min-width:0;
+  margin-left:9px;
+  height:43px;
+  padding:9px 12px;
   font-size:16px;
-  border:2px solid #ffd700;
-  border-radius:8px;
+  border:2px solid var(--gold);
+  border-radius:12px;
   background:#fff;
   color:#000;
   outline:none;
 }
-#nombre:focus{
-  box-shadow:0 0 10px #ffd700;
-}
+#nombre:focus{box-shadow:0 0 14px rgba(255,210,26,.55)}
 .date-block{
-  background:#152015;
-  padding:8px 14px;
-  border-radius:8px;
-  margin:14px 0 8px;
+  background:linear-gradient(90deg,#0d1810,#131913);
+  padding:9px 12px;
+  border-radius:14px;
+  margin:13px 0 7px;
   display:flex;
   justify-content:space-between;
-  border-bottom:1px solid #b8860b;
-}
-.date-day{font-weight:bold;color:#ffd700;}
-.date-num{font-size:14px;color:#ccc;}
-.match{
-  background:#1a2b1a;
-  border:1px solid #b8860b;
-  border-radius:10px;
-  padding:12px;
-  margin-bottom:6px;
-  display:flex;
   align-items:center;
-  justify-content:space-between;
+  border:1px solid #174a29;
+  box-shadow:inset 0 0 12px rgba(25,230,109,.04);
+}
+.date-day{
+  font-weight:900;
+  color:var(--gold);
+  letter-spacing:1px;
+  font-size:13px;
+}
+.date-num{font-size:11px;color:#c8c8c8}
+.match{
+  position:relative;
+  background:linear-gradient(145deg,#0b1710,#080e0a);
+  border:1px solid #1a4b2a;
+  border-radius:21px;
+  padding:10px 8px;
+  margin-bottom:7px;
+  min-height:91px;
+  display:grid;
+  grid-template-columns:minmax(75px,1fr) 52px 13px 52px minmax(75px,1fr);
+  align-items:center;
+  gap:3px;
+  transition:.22s ease;
+}
+.match.filled{
+  border-color:#31f079;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(28,230,105,.16),transparent 62%),
+    linear-gradient(145deg,#0d2114,#071009);
+  box-shadow:
+    0 0 7px rgba(25,230,109,.8),
+    0 0 22px rgba(25,230,109,.28),
+    inset 0 0 20px rgba(25,230,109,.08);
 }
 .team-left,.team-right{
   display:flex;
   align-items:center;
-  gap:8px;
-  flex:1;
+  min-width:0;
+  gap:5px;
 }
-.team-left{justify-content:flex-start;}
-.team-right{justify-content:flex-end;}
+.team-left{justify-content:flex-start}
+.team-right{justify-content:flex-end}
 .logo{
-  width:42px;
-  height:42px;
+  width:45px;
+  height:45px;
   object-fit:contain;
   background:#fff;
   border-radius:50%;
   padding:4px;
+  flex:0 0 45px;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.7));
 }
-.team-name{font-weight:bold;font-size:14px;}
+.team-name{
+  font-weight:900;
+  font-size:11px;
+  line-height:1.05;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
 .score-box{
-  display:flex;
-  align-items:center;
-  gap:6px;
-  padding:0 6px;
+  display:contents;
 }
 .gol{
-  width:50px;
-  height:50px;
-  border-radius:8px;
-  border:2px solid #ffd700;
-  background:#fff;
-  color:#000;
-  font-size:20px;
-  font-weight:bold;
+  width:52px;
+  height:52px;
+  border-radius:14px;
+  border:2px solid var(--gold);
+  background:linear-gradient(145deg,#302d12,#16160c);
+  color:#fff;
+  font-size:23px;
+  font-weight:900;
   text-align:center;
   outline:none;
+  box-shadow:
+    0 0 8px rgba(255,210,26,.55),
+    inset 0 0 12px rgba(255,210,26,.08);
+  -moz-appearance:textfield;
 }
+.gol::-webkit-outer-spin-button,
+.gol::-webkit-inner-spin-button{margin:0}
 .gol:focus{
-  box-shadow:0 0 10px #ffd700;
-  border-color:#ffd700;
+  border-color:var(--gold2);
+  box-shadow:0 0 14px rgba(255,225,45,.9),0 0 25px rgba(255,210,26,.22);
 }
-.sep{font-size:18px;color:#ffd700;font-weight:bold;}
-.pago{
-  background:linear-gradient(90deg,#2b2000,#3b2b00);
-  border:2px solid #b8860b;
-  border-radius:10px;
-  padding:14px;
-  margin:16px 0 10px;
-  cursor:pointer;
+.match.filled .gol{
+  box-shadow:
+    0 0 12px rgba(255,210,26,.9),
+    0 0 25px rgba(255,210,26,.2),
+    inset 0 0 12px rgba(255,210,26,.1);
+}
+.sep{
   text-align:center;
+  font-size:19px;
+  color:var(--gold);
+  font-weight:900;
 }
-.pago-title{
+.check{
+  position:absolute;
+  right:-3px;
+  top:-9px;
+  width:31px;
+  height:31px;
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:6px;
-  font-weight:bold;
-  color:#ffd700;
-  margin-bottom:6px;
+  border-radius:50%;
+  background:#22e96f;
+  color:#031008;
+  border:2px solid #07120b;
+  font-size:20px;
+  font-weight:900;
+  box-shadow:0 0 12px rgba(34,233,111,.85);
+  opacity:0;
+  transform:scale(.45);
+  transition:.2s ease;
+  z-index:3;
 }
-.pago-number{font-size:15px;font-weight:bold;letter-spacing:1px;}
-.pago-name{font-size:13px;color:#ccc;margin-top:4px;}
-.buttons{display:flex;gap:10px;margin-top:8px;}
+.match.filled .check{
+  opacity:1;
+  transform:scale(1);
+}
+.pago{
+  background:
+    radial-gradient(circle at 90% 20%,rgba(255,210,26,.16),transparent 40%),
+    linear-gradient(145deg,#1a1605,#0d0e09);
+  border:1px solid #a8870d;
+  border-radius:19px;
+  padding:14px;
+  margin:15px 0 9px;
+  cursor:pointer;
+  text-align:center;
+  box-shadow:inset 0 0 20px rgba(255,210,26,.06);
+}
+.pago-title{
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:7px;
+  letter-spacing:.7px;
+}
+.pago-number{
+  font-size:16px;
+  font-weight:900;
+  letter-spacing:1.3px;
+}
+.pago-name{font-size:12px;color:#ccc;margin-top:5px}
+.buttons{display:flex;gap:8px;margin-top:8px}
 button{
   flex:1;
-  padding:14px;
+  min-height:52px;
   border:none;
-  border-radius:8px;
-  font-size:16px;
-  font-weight:bold;
+  border-radius:15px;
+  font-size:14px;
+  font-weight:900;
   cursor:pointer;
 }
-.btn-whatsapp{background:#25D366;color:#000;}
-.btn-delete{background:#b71c1c;color:#fff;}
+.btn-whatsapp{
+  background:linear-gradient(180deg,#43f58a,#19d96a);
+  color:#031108;
+  box-shadow:0 0 16px rgba(25,217,106,.22);
+}
+.btn-delete{
+  background:#171b18;
+  color:#fff;
+  border:1px solid #693434;
+}
+@media(max-width:390px){
+  body{padding-left:5px;padding-right:5px}
+  .match{
+    grid-template-columns:minmax(68px,1fr) 47px 11px 47px minmax(68px,1fr);
+    padding-left:6px;padding-right:6px;
+  }
+  .logo{width:40px;height:40px;flex-basis:40px}
+  .team-name{font-size:10px}
+  .gol{width:47px;height:47px;font-size:21px}
+}
 </style>
 </head>
 <body>
@@ -191,183 +296,113 @@ button{
   <input type="text" id="nombre" placeholder="">
 </div>
 
-<div class="date-block">
-  <span class="date-day">VIERNES</span>
-  <span class="date-num">9 DE OCTUBRE</span>
-</div>
+<div class="date-block"><span class="date-day">VIERNES</span><span class="date-num">9 DE OCTUBRE</span></div>
+
 <div class="match">
-  <div class="team-left">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Club_Puebla.svg/120px-Club_Puebla.svg.png" class="logo" alt="Puebla">
-    <span class="team-name">PUEBLA</span>
-  </div>
-  <div class="score-box">
-    <input type="number" class="gol" id="pue" min="0" placeholder="">
-    <span class="sep">-</span>
-    <input type="number" class="gol" id="leo" min="0" placeholder="">
-  </div>
-  <div class="team-right">
-    <span class="team-name">LEÓN</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Club_Leon.svg/120px-Club_Leon.svg.png" class="logo" alt="León">
-  </div>
+  <div class="team-left"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Club_Puebla.svg/120px-Club_Puebla.svg.png" class="logo"><span class="team-name">PUEBLA</span></div>
+  <input type="number" class="gol" id="pue" min="0" inputmode="numeric"><span class="sep">-</span><input type="number" class="gol" id="leo" min="0" inputmode="numeric">
+  <div class="team-right"><span class="team-name">LEÓN</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Club_Leon.svg/120px-Club_Leon.svg.png" class="logo"></div>
+  <div class="check">✓</div>
 </div>
 
-<div class="date-block">
-  <span class="date-day">SÁBADO</span>
-  <span class="date-num">10 DE OCTUBRE</span>
-</div>
+<div class="date-block"><span class="date-day">SÁBADO</span><span class="date-num">10 DE OCTUBRE</span></div>
+
 <div class="match">
-  <div class="team-left">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Club_Tigres_UANL.svg/120px-Club_Tigres_UANL.svg.png" class="logo" alt="Tigres">
-    <span class="team-name">TIGRES</span>
-  </div>
-  <div class="score-box">
-    <input type="number" class="gol" id="tig" min="0" placeholder="">
-    <span class="sep">-</span>
-    <input type="number" class="gol" id="tol" min="0" placeholder="">
-  </div>
-  <div class="team-right">
-    <span class="team-name">TOLUCA</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Deportivo_Toluca.svg/120px-Deportivo_Toluca.svg.png" class="logo" alt="Toluca">
-  </div>
-</div>
-<div class="match">
-  <div class="team-left">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Queretaro_FC.svg/120px-Queretaro_FC.svg.png" class="logo" alt="Querétaro">
-    <span class="team-name">QUERÉTARO</span>
-  </div>
-  <div class="score-box">
-    <input type="number" class="gol" id="qro" min="0" placeholder="">
-    <span class="sep">-</span>
-    <input type="number" class="gol" id="atl" min="0" placeholder="">
-  </div>
-  <div class="team-right">
-    <span class="team-name">ATLANTE</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Atlante_FC.svg/120px-Atlante_FC.svg.png" class="logo" alt="Atlante">
-  </div>
-</div>
-<div class="match">
-  <div class="team-left">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Club_Juarez.svg/120px-Club_Juarez.svg.png" class="logo" alt="Juárez">
-    <span class="team-name">JUÁREZ</span>
-  </div>
-  <div class="score-box">
-    <input type="number" class="gol" id="jua" min="0" placeholder="">
-    <span class="sep">-</span>
-    <input type="number" class="gol" id="tij" min="0" placeholder="">
-  </div>
-  <div class="team-right">
-    <span class="team-name">TIJUANA</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Club_Tijuana.svg/120px-Club_Tijuana.svg.png" class="logo" alt="Tijuana">
-  </div>
-</div>
-<div class="match">
-  <div class="team-left">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Atlas_FC.svg/120px-Atlas_FC.svg.png" class="logo" alt="Atlas">
-    <span class="team-name">ATLAS</span>
-  </div>
-  <div class="score-box">
-    <input type="number" class="gol" id="atls" min="0" placeholder="">
-    <span class="sep">-</span>
-    <input type="number" class="gol" id="chi" min="0" placeholder="">
-  </div>
-  <div class="team-right">
-    <span class="team-name">CHIVAS</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/CD_Guadalajara_logo.svg/120px-CD_Guadalajara_logo.svg.png" class="logo" alt="Chivas">
-  </div>
-</div>
-<div class="match">
-  <div class="team-left">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Club_America.svg/120px-Club_America.svg.png" class="logo" alt="América">
-    <span class="team-name">AMÉRICA</span>
-  </div>
-  <div class="score-box">
-    <input type="number" class="gol" id="ame" min="0" placeholder="">
-    <span class="sep">-</span>
-    <input type="number" class="gol" id="ray" min="0" placeholder="">
-  </div>
-  <div class="team-right">
-    <span class="team-name">MONTERREY</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Club_Monterrey.svg/120px-Club_Monterrey.svg.png" class="logo" alt="Monterrey">
-  </div>
+  <div class="team-left"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Club_Tigres_UANL.svg/120px-Club_Tigres_UANL.svg.png" class="logo"><span class="team-name">TIGRES</span></div>
+  <input type="number" class="gol" id="tig" min="0" inputmode="numeric"><span class="sep">-</span><input type="number" class="gol" id="tol" min="0" inputmode="numeric">
+  <div class="team-right"><span class="team-name">TOLUCA</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Deportivo_Toluca.svg/120px-Deportivo_Toluca.svg.png" class="logo"></div>
+  <div class="check">✓</div>
 </div>
 
-<div class="date-block">
-  <span class="date-day">DOMINGO</span>
-  <span class="date-num">11 DE OCTUBRE</span>
-</div>
 <div class="match">
-  <div class="team-left">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Club_San_Luis.svg/120px-Club_San_Luis.svg.png" class="logo" alt="San Luis">
-    <span class="team-name">SAN LUIS</span>
-  </div>
-  <div class="score-box">
-    <input type="number" class="gol" id="sl" min="0" placeholder="">
-    <span class="sep">-</span>
-    <input type="number" class="gol" id="san" min="0" placeholder="">
-  </div>
-  <div class="team-right">
-    <span class="team-name">SANTOS</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Santos_Laguna_logo.svg/120px-Santos_Laguna_logo.svg.png" class="logo" alt="Santos">
-  </div>
+  <div class="team-left"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Queretaro_FC.svg/120px-Queretaro_FC.svg.png" class="logo"><span class="team-name">QUERÉTARO</span></div>
+  <input type="number" class="gol" id="qro" min="0" inputmode="numeric"><span class="sep">-</span><input type="number" class="gol" id="atl" min="0" inputmode="numeric">
+  <div class="team-right"><span class="team-name">ATLANTE</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Atlante_FC.svg/120px-Atlante_FC.svg.png" class="logo"></div>
+  <div class="check">✓</div>
 </div>
+
 <div class="match">
-  <div class="team-left">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Club_Pachuca.svg/120px-Club_Pachuca.svg.png" class="logo" alt="Pachuca">
-    <span class="team-name">PACHUCA</span>
-  </div>
-  <div class="score-box">
-    <input type="number" class="gol" id="pac" min="0" placeholder="">
-    <span class="sep">-</span>
-    <input type="number" class="gol" id="nec" min="0" placeholder="">
-  </div>
-  <div class="team-right">
-    <span class="team-name">NECAXA</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Club_Necaxa.svg/120px-Club_Necaxa.svg.png" class="logo" alt="Necaxa">
-  </div>
+  <div class="team-left"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Club_Juarez.svg/120px-Club_Juarez.svg.png" class="logo"><span class="team-name">JUÁREZ</span></div>
+  <input type="number" class="gol" id="jua" min="0" inputmode="numeric"><span class="sep">-</span><input type="number" class="gol" id="tij" min="0" inputmode="numeric">
+  <div class="team-right"><span class="team-name">TIJUANA</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Club_Tijuana.svg/120px-Club_Tijuana.svg.png" class="logo"></div>
+  <div class="check">✓</div>
 </div>
+
 <div class="match">
-  <div class="team-left">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Club_U_N_A_M.svg/120px-Club_U_N_A_M.svg.png" class="logo" alt="Pumas">
-    <span class="team-name">PUMAS</span>
-  </div>
-  <div class="score-box">
-    <input type="number" class="gol" id="pum" min="0" placeholder="">
-    <span class="sep">-</span>
-    <input type="number" class="gol" id="ca" min="0" placeholder="">
-  </div>
-  <div class="team-right">
-    <span class="team-name">CRUZ AZUL</span>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Escudo_Cruz_Azul.svg/120px-Escudo_Cruz_Azul.svg.png" class="logo" alt="Cruz Azul">
-  </div>
+  <div class="team-left"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Atlas_FC.svg/120px-Atlas_FC.svg.png" class="logo"><span class="team-name">ATLAS</span></div>
+  <input type="number" class="gol" id="atls" min="0" inputmode="numeric"><span class="sep">-</span><input type="number" class="gol" id="chi" min="0" inputmode="numeric">
+  <div class="team-right"><span class="team-name">CHIVAS</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/CD_Guadalajara_logo.svg/120px-CD_Guadalajara_logo.svg.png" class="logo"></div>
+  <div class="check">✓</div>
+</div>
+
+<div class="match">
+  <div class="team-left"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Club_America.svg/120px-Club_America.svg.png" class="logo"><span class="team-name">AMÉRICA</span></div>
+  <input type="number" class="gol" id="ame" min="0" inputmode="numeric"><span class="sep">-</span><input type="number" class="gol" id="ray" min="0" inputmode="numeric">
+  <div class="team-right"><span class="team-name">MONTERREY</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Club_Monterrey.svg/120px-Club_Monterrey.svg.png" class="logo"></div>
+  <div class="check">✓</div>
+</div>
+
+<div class="date-block"><span class="date-day">DOMINGO</span><span class="date-num">11 DE OCTUBRE</span></div>
+
+<div class="match">
+  <div class="team-left"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Club_San_Luis.svg/120px-Club_San_Luis.svg.png" class="logo"><span class="team-name">SAN LUIS</span></div>
+  <input type="number" class="gol" id="sl" min="0" inputmode="numeric"><span class="sep">-</span><input type="number" class="gol" id="san" min="0" inputmode="numeric">
+  <div class="team-right"><span class="team-name">SANTOS</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Santos_Laguna_logo.svg/120px-Santos_Laguna_logo.svg.png" class="logo"></div>
+  <div class="check">✓</div>
+</div>
+
+<div class="match">
+  <div class="team-left"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Club_Pachuca.svg/120px-Club_Pachuca.svg.png" class="logo"><span class="team-name">PACHUCA</span></div>
+  <input type="number" class="gol" id="pac" min="0" inputmode="numeric"><span class="sep">-</span><input type="number" class="gol" id="nec" min="0" inputmode="numeric">
+  <div class="team-right"><span class="team-name">NECAXA</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Club_Necaxa.svg/120px-Club_Necaxa.svg.png" class="logo"></div>
+  <div class="check">✓</div>
+</div>
+
+<div class="match">
+  <div class="team-left"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Club_U_N_A_M.svg/120px-Club_U_N_A_M.svg.png" class="logo"><span class="team-name">PUMAS</span></div>
+  <input type="number" class="gol" id="pum" min="0" inputmode="numeric"><span class="sep">-</span><input type="number" class="gol" id="ca" min="0" inputmode="numeric">
+  <div class="team-right"><span class="team-name">CRUZ AZUL</span><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Escudo_Cruz_Azul.svg/120px-Escudo_Cruz_Azul.svg.png" class="logo"></div>
+  <div class="check">✓</div>
 </div>
 
 <div class="pago" id="pago" onclick="copiarPago()">
-  <div class="pago-title">💳 PAGO — SPINN BY OXXO</div>
+  <div class="pago-title">PAGO — SPINN BY OXXO</div>
   <div class="pago-number">4217 4702 7509 9253</div>
-  <div class="pago-name">A nombre: FELIPE RODRÍGUEZ</div>
+  <div class="pago-name">A nombre: FELIPE RODRÍGUEZ · Toca para copiar</div>
 </div>
 
 <div class="buttons">
-  <button class="btn-whatsapp" onclick="enviar()">📱 ENVIAR A WHATSAPP</button>
-  <button class="btn-delete" onclick="borrar()">🗑️ BORRAR</button>
+  <button class="btn-whatsapp" onclick="enviar()">ENVIAR A WHATSAPP</button>
+  <button class="btn-delete" onclick="borrar()">BORRAR</button>
 </div>
 
 <script>
-const NUMERO = "529342771745";
-const TEXTO_PAGO = "SPINN BY OXXO\n4217 4702 7509 9253\nA nombre: FELIPE RODRÍGUEZ";
+const NUMERO="529342771745";
+const TEXTO_PAGO="SPINN BY OXXO\n4217 4702 7509 9253\nA nombre: FELIPE RODRÍGUEZ";
+
+document.querySelectorAll(".match").forEach(match=>{
+  match.querySelectorAll(".gol").forEach(input=>{
+    input.addEventListener("input",()=>{
+      const goles=match.querySelectorAll(".gol");
+      const lleno=[...goles].every(x=>x.value.trim()!=="");
+      match.classList.toggle("filled",lleno);
+    });
+  });
+});
 
 function copiarPago(){
-  navigator.clipboard.writeText(TEXTO_PAGO).then(()=>alert("✅ Copiado!"));
+  navigator.clipboard.writeText(TEXTO_PAGO).then(()=>{
+    const p=document.getElementById("pago");
+    const original=p.innerHTML;
+    p.innerHTML='<div class="pago-title">✓ DATOS COPIADOS</div><div class="pago-number">4217 4702 7509 9253</div>';
+    setTimeout(()=>p.innerHTML=original,1800);
+  });
 }
-
 function v(id){return document.getElementById(id).value || "0";}
-
 function enviar(){
-  const nombre = document.getElementById("nombre").value.trim();
+  const nombre=document.getElementById("nombre").value.trim();
   if(!nombre){alert("Escribe tu nombre");return;}
-  
-  const mensaje = 
-`NOMBRE: ${nombre.toUpperCase()}
+  const mensaje=`NOMBRE: ${nombre.toUpperCase()}
 
 PUEBLA - LEÓN: *${v("pue")} - ${v("leo")}*
 TIGRES - TOLUCA: *${v("tig")} - ${v("tol")}*
@@ -380,15 +415,13 @@ PACHUCA - NECAXA: *${v("pac")} - ${v("nec")}*
 PUMAS - CRUZ AZUL: *${v("pum")} - ${v("ca")}*
 
 ${TEXTO_PAGO}`;
-
   window.open("https://wa.me/"+NUMERO+"?text="+encodeURIComponent(mensaje),"_blank");
 }
-
 function borrar(){
   document.getElementById("nombre").value="";
   document.querySelectorAll(".gol").forEach(c=>c.value="");
+  document.querySelectorAll(".match").forEach(m=>m.classList.remove("filled"));
 }
 </script>
 </body>
-      </html>
-      
+</html>
