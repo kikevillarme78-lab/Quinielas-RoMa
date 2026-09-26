@@ -6,19 +6,19 @@
 <title>QUINIELAS ROMA — J11</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,sans-serif;background:#f0f2f5;padding:5px;max-width:420px;margin:0 auto;}
-h1{background:#000;color:#fff;text-align:center;padding:8px;border-radius:8px;font-size:17px;margin-bottom:6px;}
-.nombre-fila{display:flex;align-items:center;background:#fff;padding:8px;border-radius:8px;margin-bottom:6px;}
-.etiqueta{font-weight:bold;font-size:15px;}
-#nombre{flex:1;padding:8px;font-size:16px;border:2px solid #000;border-radius:6px;margin-left:8px;outline:none;}
-.fecha{background:#222;color:#fff;text-align:center;padding:5px;margin:6px 0 4px;border-radius:4px;font-weight:bold;font-size:14px;}
-.partido{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:6px 8px;margin-bottom:4px;border-radius:6px;font-weight:bold;font-size:14px;}
-.eq-izq,.eq-der{display:flex;align-items:center;gap:6px;flex:1;}
+body{font-family:Arial,sans-serif;background:#f0f2f5;padding:6px;max-width:420px;margin:0 auto;}
+h1{background:#000;color:#fff;text-align:center;padding:10px;border-radius:8px;font-size:18px;margin-bottom:8px;}
+.nombre-linea{display:flex;align-items:center;background:#fff;padding:10px;border-radius:8px;margin-bottom:8px;}
+.etiqueta-nombre{font-weight:bold;font-size:16px;white-space:nowrap;}
+#nombre{flex:1;padding:10px;font-size:16px;border:2px solid #000;border-radius:6px;margin-left:10px;outline:none;min-height:44px;}
+.fecha{background:#222;color:#fff;text-align:center;padding:6px;margin:8px 0 4px;border-radius:5px;font-weight:bold;font-size:14px;}
+.partido{background:#fff;display:flex;align-items:center;justify-content:space-between;padding:8px 10px;margin-bottom:5px;border-radius:7px;font-weight:bold;font-size:15px;}
+.eq-izq,.eq-der{display:flex;align-items:center;gap:8px;flex:1;}
 .eq-der{justify-content:flex-end;}
-.logo{width:28px;height:28px;object-fit:contain;}
-.caja{width:38px;height:38px;text-align:center;font-size:17px;font-weight:bold;border:2px solid #000;border-radius:4px;}
-.pago{background:#fff9e6;border:2px solid #f5c500;text-align:center;padding:8px;margin:8px 0;border-radius:8px;cursor:pointer;font-size:13px;}
-.boton{width:100%;padding:10px;font-size:16px;font-weight:bold;border:none;border-radius:8px;margin-top:5px;cursor:pointer;}
+.logo{width:32px;height:32px;object-fit:contain;}
+.caja{width:44px;height:44px;text-align:center;font-size:18px;font-weight:bold;border:2px solid #000;border-radius:5px;}
+.pago{background:#fff9e6;border:2px solid #f5c500;text-align:center;padding:12px;margin:10px 0;border-radius:8px;cursor:pointer;font-size:14px;}
+.boton{width:100%;padding:12px;font-size:17px;font-weight:bold;border:none;border-radius:8px;margin-top:6px;cursor:pointer;}
 .verde{background:#25D366;color:#fff;}
 .rojo{background:#ff4444;color:#fff;}
 </style>
@@ -27,8 +27,8 @@ h1{background:#000;color:#fff;text-align:center;padding:8px;border-radius:8px;fo
 
 <h1>QUINIELAS ROMA — JORNADA 11</h1>
 
-<div class="nombre-fila">
-  <span class="etiqueta">NOMBRE:</span>
+<div class="nombre-linea">
+  <span class="etiqueta-nombre">NOMBRE:</span>
   <input type="text" id="nombre" placeholder="">
 </div>
 
@@ -144,8 +144,9 @@ function enviar(){
   const e=val(); if(e){alert(e);return;}
   window.open(`https://wa.me/${NUMERO}?text=${encodeURIComponent(armar())}`);
 }
-function copiar(){navigator.clipboard.writeText(TEXTO_PAGO);alert("✅ Copiado");}
+function copiar(){navigator.clipboard.writeText(TEXTO_PAGO).then(()=>{const b=document.getElementById("bloquePago");const o=b.innerHTML;b.innerHTML="✅ ¡COPIADO!<br>"+TEXTO_PAGO;setTimeout(()=>b.innerHTML=o,2000);});}
 function borrar(){document.getElementById("nombre").value="";document.querySelectorAll(".caja").forEach(c=>c.value="");}
 </script>
 </body>
-</html>
+  </html>
+  
