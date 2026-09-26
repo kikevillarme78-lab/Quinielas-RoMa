@@ -10,7 +10,7 @@ html{width:100%;}
 body{
     font-family:Arial,sans-serif;
     background:#f0f2f5;
-    padding:8px;
+    padding:6px;
     width:100%;
 }
 .contenedor{max-width:420px;width:100%;margin:0 auto;}
@@ -29,7 +29,7 @@ body{
     width:100%;
     border:2px solid #000;
     font-size:18px;
-    padding:12px;
+    padding:14px;
     margin-bottom:15px;
     text-align:center;
     outline:none;
@@ -80,31 +80,32 @@ body{
 .equipo{
     display:flex;
     align-items:center;
-    gap:8px;
+    gap:10px;
     flex:1;
 }
 .der{justify-content:flex-end;}
 
 .logo{
-    width:42px;
-    height:42px;
+    width:48px;
+    height:48px;
     object-fit:contain;
 }
 .eq-nombre{
     font-weight:bold;
     font-size:15px;
+    white-space:nowrap;
 }
 
 .caja-gol{
-    width:60px;
-    height:55px;
+    width:55px;
+    height:52px;
     text-align:center;
-    font-size:22px;
+    font-size:20px;
     font-weight:bold;
     border:2px solid #000;
     border-radius:6px;
 }
-.separador{padding:0 8px;font-weight:bold;font-size:18px;}
+.separador{padding:0 6px;font-weight:bold;font-size:18px;}
 
 .pago-caja{
     background:#fff9e6;
@@ -126,8 +127,8 @@ body{
 
 .boton{
     width:100%;
-    padding:15px;
-    font-size:18px;
+    padding:14px;
+    font-size:17px;
     font-weight:bold;
     border:none;
     border-radius:8px;
@@ -148,10 +149,10 @@ body{
 
 <input type="text" class="nombre-linea" id="nombre" placeholder="NOMBRE">
 
-<div class="fecha-bloque">VIERNES 9 DE OCTUBRE — 19:00 / 21:00 hrs</div>
+<div class="fecha-bloque">VIERNES — PUEBLA vs LEÓN</div>
 <div class="partido">
 <div class="equipo">
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Club_Puebla_logo.svg/100px-Club_Puebla_logo.png" alt="Puebla">
+<img class="logo" src="https://i.imgur.com/ZLqWd9P.png" alt="Puebla">
 <span class="eq-nombre">PUEBLA</span>
 </div>
 <input type="number" class="caja-gol" id="pue" min="0">
@@ -159,13 +160,14 @@ body{
 <input type="number" class="caja-gol" id="leo" min="0">
 <div class="equipo der">
 <span class="eq-nombre">LEÓN</span>
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Club_Leon_logo.svg/100px-Club_Leon_logo.png" alt="León">
+<img class="logo" src="https://i.imgur.com/4sYtG2z.png" alt="León">
 </div>
 </div>
 
+<div class="fecha-bloque">SÁBADO</div>
 <div class="partido">
 <div class="equipo">
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Tigres_UANL_logo.svg/100px-Tigres_UANL_logo.png" alt="Tigres">
+<img class="logo" src="https://i.imgur.com/cJtX8wQ.png" alt="Tigres">
 <span class="eq-nombre">TIGRES</span>
 </div>
 <input type="number" class="caja-gol" id="tig" min="0">
@@ -173,14 +175,13 @@ body{
 <input type="number" class="caja-gol" id="tol" min="0">
 <div class="equipo der">
 <span class="eq-nombre">TOLUCA</span>
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Deportivo_Toluca_logo.svg/100px-Deportivo_Toluca_logo.png" alt="Toluca">
+<img class="logo" src="https://i.imgur.com/sPpV9vH.png" alt="Toluca">
 </div>
 </div>
 
-<div class="fecha-bloque">SÁBADO 10 DE OCTUBRE — 17:00 / 19:00 / 21:00 hrs</div>
 <div class="partido">
 <div class="equipo">
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Queretaro_FC_logo.svg/100px-Queretaro_FC_logo.png" alt="Querétaro">
+<img class="logo" src="https://i.imgur.com/y9m4s9b.png" alt="Querétaro">
 <span class="eq-nombre">QUERÉTARO</span>
 </div>
 <input type="number" class="caja-gol" id="qro" min="0">
@@ -188,13 +189,13 @@ body{
 <input type="number" class="caja-gol" id="atl" min="0">
 <div class="equipo der">
 <span class="eq-nombre">ATLANTE</span>
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Atlante_FC_logo.svg/100px-Atlante_FC_logo.png" alt="Atlante">
+<img class="logo" src="https://i.imgur.com/8rN7Z9q.png" alt="Atlante">
 </div>
 </div>
 
 <div class="partido">
 <div class="equipo">
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/FC_Juarez_logo.svg/100px-FC_Juarez_logo.png" alt="Juárez">
+<img class="logo" src="https://i.imgur.com/hJn9VrL.png" alt="Juárez">
 <span class="eq-nombre">JUÁREZ</span>
 </div>
 <input type="number" class="caja-gol" id="jua" min="0">
@@ -202,13 +203,13 @@ body{
 <input type="number" class="caja-gol" id="tij" min="0">
 <div class="equipo der">
 <span class="eq-nombre">TIJUANA</span>
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Club_Tijuana_logo.svg/100px-Club_Tijuana_logo.png" alt="Tijuana">
+<img class="logo" src="https://i.imgur.com/6p8Dm9Q.png" alt="Tijuana">
 </div>
 </div>
 
 <div class="partido">
 <div class="equipo">
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Atlas_FC_logo.svg/100px-Atlas_FC_logo.png" alt="Atlas">
+<img class="logo" src="https://i.imgur.com/xDqRbN8.png" alt="Atlas">
 <span class="eq-nombre">ATLAS</span>
 </div>
 <input type="number" class="caja-gol" id="atls" min="0">
@@ -216,13 +217,13 @@ body{
 <input type="number" class="caja-gol" id="chi" min="0">
 <div class="equipo der">
 <span class="eq-nombre">CHIVAS</span>
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/CD_Guadalajara_logo.svg/100px-CD_Guadalajara_logo.png" alt="Chivas">
+<img class="logo" src="https://i.imgur.com/G9hXqYw.png" alt="Chivas">
 </div>
 </div>
 
 <div class="partido">
 <div class="equipo">
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Club_America_logo.svg/100px-Club_America_logo.png" alt="América">
+<img class="logo" src="https://i.imgur.com/3Kd5sY7.png" alt="América">
 <span class="eq-nombre">AMÉRICA</span>
 </div>
 <input type="number" class="caja-gol" id="ame" min="0">
@@ -230,14 +231,14 @@ body{
 <input type="number" class="caja-gol" id="ray" min="0">
 <div class="equipo der">
 <span class="eq-nombre">MONTERREY</span>
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Monterrey_rayados.svg/100px-Monterrey_rayados.png" alt="Monterrey">
+<img class="logo" src="https://i.imgur.com/LnWv9qR.png" alt="Monterrey">
 </div>
 </div>
 
-<div class="fecha-bloque">DOMINGO 11 DE OCTUBRE — 17:00 / 17:15 / 19:00 hrs</div>
+<div class="fecha-bloque">DOMINGO</div>
 <div class="partido">
 <div class="equipo">
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Atletico_San_Luis_logo.svg/100px-Atletico_San_Luis_logo.png" alt="San Luis">
+<img class="logo" src="https://i.imgur.com/DtR9wVq.png" alt="San Luis">
 <span class="eq-nombre">SAN LUIS</span>
 </div>
 <input type="number" class="caja-gol" id="sl" min="0">
@@ -245,13 +246,13 @@ body{
 <input type="number" class="caja-gol" id="san" min="0">
 <div class="equipo der">
 <span class="eq-nombre">SANTOS</span>
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Santos_Laguna_logo.svg/100px-Santos_Laguna_logo.png" alt="Santos">
+<img class="logo" src="https://i.imgur.com/S2k7wGQ.png" alt="Santos">
 </div>
 </div>
 
 <div class="partido">
 <div class="equipo">
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/CF_Pachuca_logo.svg/100px-CF_Pachuca_logo.png" alt="Pachuca">
+<img class="logo" src="https://i.imgur.com/9z9mKvM.png" alt="Pachuca">
 <span class="eq-nombre">PACHUCA</span>
 </div>
 <input type="number" class="caja-gol" id="pac" min="0">
@@ -259,13 +260,13 @@ body{
 <input type="number" class="caja-gol" id="nec" min="0">
 <div class="equipo der">
 <span class="eq-nombre">NECAXA</span>
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Club_Necaxa_logo.svg/100px-Club_Necaxa_logo.png" alt="Necaxa">
+<img class="logo" src="https://i.imgur.com/7LqZ9nD.png" alt="Necaxa">
 </div>
 </div>
 
 <div class="partido">
 <div class="equipo">
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Pumas_UNAM_logo.svg/100px-Pumas_UNAM_logo.png" alt="Pumas">
+<img class="logo" src="https://i.imgur.com/p2V7w8x.png" alt="Pumas">
 <span class="eq-nombre">PUMAS</span>
 </div>
 <input type="number" class="caja-gol" id="pum" min="0">
@@ -273,7 +274,7 @@ body{
 <input type="number" class="caja-gol" id="ca" min="0">
 <div class="equipo der">
 <span class="eq-nombre">CRUZ AZUL</span>
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Cruz_Azul_logo.svg/100px-Cruz_Azul_logo.png" alt="Cruz Azul">
+<img class="logo" src="https://i.imgur.com/8q9sPwR.png" alt="Cruz Azul">
 </div>
 </div>
 
