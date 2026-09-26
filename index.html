@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>QUINIELAS ROMA — JORNADA 10</title>
+<title>QUINIELAS ROMA — JORNADA 11</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 html{width:100%;}
@@ -27,18 +27,18 @@ body{
 
 .nombre-linea{
     width:100%;
-    border:none;
-    border-bottom:2px solid #000;
+    border:2px solid #000;
     font-size:18px;
-    padding:8px 0;
-    margin-bottom:12px;
+    padding:12px;
+    margin-bottom:15px;
     text-align:center;
     outline:none;
+    border-radius:6px;
 }
 
 .aviso{
-    background:#fff3cd;
-    color:#856404;
+    background:#f8d7da;
+    color:#721c24;
     padding:10px;
     border-radius:6px;
     text-align:center;
@@ -69,7 +69,7 @@ body{
 
 .partido{
     background:#fff;
-    padding:12px 10px;
+    padding:14px 10px;
     margin-bottom:6px;
     border-radius:8px;
     display:flex;
@@ -77,16 +77,26 @@ body{
     justify-content:space-between;
 }
 
+.equipo{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex:1;
+}
+.der{justify-content:flex-end;}
+
+.logo{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+}
 .eq-nombre{
     font-weight:bold;
-    font-size:16px;
-    flex:1;
-    margin:0 8px;
+    font-size:15px;
 }
-.izq{text-align:left;}.der{text-align:right;}
 
 .caja-gol{
-    width:55px;
+    width:60px;
     height:55px;
     text-align:center;
     font-size:22px;
@@ -94,7 +104,7 @@ body{
     border:2px solid #000;
     border-radius:6px;
 }
-.separador{padding:0 4px;font-weight:bold;font-size:18px;}
+.separador{padding:0 8px;font-weight:bold;font-size:18px;}
 
 .pago-caja{
     background:#fff9e6;
@@ -103,12 +113,21 @@ body{
     margin:15px 0 10px;
     border-radius:10px;
     text-align:center;
+    cursor:pointer;
+    transition:transform 0.1s;
+}
+.pago-caja:active{transform:scale(0.98);background:#fff3cd;}
+.texto-copiado{
+    font-size:12px;
+    color:#856404;
+    margin-top:5px;
+    display:none;
 }
 
 .boton{
     width:100%;
-    padding:14px;
-    font-size:17px;
+    padding:15px;
+    font-size:18px;
     font-weight:bold;
     border:none;
     border-radius:8px;
@@ -116,288 +135,232 @@ body{
     margin-top:8px;
 }
 .btn-enviar{background:#25D366;color:#fff;}
-.btn-guardar{background:#FFC107;color:#000;}
 .btn-borrar{background:#ff4444;color:#fff;}
-
-.lista-quinielas{
-    margin-top:20px;
-    border-top:2px solid #ccc;
-    padding-top:15px;
-}
-.titulo-lista{
-    font-size:18px;
-    font-weight:bold;
-    text-align:center;
-    margin-bottom:10px;
-}
-.tarjeta-quiniela{
-    background:#fff;
-    border-radius:8px;
-    padding:12px;
-    margin-bottom:8px;
-    border-left:4px solid #25D366;
-}
-.nombre-guardado{
-    font-weight:bold;
-    font-size:16px;
-    margin-bottom:5px;
-}
-.fecha-guardado{
-    font-size:12px;
-    color:#666;
-    margin-bottom:8px;
-}
-.borrar-una{
-    background:transparent;
-    border:none;
-    color:#ff4444;
-    font-size:12px;
-    cursor:pointer;
-    padding:4px;
-    margin-top:5px;
-}
-.vacio{
-    text-align:center;
-    color:#888;
-    padding:15px;
-}
 </style>
 </head>
 <body>
 <div class="contenedor">
 
-<div class="cabecera"><h1>QUINIELAS ROMA — JORNADA 10</h1></div>
+<div class="cabecera"><h1>QUINIELAS ROMA — JORNADA 11</h1></div>
 
-<div id="aviso" class="aviso">⚠️ Completa todos los marcadores y tu nombre</div>
-<div id="avisoExito" class="aviso-exito">✅ ¡Guardada! Se agregó abajo</div>
+<div id="aviso" class="aviso">⚠️ Escribe tu nombre y todos los goles para poder enviar</div>
+<div id="avisoExito" class="aviso-exito">✅ ¡Enviado!</div>
 
 <input type="text" class="nombre-linea" id="nombre" placeholder="NOMBRE">
 
-<div class="fecha-bloque">VIERNES 25 DE SEPTIEMBRE</div>
+<div class="fecha-bloque">VIERNES 9 DE OCTUBRE — 19:00 / 21:00 hrs</div>
 <div class="partido">
-<span class="eq-nombre izq">ATLANTE</span>
-<input type="number" class="caja-gol" id="atlante" min="0">
-<span class="separador">-</span>
-<input type="number" class="caja-gol" id="monterrey" min="0">
-<span class="eq-nombre der">RAYADOS</span>
+<div class="equipo">
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Club_Puebla_logo.svg/100px-Club_Puebla_logo.png" alt="Puebla">
+<span class="eq-nombre">PUEBLA</span>
 </div>
-<div class="partido">
-<span class="eq-nombre izq">TIJUANA</span>
-<input type="number" class="caja-gol" id="tijuana" min="0">
+<input type="number" class="caja-gol" id="pue" min="0">
 <span class="separador">-</span>
-<input type="number" class="caja-gol" id="atlas" min="0">
-<span class="eq-nombre der">ATLAS</span>
+<input type="number" class="caja-gol" id="leo" min="0">
+<div class="equipo der">
+<span class="eq-nombre">LEÓN</span>
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Club_Leon_logo.svg/100px-Club_Leon_logo.png" alt="León">
 </div>
-
-<div class="fecha-bloque">SÁBADO 26 DE SEPTIEMBRE — 17:00 / 17:07 / 19:00 hrs</div>
-<div class="partido">
-<span class="eq-nombre izq">CRUZ AZUL</span>
-<input type="number" class="caja-gol" id="cruzazul" min="0">
-<span class="separador">-</span>
-<input type="number" class="caja-gol" id="toluca" min="0">
-<span class="eq-nombre der">TOLUCA</span>
-</div>
-<div class="partido">
-<span class="eq-nombre izq">CHIVAS</span>
-<input type="number" class="caja-gol" id="chivas" min="0">
-<span class="separador">-</span>
-<input type="number" class="caja-gol" id="queretaro" min="0">
-<span class="eq-nombre der">QUERÉTARO</span>
-</div>
-<div class="partido">
-<span class="eq-nombre izq">SANTOS</span>
-<input type="number" class="caja-gol" id="santos" min="0">
-<span class="separador">-</span>
-<input type="number" class="caja-gol" id="pachuca" min="0">
-<span class="eq-nombre der">PACHUCA</span>
-</div>
-<div class="partido">
-<span class="eq-nombre izq">TIGRES</span>
-<input type="number" class="caja-gol" id="tigres" min="0">
-<span class="separador">-</span>
-<input type="number" class="caja-gol" id="puebla" min="0">
-<span class="eq-nombre der">PUEBLA</span>
 </div>
 
-<div class="fecha-bloque">DOMINGO 27 DE SEPTIEMBRE — 12:00 / 19:00 / 21:00 hrs</div>
 <div class="partido">
-<span class="eq-nombre izq">PUMAS</span>
-<input type="number" class="caja-gol" id="pumas" min="0">
-<span class="separador">-</span>
-<input type="number" class="caja-gol" id="sanluis" min="0">
-<span class="eq-nombre der">SAN LUIS</span>
+<div class="equipo">
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Tigres_UANL_logo.svg/100px-Tigres_UANL_logo.png" alt="Tigres">
+<span class="eq-nombre">TIGRES</span>
 </div>
-<div class="partido">
-<span class="eq-nombre izq">LEÓN</span>
-<input type="number" class="caja-gol" id="leon" min="0">
+<input type="number" class="caja-gol" id="tig" min="0">
 <span class="separador">-</span>
-<input type="number" class="caja-gol" id="juarez" min="0">
-<span class="eq-nombre der">JUÁREZ</span>
+<input type="number" class="caja-gol" id="tol" min="0">
+<div class="equipo der">
+<span class="eq-nombre">TOLUCA</span>
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Deportivo_Toluca_logo.svg/100px-Deportivo_Toluca_logo.png" alt="Toluca">
 </div>
-<div class="partido">
-<span class="eq-nombre izq">NECAXA</span>
-<input type="number" class="caja-gol" id="necaxa" min="0">
-<span class="separador">-</span>
-<input type="number" class="caja-gol" id="america" min="0">
-<span class="eq-nombre der">AMÉRICA</span>
 </div>
 
-<div class="pago-caja">
+<div class="fecha-bloque">SÁBADO 10 DE OCTUBRE — 17:00 / 19:00 / 21:00 hrs</div>
+<div class="partido">
+<div class="equipo">
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Queretaro_FC_logo.svg/100px-Queretaro_FC_logo.png" alt="Querétaro">
+<span class="eq-nombre">QUERÉTARO</span>
+</div>
+<input type="number" class="caja-gol" id="qro" min="0">
+<span class="separador">-</span>
+<input type="number" class="caja-gol" id="atl" min="0">
+<div class="equipo der">
+<span class="eq-nombre">ATLANTE</span>
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Atlante_FC_logo.svg/100px-Atlante_FC_logo.png" alt="Atlante">
+</div>
+</div>
+
+<div class="partido">
+<div class="equipo">
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/FC_Juarez_logo.svg/100px-FC_Juarez_logo.png" alt="Juárez">
+<span class="eq-nombre">JUÁREZ</span>
+</div>
+<input type="number" class="caja-gol" id="jua" min="0">
+<span class="separador">-</span>
+<input type="number" class="caja-gol" id="tij" min="0">
+<div class="equipo der">
+<span class="eq-nombre">TIJUANA</span>
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Club_Tijuana_logo.svg/100px-Club_Tijuana_logo.png" alt="Tijuana">
+</div>
+</div>
+
+<div class="partido">
+<div class="equipo">
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Atlas_FC_logo.svg/100px-Atlas_FC_logo.png" alt="Atlas">
+<span class="eq-nombre">ATLAS</span>
+</div>
+<input type="number" class="caja-gol" id="atls" min="0">
+<span class="separador">-</span>
+<input type="number" class="caja-gol" id="chi" min="0">
+<div class="equipo der">
+<span class="eq-nombre">CHIVAS</span>
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/CD_Guadalajara_logo.svg/100px-CD_Guadalajara_logo.png" alt="Chivas">
+</div>
+</div>
+
+<div class="partido">
+<div class="equipo">
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Club_America_logo.svg/100px-Club_America_logo.png" alt="América">
+<span class="eq-nombre">AMÉRICA</span>
+</div>
+<input type="number" class="caja-gol" id="ame" min="0">
+<span class="separador">-</span>
+<input type="number" class="caja-gol" id="ray" min="0">
+<div class="equipo der">
+<span class="eq-nombre">MONTERREY</span>
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Monterrey_rayados.svg/100px-Monterrey_rayados.png" alt="Monterrey">
+</div>
+</div>
+
+<div class="fecha-bloque">DOMINGO 11 DE OCTUBRE — 17:00 / 17:15 / 19:00 hrs</div>
+<div class="partido">
+<div class="equipo">
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Atletico_San_Luis_logo.svg/100px-Atletico_San_Luis_logo.png" alt="San Luis">
+<span class="eq-nombre">SAN LUIS</span>
+</div>
+<input type="number" class="caja-gol" id="sl" min="0">
+<span class="separador">-</span>
+<input type="number" class="caja-gol" id="san" min="0">
+<div class="equipo der">
+<span class="eq-nombre">SANTOS</span>
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Santos_Laguna_logo.svg/100px-Santos_Laguna_logo.png" alt="Santos">
+</div>
+</div>
+
+<div class="partido">
+<div class="equipo">
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/CF_Pachuca_logo.svg/100px-CF_Pachuca_logo.png" alt="Pachuca">
+<span class="eq-nombre">PACHUCA</span>
+</div>
+<input type="number" class="caja-gol" id="pac" min="0">
+<span class="separador">-</span>
+<input type="number" class="caja-gol" id="nec" min="0">
+<div class="equipo der">
+<span class="eq-nombre">NECAXA</span>
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Club_Necaxa_logo.svg/100px-Club_Necaxa_logo.png" alt="Necaxa">
+</div>
+</div>
+
+<div class="partido">
+<div class="equipo">
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Pumas_UNAM_logo.svg/100px-Pumas_UNAM_logo.png" alt="Pumas">
+<span class="eq-nombre">PUMAS</span>
+</div>
+<input type="number" class="caja-gol" id="pum" min="0">
+<span class="separador">-</span>
+<input type="number" class="caja-gol" id="ca" min="0">
+<div class="equipo der">
+<span class="eq-nombre">CRUZ AZUL</span>
+<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Cruz_Azul_logo.svg/100px-Cruz_Azul_logo.png" alt="Cruz Azul">
+</div>
+</div>
+
+<div class="pago-caja" id="cajaPago" onclick="copiarPago()">
 💳 PAGO — SPINN BY OXXO<br>
 <strong>4217 4702 7509 9253</strong><br>
 A nombre de: FELIPE RODRÍGUEZ
+<div class="texto-copiado" id="textoCopiado">✅ ¡Copiado!</div>
 </div>
 
 <button class="boton btn-enviar" onclick="enviarWhatsApp()">📱 ENVIAR A WHATSAPP</button>
-<button class="boton btn-guardar" onclick="guardarQuiniela()">💾 GUARDAR</button>
 <button class="boton btn-borrar" onclick="borrarTodo()">🗑️ BORRAR TODO</button>
-
-<div class="lista-quinielas">
-<h3 class="titulo-lista">📋 TODAS LAS QUINIELAS</h3>
-<div id="listaGuardadas">
-<p class="vacio">Aún no hay ninguna guardada</p>
-</div>
-</div>
 
 </div>
 
 <script>
 const NUMERO = "529342771745";
+const DATOS_PAGO = "SPINN BY OXXO\n4217 4702 7509 9253\nA nombre de: FELIPE RODRÍGUEZ";
 
-function valor(id){return document.getElementById(id).value;}
+function valor(id){return document.getElementById(id).value.trim();}
 
 function validar(){
-const n=document.getElementById("nombre").value.trim();
-if(!n){mostrarAviso("Escribe tu nombre");return false;}
-const campos=["atlante","monterrey","tijuana","atlas","cruzazul","toluca","chivas","queretaro","santos","pachuca","tigres","puebla","pumas","sanluis","leon","juarez","necaxa","america"];
-for(let c of campos){
-    if(!document.getElementById(c).value){
-        mostrarAviso("Completa todos los marcadores");
+    const nombre = document.getElementById("nombre").value.trim();
+    if(!nombre){
+        mostrarAviso("Escribe tu nombre");
         return false;
     }
-}
-return true;
+    const campos = ["pue","leo","tig","tol","qro","atl","jua","tij","atls","chi","ame","ray","sl","san","pac","nec","pum","ca"];
+    for(let c of campos){
+        if(!valor(c)){
+            mostrarAviso("Completa todos los marcadores de goles");
+            return false;
+        }
+    }
+    return true;
 }
 
 function armarTexto(){
-const n=document.getElementById("nombre").value.toUpperCase();
-return `NOMBRE: ${n}
+    const n = document.getElementById("nombre").value.toUpperCase();
+    return `NOMBRE: ${n}
 
-ATLANTE     ${valor("atlante")} - ${valor("monterrey")}     RAYADOS
-TIJUANA     ${valor("tijuana")} - ${valor("atlas")}     ATLAS
-CRUZ AZUL   ${valor("cruzazul")} - ${valor("toluca")}     TOLUCA
-CHIVAS      ${valor("chivas")} - ${valor("queretaro")}     QUERÉTARO
-SANTOS      ${valor("santos")} - ${valor("pachuca")}     PACHUCA
-TIGRES      ${valor("tigres")} - ${valor("puebla")}     PUEBLA
-PUMAS       ${valor("pumas")} - ${valor("sanluis")}     SAN LUIS
-LEÓN        ${valor("leon")} - ${valor("juarez")}     JUÁREZ
-NECAXA      ${valor("necaxa")} - ${valor("america")}     AMÉRICA`;
+PUEBLA - LEÓN: *${valor("pue")} - ${valor("leo")}*
+TIGRES - TOLUCA: *${valor("tig")} - ${valor("tol")}*
+QUERÉTARO - ATLANTE: *${valor("qro")} - ${valor("atl")}*
+JUÁREZ - TIJUANA: *${valor("jua")} - ${valor("tij")}*
+ATLAS - CHIVAS: *${valor("atls")} - ${valor("chi")}*
+AMÉRICA - MONTERREY: *${valor("ame")} - ${valor("ray")}*
+SAN LUIS - SANTOS: *${valor("sl")} - ${valor("san")}*
+PACHUCA - NECAXA: *${valor("pac")} - ${valor("nec")}*
+PUMAS - CRUZ AZUL: *${valor("pum")} - ${valor("ca")}*`;
 }
 
 function enviarWhatsApp(){
-if(!validar()) return;
-const texto=armarTexto();
-window.open(`https://wa.me/${NUMERO}?text=${encodeURIComponent(texto)}`, "_blank");
+    if(!validar()) return;
+    const texto = armarTexto();
+    window.open(`https://wa.me/${NUMERO}?text=${encodeURIComponent(texto)}`, "_blank");
+    mostrarAvisoExito();
+    borrarTodo();
 }
 
-function guardarQuiniela(){
-if(!validar()) return;
-
-const datos={
-    nombre: document.getElementById("nombre").value.toUpperCase(),
-    atlante: valor("atlante"),
-    monterrey: valor("monterrey"),
-    tijuana: valor("tijuana"),
-    atlas: valor("atlas"),
-    cruzazul: valor("cruzazul"),
-    toluca: valor("toluca"),
-    chivas: valor("chivas"),
-    queretaro: valor("queretaro"),
-    santos: valor("santos"),
-    pachuca: valor("pachuca"),
-    tigres: valor("tigres"),
-    puebla: valor("puebla"),
-    pumas: valor("pumas"),
-    sanluis: valor("sanluis"),
-    leon: valor("leon"),
-    juarez: valor("juarez"),
-    necaxa: valor("necaxa"),
-    america: valor("america"),
-    fecha: new Date().toLocaleString("es-MX")
-};
-
-let lista=JSON.parse(localStorage.getItem("quinielas") || "[]");
-lista.unshift(datos);
-localStorage.setItem("quinielas", JSON.stringify(lista));
-
-mostrarAvisoExito();
-renderizarLista();
-borrarFormulario();
-}
-
-function renderizarLista(){
-const contenedor=document.getElementById("listaGuardadas");
-const lista=JSON.parse(localStorage.getItem("quinielas") || "[]");
-
-if(lista.length===0){
-    contenedor.innerHTML='<p class="vacio">Aún no hay ninguna guardada</p>';
-    return;
-}
-
-contenedor.innerHTML="";
-lista.forEach((q, i)=>{
-    const tarjeta=document.createElement("div");
-    tarjeta.className="tarjeta-quiniela";
-    tarjeta.innerHTML=`
-        <div class="nombre-guardado">${q.nombre}</div>
-        <div class="fecha-guardado">${q.fecha}</div>
-        <div>ATL:${q.atlante} - RAY:${q.monterrey}</div>
-        <div>TIJ:${q.tijuana} - ATL:${q.atlas}</div>
-        <div>CA:${q.cruzazul} - TOL:${q.toluca}</div>
-        <div>CHI:${q.chivas} - QRO:${q.queretaro}</div>
-        <div>SAN:${q.santos} - PAC:${q.pachuca}</div>
-        <div>TIG:${q.tigres} - PUE:${q.puebla}</div>
-        <div>PUM:${q.pumas} - SL:${q.sanluis}</div>
-        <div>LEO:${q.leon} - JUA:${q.juarez}</div>
-        <div>NEC:${q.necaxa} - AME:${q.america}</div>
-        <button class="borrar-una" onclick="borrarUna(${i})">🗑️ Borrar esta</button>
-    `;
-    contenedor.appendChild(tarjeta);
-});
-}
-
-function borrarUna(indice){
-let lista=JSON.parse(localStorage.getItem("quinielas") || "[]");
-lista.splice(indice,1);
-localStorage.setItem("quinielas", JSON.stringify(lista));
-renderizarLista();
+function copiarPago(){
+    navigator.clipboard.writeText(DATOS_PAGO).then(()=>{
+        const t = document.getElementById("textoCopiado");
+        t.style.display = "block";
+        setTimeout(()=>t.style.display="none", 2000);
+    });
 }
 
 function borrarTodo(){
-document.getElementById("nombre").value="";
-document.querySelectorAll(".caja-gol").forEach(i=>i.value="");
-document.getElementById("aviso").style.display="none";
-}
-
-function borrarFormulario(){
-document.getElementById("nombre").value="";
-document.querySelectorAll(".caja-gol").forEach(i=>i.value="");
+    document.getElementById("nombre").value = "";
+    document.querySelectorAll(".caja-gol").forEach(i=>i.value="");
+    document.getElementById("aviso").style.display = "none";
 }
 
 function mostrarAviso(mensaje){
-const aviso=document.getElementById("aviso");
-aviso.textContent=mensaje;
-aviso.style.display="block";
-setTimeout(()=>aviso.style.display="none", 3500);
+    const aviso = document.getElementById("aviso");
+    aviso.textContent = mensaje;
+    aviso.style.display = "block";
+    setTimeout(()=>aviso.style.display="none", 3500);
 }
 
 function mostrarAvisoExito(){
-const aviso=document.getElementById("avisoExito");
-aviso.style.display="block";
-setTimeout(()=>aviso.style.display="none", 2500);
+    const aviso = document.getElementById("avisoExito");
+    aviso.style.display = "block";
+    setTimeout(()=>aviso.style.display="none", 2500);
 }
-
-renderizarLista();
 </script>
 </body>
-</html>
+    </html>
+    
