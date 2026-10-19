@@ -14,17 +14,17 @@ body{font-family:Arial,sans-serif;background:#000;color:#fff;padding:14px;max-wi
   width:100%;
   padding:14px;
   border:3px solid #ffd300;
-  background:#000;
-  color:#fff;
-  -webkit-text-fill-color:#fff;
-  caret-color:#fff;
+  background:#000 !important;
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+  caret-color:#ffffff !important;
   font-size:17px;
   border-radius:22px;
   margin-bottom:22px;
 }
-.header-name::placeholder{color:transparent}
-.match{display:grid;grid-template-columns:70px 1fr 58px 4px 58px 1fr 70px;gap:6px;align-items:center;border:2px solid #444;border-radius:14px;padding:12px 6px;margin-bottom:12px;background:#111}
-.crest{width:52px;height:52px;object-fit:contain;margin:0 auto}
+.header-name::placeholder{color:transparent !important}
+.match{display:grid;grid-template-columns:60px 1fr 54px 4px 54px 1fr 60px;gap:6px;align-items:center;border:2px solid #444;border-radius:14px;padding:12px 6px;margin-bottom:12px;background:#111}
+.emoji-team{text-align:center;font-size:26px}
 .team-label{text-align:center;font-size:14px;margin-top:4px}
 .score{width:52px;height:52px;font-size:22px;border:none;background:#fff;color:#000;border-radius:10px;text-align:center;font-weight:bold}
 .divider{background:#ffd300;height:4px}
@@ -36,8 +36,8 @@ body{font-family:Arial,sans-serif;background:#000;color:#fff;padding:14px;max-wi
 .pago-notice{margin-top:22px;text-align:center;font-size:16px;color:#ffd300;font-weight:bold}
 .foot{text-align:center;color:#888;margin-top:12px;font-size:13px}
 @media(max-width:420px){
-  .match{grid-template-columns:60px 1fr 48px 3px 48px 1fr 60px;padding:10px 4px}
-  .crest{width:44px;height:44px}
+  .match{grid-template-columns:54px 1fr 48px 3px 48px 1fr 54px;padding:10px 4px}
+  .emoji-team{font-size:24px}
   .score{width:46px;height:46px;font-size:19px}
 }
 </style>
@@ -51,28 +51,30 @@ body{font-family:Arial,sans-serif;background:#000;color:#fff;padding:14px;max-wi
   <button class="btn send" onclick="enviarWhats()">Enviar WhatsApp</button>
   <button class="btn clear" onclick="limpiar()">Borrar todo</button>
 </section>
+<div class="pago-notice">💳 PAGO — SPIN BY OXXO</div>
+<div class="foot">Quinielas Roma Jornada 14</div>
 
 <script>
 const NUM_TARJETA = "4217 4702 7509 9253";
-const teams = {
-  "Puebla": "puebla.png",
-  "León": "leon.png",
-  "Tigres": "tigres.png",
-  "Toluca": "toluca.png",
-  "Querétaro": "queretaro.png",
-  "Atlante": "atlante.png",
-  "Juárez": "juarez.png",
-  "Tijuana": "tijuana.png",
-  "Atlas": "atlas.png",
-  "Chivas": "chivas.png",
-  "América": "america.png",
-  "Rayados": "monterrey.png",
-  "San Luis": "sanluis.png",
-  "Santos": "santos.png",
-  "Pachuca": "pachuca.png",
-  "Necaxa": "necaxa.png",
-  "Pumas": "pumas.png",
-  "Cruz Azul": "cruzazul.png"
+const teamsEmoji = {
+  "Puebla":"🍠",
+  "León":"🦁",
+  "Tigres":"🐯",
+  "Toluca":"😈",
+  "Querétaro":"🐓",
+  "Atlante":"🐎",
+  "Juárez":"🐕",
+  "Tijuana":"🐺",
+  "Atlas":"🦊",
+  "Chivas":"🐐",
+  "América":"🦅",
+  "Rayados":"🤠",
+  "San Luis":"🌵",
+  "Santos":"👼",
+  "Pachuca":"🐹",
+  "Necaxa":"⚡",
+  "Pumas":"🐱",
+  "Cruz Azul":"🐇"
 };
 
 const games = [
@@ -89,21 +91,21 @@ const games = [
 
 let html="";
 games.forEach((g,i)=>{
-  const imgL=teams[g[0]], imgV=teams[g[1]];
+  const eL=teamsEmoji[g[0]], eV=teamsEmoji[g[1]];
   html+=`<div class="match">
-    <div><img class="crest" src="${imgL}" onerror="this.style.display='none'"><div class="team-label">${g[0]}</div></div>
+    <div><div class="emoji-team">${eL}</div><div class="team-label">${g[0]}</div></div>
     <div></div>
     <input class="score" id="l${i}" type="number" min="0" value="">
     <div class="divider"></div>
     <input class="score" id="v${i}" type="number" min="0" value="">
     <div></div>
-    <div><img class="crest" src="${imgV}" onerror="this.style.display='none'"><div class="team-label">${g[1]}</div></div>
+    <div><div class="emoji-team">${eV}</div><div class="team-label">${g[1]}</div></div>
   </div>`;
 });
 document.getElementById("matches").innerHTML=html;
 
 function mostrarTarjeta(){
-  alert("Número Spin by OXXO:\n"+NUM_TARJETA);
+  navigator.clipboard.writeText(NUM_TARJETA).then(()=>alert("Número copiado:\n"+NUM_TARJETA));
 }
 
 function armarTexto(){
