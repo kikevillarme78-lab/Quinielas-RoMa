@@ -8,36 +8,33 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{min-height:100%;width:100%}
-body{font-family:Arial,sans-serif;background:#000;color:#fff;padding:14px;max-width:540px;margin:0 auto}
-.main-title{text-align:center;font-size:22px;margin-bottom:16px;color:#ffd300;font-weight:bold}
+body{font-family:Arial,sans-serif;background:#ffffff;color:#000;padding:14px;max-width:540px;margin:0 auto}
+.main-title{text-align:center;font-size:22px;margin-bottom:16px;color:#b8860b;font-weight:bold}
 .header-name{
   width:100%;
   padding:14px;
-  border:3px solid #ffd300;
-  background:#000 !important;
-  color:#ffffff !important;
-  -webkit-text-fill-color:#ffffff !important;
-  caret-color:#ffffff !important;
+  border:3px solid #b8860b;
+  background:#fff;
+  color:#000;
   font-size:17px;
   border-radius:22px;
   margin-bottom:22px;
 }
-.header-name::placeholder{color:transparent !important}
-.match{display:grid;grid-template-columns:60px 1fr 54px 4px 54px 1fr 60px;gap:6px;align-items:center;border:2px solid #444;border-radius:14px;padding:12px 6px;margin-bottom:12px;background:#111}
-.emoji-team{text-align:center;font-size:26px}
+.match{display:grid;grid-template-columns:60px 1fr 54px 4px 54px 1fr 60px;gap:6px;align-items:center;border:2px solid #aaa;border-radius:14px;padding:12px 6px;margin-bottom:12px;background:#f8f8f8}
+.crest{width:44px;height:44px;object-fit:contain;margin:0 auto}
 .team-label{text-align:center;font-size:14px;margin-top:4px}
-.score{width:52px;height:52px;font-size:22px;border:none;background:#fff;color:#000;border-radius:10px;text-align:center;font-weight:bold}
-.divider{background:#ffd300;height:4px}
+.score{width:52px;height:52px;font-size:22px;border:1px solid #666;background:#fff;color:#000;border-radius:10px;text-align:center;font-weight:bold}
+.divider{background:#b8860b;height:4px}
 .actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:24px}
 .btn{padding:13px;border:none;border-radius:12px;font-weight:bold;font-size:15px}
 .btn-card{background:#7b2cbf;color:#fff}
 .send{background:#22aa55;color:#fff}
 .clear{background:#aa2222;color:#fff}
-.pago-notice{margin-top:22px;text-align:center;font-size:16px;color:#ffd300;font-weight:bold}
-.foot{text-align:center;color:#888;margin-top:12px;font-size:13px}
+.pago-notice{margin-top:22px;text-align:center;font-size:16px;color:#b8860b;font-weight:bold}
+.foot{text-align:center;color:#666;margin-top:12px;font-size:13px}
 @media(max-width:420px){
   .match{grid-template-columns:54px 1fr 48px 3px 48px 1fr 54px;padding:10px 4px}
-  .emoji-team{font-size:24px}
+  .crest{width:38px;height:38px}
   .score{width:46px;height:46px;font-size:19px}
 }
 </style>
@@ -56,28 +53,27 @@ body{font-family:Arial,sans-serif;background:#000;color:#fff;padding:14px;max-wi
 
 <script>
 const NUM_TARJETA = "4217 4702 7509 9253";
-const teamsEmoji = {
-  "Puebla":"🍠",
-  "León":"🦁",
-  "Tigres":"🐯",
-  "Toluca":"😈",
-  "Querétaro":"🐓",
-  "Atlante":"🐎",
-  "Juárez":"🐕",
-  "Tijuana":"🐺",
-  "Atlas":"🦊",
-  "Chivas":"🐐",
-  "América":"🦅",
-  "Rayados":"🤠",
-  "San Luis":"🌵",
-  "Santos":"👼",
-  "Pachuca":"🐹",
-  "Necaxa":"⚡",
-  "Pumas":"🐱",
-  "Cruz Azul":"🐇"
+const teamsImg = {
+  "Juárez":"juarez.png",
+  "Necaxa":"necaxa.png",
+  "Atlante":"atlante.png",
+  "San Luis":"sanluis.png",
+  "León":"leon.png",
+  "Toluca":"toluca.png",
+  "Rayados":"rayados.png",
+  "Chivas":"chivas.png",
+  "Pumas":"pumas.png",
+  "Tigres":"tigres.png",
+  "Atlas":"atlas.png",
+  "Puebla":"puebla.png",
+  "Querétaro":"queretaro.png",
+  "Cruz Azul":"cruzazul.png",
+  "América":"america.png",
+  "Pachuca":"pachuca.png",
+  "Tijuana":"tijuana.png",
+  "Santos":"santos.png"
 };
 
-// 9 partidos de la Jornada 14
 const games = [
   ["Juárez","Necaxa"],
   ["Atlante","San Luis"],
@@ -92,15 +88,15 @@ const games = [
 
 let html="";
 games.forEach((g,i)=>{
-  const eL=teamsEmoji[g[0]], eV=teamsEmoji[g[1]];
+  const imgL=teamsImg[g[0]], imgV=teamsImg[g[1]];
   html+=`<div class="match">
-    <div><div class="emoji-team">${eL}</div><div class="team-label">${g[0]}</div></div>
+    <div><img class="crest" src="${imgL}" onerror="this.style.display='none'"><div class="team-label">${g[0]}</div></div>
     <div></div>
     <input class="score" id="l${i}" type="number" min="0" value="">
     <div class="divider"></div>
     <input class="score" id="v${i}" type="number" min="0" value="">
     <div></div>
-    <div><div class="emoji-team">${eV}</div><div class="team-label">${g[1]}</div></div>
+    <div><img class="crest" src="${imgV}" onerror="this.style.display='none'"><div class="team-label">${g[1]}</div></div>
   </div>`;
 });
 document.getElementById("matches").innerHTML=html;
@@ -109,21 +105,38 @@ function mostrarTarjeta(){
   navigator.clipboard.writeText(NUM_TARJETA).then(()=>alert("Número copiado:\n"+NUM_TARJETA));
 }
 
+function todosLlenos(){
+  const nom=document.getElementById("nombre").value.trim();
+  if(nom==="") return false;
+  for(let i=0;i<games.length;i++){
+    const l=document.getElementById(`l${i}`).value.trim();
+    const v=document.getElementById(`v${i}`).value.trim();
+    if(l==="" || v==="") return false;
+  }
+  return true;
+}
+
 function armarTexto(){
-  const nom=document.getElementById("nombre").value||"";
+  const nom=document.getElementById("nombre").value.trim();
   let mensaje = nom + "\n";
   games.forEach((g,i)=>{
-    const lg=document.getElementById(`l${i}`).value||"?";
-    const vg=document.getElementById(`v${i}`).value||"?";
+    const lg=document.getElementById(`l${i}`).value;
+    const vg=document.getElementById(`v${i}`).value;
     mensaje += `${g[0]} ${lg}‑${vg} ${g[1]}\n`;
   });
   return mensaje;
 }
+
 function enviarWhats(){
+  if(!todosLlenos()){
+    alert("Falta escribir el nombre o algún gol");
+    return;
+  }
   const num="529342771745";
   const t=encodeURIComponent(armarTexto());
   window.open(`https://wa.me/${num}?text=${t}`);
 }
+
 function limpiar(){
   document.getElementById("nombre").value="";
   games.forEach((g,i)=>{
@@ -133,5 +146,4 @@ function limpiar(){
 }
 </script>
 </body>
-                                             </html>
-                                             
+</html>
