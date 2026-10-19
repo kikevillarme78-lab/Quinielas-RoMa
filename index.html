@@ -2,44 +2,44 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial‑scale=1.0">
-<meta name="theme‑color" content="#b8860b">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#b8860b">
 <title>QUINIELAS ROMA — JORNADA 14</title>
 <style>
-*{box‑sizing:border‑box;margin:0;padding:0}
-html,body{min‑height:100vh;width:100%}
-body{font‑family:Arial,sans‑serif;background:#fff;color:#000;padding:8px;max‑width:520px;margin:0 auto}
-.main‑title{text‑align:center;font‑size:18px;margin‑bottom:8px;color:#b8860b;font‑weight:bold}
-.header‑name{width:100%;padding:10px;border:2px solid #b8860b;background:#fff;color:#000;font‑size:15px;border‑radius:16px;margin‑bottom:8px}
-.match{display:grid;grid‑template‑columns:62px 1fr 44px 3px 44px 1fr 62px;gap:4px;align‑items:center;border:1px solid #aaa;border‑radius:10px;padding:6px 4px;margin‑bottom:6px;background:#f8f8f8}
-.crest{width:42px;height:42px;object‑fit:contain;margin:0 auto}
-.team‑label{text‑align:center;font‑size:11px;margin‑top:2px}
-.score{width:38px;height:38px;font‑size:18px;border:1px solid #666;background:#fff;color:#000;border‑radius:8px;text‑align:center;font‑weight:bold}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100vh;width:100%}
+body{font-family:Arial,sans-serif;background:#fff;color:#000;padding:8px;max-width:520px;margin:0 auto}
+.main-title{text-align:center;font-size:18px;margin-bottom:8px;color:#b8860b;font-weight:bold}
+.header-name{width:100%;padding:10px;border:2px solid #b8860b;background:#fff;color:#000;font-size:15px;border-radius:16px;margin-bottom:8px}
+.match{display:grid;grid-template-columns:64px auto 44px 3px 44px auto 64px;gap:4px;align-items:center;border:1px solid #aaa;border-radius:10px;padding:6px 4px;margin-bottom:6px;background:#f8f8f8}
+.crest{width:44px;height:44px;object-fit:contain;margin:0 auto}
+.team-label{text-align:center;font-size:11px}
+.score{width:38px;height:38px;font-size:18px;border:1px solid #666;background:#fff;color:#000;border-radius:8px;text-align:center;font-weight:bold}
 .divider{background:#b8860b;height:3px}
-.actions{display:grid;grid‑template‑columns:1fr 1fr 1fr;gap:6px;margin‑top:10px}
-.btn{padding:9px;border:none;border‑radius:10px;font‑weight:bold;font‑size:13px}
-.btn‑card{background:#7b2cbf;color:#fff}
+.actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:10px}
+.btn{padding:9px;border:none;border-radius:10px;font-weight:bold;font-size:13px}
+.btn-card{background:#7b2cbf;color:#fff}
 .send{background:#22aa55;color:#fff}
 .clear{background:#aa2222;color:#fff}
-.pago‑notice{margin‑top:8px;text‑align:center;font‑size:13px;color:#b8860b;font‑weight:bold}
-.foot{text‑align:center;color:#666;margin‑top:4px;font‑size:11px}
-@media(max‑width:400px){
-  .match{grid‑template‑columns:54px 1fr 40px 2px 40px 1fr 54px;padding:5px 3px}
-  .crest{width:36px;height:36px}
-  .score{width:34px;height:34px;font‑size:16px}
+.pago-notice{margin-top:8px;text-align:center;font-size:13px;color:#b8860b;font-weight:bold}
+.foot{text-align:center;color:#666;margin-top:4px;font-size:11px}
+@media(max-width:400px){
+  .match{grid-template-columns:56px auto 40px 2px 40px auto 56px;padding:5px 3px}
+  .crest{width:38px;height:38px}
+  .score{width:34px;height:34px;font-size:16px}
 }
 </style>
 </head>
 <body>
-<div class="main‑title">🥅 Quinielas ⚽ RoMa 🥅 $30 pesos</div>
-<input id="nombre" class="header‑name" type="text" placeholder="">
+<div class="main-title">🥅 Quinielas ⚽ RoMa 🥅 $30 pesos</div>
+<input id="nombre" class="header-name" type="text" placeholder="">
 <div id="matches"></div>
 <section class="actions">
-  <button class="btn btn‑card" onclick="mostrarTarjeta()">Ver número de tarjeta</button>
+  <button class="btn btn-card" onclick="mostrarTarjeta()">Ver número de tarjeta</button>
   <button class="btn send" onclick="enviarWhats()">Enviar WhatsApp</button>
   <button class="btn clear" onclick="limpiar()">Borrar todo</button>
 </section>
-<div class="pago‑notice">💳 PAGO — SPIN BY OXXO</div>
+<div class="pago-notice">💳 PAGO — SPIN BY OXXO</div>
 <div class="foot">Quinielas Roma Jornada 14</div>
 
 <script>
@@ -81,13 +81,13 @@ let html="";
 games.forEach((g,i)=>{
   const imgL=teamsImg[g[0]], imgV=teamsImg[g[1]];
   html+=`<div class="match">
-    <div><img class="crest" src="${imgL}" onerror="this.style.display='none'"><div class="team‑label">${g[0]}</div></div>
-    <div></div>
+    <div><img class="crest" src="${imgL}" onerror="this.style.display='none'"></div>
+    <div class="team-label">${g[0]}</div>
     <input class="score" id="l${i}" type="number" min="0" value="">
     <div class="divider"></div>
     <input class="score" id="v${i}" type="number" min="0" value="">
-    <div></div>
-    <div><img class="crest" src="${imgV}" onerror="this.style.display='none'"><div class="team‑label">${g[1]}</div></div>
+    <div class="team-label">${g[1]}</div>
+    <div><img class="crest" src="${imgV}" onerror="this.style.display='none'"></div>
   </div>`;
 });
 document.getElementById("matches").innerHTML=html;
