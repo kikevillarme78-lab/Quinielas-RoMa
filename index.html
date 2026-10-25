@@ -30,7 +30,7 @@ body{
   box-shadow:0 0 5px rgba(65,255,75,.32);
 }
 .team{ min-width:0; text-align:center; }
-.crest{ display:block; width:clamp(30px,5.2vh,48px); height:clamp(30px,5.2vh,48px); object-fit:contain; margin:0 auto 2px; filter:drop-shadow(0 1px 2px #000); }
+.crest{ display:block; width:clamp(30px,5.2vh,48px); height:clamp(30px,5.2vh,48px); object-fit:contain; margin:0 auto 2px; filter:drop-shadow(0 1px 2px #000); background:#fff; border-radius:6px; padding:2px; }
 .team-label{ font-size:clamp(9px,1.45vh,12px); line-height:1.08; font-weight:800; overflow-wrap:anywhere; text-shadow:0 1px 2px #000; }
 .score{
   display:block; width:100%; min-width:0; height:clamp(30px,5.3vh,45px); padding:0;
@@ -46,7 +46,6 @@ body{
 .send{ background:#168b43; box-shadow:0 0 6px #168b43; }
 .clear{ grid-column:1/-1; background:#aa2222; }
 .pago-notice{ display:none !important; }
-.confirm-box{ margin-top:8px; padding:8px; border:1px dashed var(--gold); border-radius:10px; background:rgba(0,0,0,.6); font-size:12px; text-align:center; display:none; }
 </style>
 </head>
 <body>
@@ -61,7 +60,6 @@ body{
     <button class="btn send" type="button" onclick="enviarWhats()">Enviar por WhatsApp</button>
     <button class="btn clear" type="button" onclick="limpiar()">Borrar todo</button>
   </section>
-  <div id="confirm-preview" class="confirm-box"></div>
 </div>
 <script>
 "use strict";
@@ -85,7 +83,7 @@ games.forEach((game,i)=>{
   function crearEquipo(nombre){
     const team = document.createElement("div"); team.className = "team";
     const img = document.createElement("img"); img.className = "crest"; img.src = teamsImg[nombre];
-    img.onerror = function(){ this.style.display='none'; const fb=document.createElement('div'); fb.style.cssText='width:30px;height:30px;margin:0 auto 2px;border-radius:50%;background:#222;border:1px solid #ffd700;display:grid;place-items:center;font-size:9px;font-weight:900'; fb.textContent=nombre.substring(0,3).toUpperCase(); this.parentNode.insertBefore(fb,this); };
+    img.onerror = function(){ this.style.display='none'; const fb=document.createElement('div'); fb.style.cssText='width:30px;height:30px;margin:0 auto 2px;border-radius:6px;background:#fff;border:1px solid #ffd700;display:grid;place-items:center;font-size:9px;font-weight:900;color:#111'; fb.textContent=nombre.substring(0,3).toUpperCase(); this.parentNode.insertBefore(fb,this); };
     const label = document.createElement("div"); label.className = "team-label"; label.textContent = nombre;
     team.append(img,label); return team;
   }
@@ -114,30 +112,21 @@ function armarTexto(){
     mensaje += "*" + game[0] + "* " + l + "-" + v + " *" + game[1] + "*\n";
   }); return mensaje.trim();
 }
-function generarConfirmacion(nombre){
-  return `Listo, ${nombre}, recibido y anotado, mucha suerte!! gracias por participar`;
+function generarRecado(nombre){
+  return "Listo, " + nombre + ", recibido y anotado, mucha suerte!! gracias por participar";
 }
 function enviarWhats(){
   if(!todosLlenos()) return;
   const nombre = document.getElementById("nombre").value.trim();
   const textoQuiniela = armarTexto();
-  window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(textoQuiniela),"_blank");
-  const confirmacion = generarConfirmacion(nombre);
-  const preview = document.getElementById("confirm-preview");
-  preview.style.display = "block";
-  preview.innerHTML = `✅ Quiniela enviada.<br>Respuesta rápida:<br><br><b>"${confirmacion}"</b><br><br><button onclick="copiarConfirmacion()" style="padding:6px 12px;border-radius:8px;border:0;background:#ffd700;font-weight:900;cursor:pointer;">Copiar respuesta</button>`;
-  navigator.clipboard.writeText(confirmacion).catch(()=>{});
-}
-function copiarConfirmacion(){
-  const nombre = document.getElementById("nombre").value.trim() || "Amigo";
-  const texto = generarConfirmacion(nombre);
-  navigator.clipboard.writeText(texto).then(()=> alert("Respuesta copiada:\n" + texto));
+  const recado = generarRecado(nombre);
+  const mensajeCompleto = textoQuiniela + "\n\n" + recado;
+  window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(mensajeCompleto),"_blank");
 }
 function limpiar(){
   if(!confirm("¿Quieres borrar todo?")) return;
   document.getElementById("nombre").value = "";
   games.forEach((_,i)=>{ document.getElementById("l"+i).value = ""; document.getElementById("v"+i).value = ""; });
-  document.getElementById("confirm-preview").style.display = "none";
 }
 </script>
 </body>
