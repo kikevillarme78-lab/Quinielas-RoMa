@@ -2,92 +2,95 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#b8860b">
-<title>QUINIELAS ROMA — JORNADA 14</title>
+<meta name="viewport" content="width=device‑width, initial‑scale=1.0">
+<meta name="theme‑color" content="#b8860b">
+<title>QUINIELAS ROMA — JORNADA 15</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{min-height:100vh;width:100%}
-body{font-family:Arial,sans-serif;background:#fff;color:#000;padding:8px;max-width:520px;margin:0 auto}
-.main-title{text-align:center;font-size:18px;margin-bottom:8px;color:#b8860b;font-weight:bold}
-.header-name{width:100%;padding:10px;border:2px solid #b8860b;background:#fff;color:#000;font-size:15px;border-radius:16px;margin-bottom:8px}
-.match{display:grid;grid-template-columns:64px auto 44px 3px 44px auto 64px;gap:4px;align-items:center;border:1px solid #aaa;border-radius:10px;padding:6px 4px;margin-bottom:6px;background:#f8f8f8}
-.crest{width:44px;height:44px;object-fit:contain;margin:0 auto}
-.team-label{text-align:center;font-size:11px}
-.score{width:38px;height:38px;font-size:18px;border:1px solid #666;background:#fff;color:#000;border-radius:8px;text-align:center;font-weight:bold}
-.divider{background:#b8860b;height:3px}
-.actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:10px}
-.btn{padding:9px;border:none;border-radius:10px;font-weight:bold;font-size:13px}
-.btn-card{background:#7b2cbf;color:#fff}
-.send{background:#22aa55;color:#fff}
-.clear{background:#aa2222;color:#fff}
-.pago-notice{margin-top:8px;text-align:center;font-size:13px;color:#b8860b;font-weight:bold}
-.foot{text-align:center;color:#666;margin-top:4px;font-size:11px}
-@media(max-width:400px){
-  .match{grid-template-columns:56px auto 40px 2px 40px auto 56px;padding:5px 3px}
+*{box‑sizing:border‑box;margin:0;padding:0}
+html,body{min‑height:100vh;width:100%}
+body{font‑family:Arial,sans‑serif;background:url("cancha‑fondo.jpg") center / cover no-repeat;background‑attachment:fixed;color:#fff;padding:8px;max‑width:540px;margin:0 auto}
+.logo‑roma{display:block;width:160px;margin:8px auto}
+.logo‑liga{display:block;width:120px;margin:4px auto}
+.main‑title{text‑align:center;font‑size:20px;margin‑bottom:10px;color:#ffd700;font‑weight:bold;text‑shadow:0 0 4px #000}
+.header‑name{width:100%;padding:11px;border:2px solid #ffd700;background:rgba(0,0,0,0.75);color:#fff;font‑size:16px;border‑radius:18px;margin‑bottom:10px}
+.match{display:grid;grid‑template‑columns:58px 1fr 52px 6px 52px 1fr 58px;gap:6px;align‑items:center;border‑radius:14px;padding:8px 6px;margin‑bottom:8px;background‑color:rgba(12,32,18,0.85);box‑shadow:0 0 7px #76ff2e}
+.crest{width:44px;height:44px;object‑fit:contain;margin:0 auto}
+.team‑label{text‑align:center;font‑size:12px;margin‑top:3px;color:#fff}
+.score{width:44px;height:44px;font‑size:20px;border:2px solid #ffd700;background‑color:rgba(0,0,0,0.85);color:#ffd700;border‑radius:10px;text‑align:center;font‑weight:bold}
+.divider{background‑color:#ffd700;height:4px;border‑radius:2px}
+.actions{display:grid;grid‑template‑columns:1fr 1fr 1fr;gap:8px;margin‑top:12px}
+.btn{padding:10px;border:none;border‑radius:12px;font‑weight:bold;font‑size:14px;color:#fff}
+.btn‑card{background‑color:#7b2cbf;box‑shadow:0 0 4px #7b2cbf}
+.send{background‑color:#22aa55;box‑shadow:0 0 4px #22aa55}
+.clear{background‑color:#aa2222;box‑shadow:0 0 4px #aa2222}
+.pago‑notice{margin‑top:10px;text‑align:center;font‑size:14px;color:#ffd700;font‑weight:bold;text‑shadow:0 0 3px #000}
+.foot{text‑align:center;color:#fff;margin‑top:6px;font‑size:12px;text‑shadow:0 0 2px #000}
+@media(max‑width:420px){
+  .match{grid‑template‑columns:50px 1fr 44px 4px 44px 1fr 50px;padding:7px 4px}
   .crest{width:38px;height:38px}
-  .score{width:34px;height:34px;font-size:16px}
+  .score{width:38px;height:38px;font‑size:18px}
 }
 </style>
 </head>
 <body>
-<div class="main-title">🥅 Quinielas ⚽ RoMa 🥅 $30 pesos</div>
-<input id="nombre" class="header-name" type="text" placeholder="">
+<img class="logo‑roma" src="quinielasroma.png" alt="Logo Quinielas RoMa">
+<img class="logo‑liga" src="mx.png" alt="Logo Liga MX">
+<div class="main‑title">🥅 Quinielas ⚽ RoMa 🥅 $30 pesos</div>
+<input id="nombre" class="header‑name" type="text" placeholder="">
 <div id="matches"></div>
 <section class="actions">
-  <button class="btn btn-card" onclick="mostrarTarjeta()">Ver número de tarjeta</button>
+  <button class="btn btn‑card" onclick="mostrarTarjeta()">Ver número de tarjeta</button>
   <button class="btn send" onclick="enviarWhats()">Enviar WhatsApp</button>
   <button class="btn clear" onclick="limpiar()">Borrar todo</button>
 </section>
-<div class="pago-notice">💳 PAGO — SPIN BY OXXO</div>
-<div class="foot">Quinielas Roma Jornada 14</div>
+<div class="pago‑notice">💳 PAGO — SPIN BY OXXO</div>
+<div class="foot">Quinielas Roma Jornada 15</div>
 
 <script>
 const NUM_TARJETA = "4217 4702 7509 9253";
 const teamsImg = {
-  "Juárez":"juarez.png",
-  "Necaxa":"necaxa.png",
-  "Atlante":"atlante.png",
   "San Luis":"sanluis.png",
-  "León":"leon.png",
-  "Toluca":"toluca.png",
-  "Rayados":"rayados.png",
-  "Chivas":"chivas.png",
-  "Pumas":"pumas.png",
-  "Tigres":"tigres.png",
   "Atlas":"atlas.png",
-  "Puebla":"puebla.png",
+  "Juárez":"juarez.png",
   "Querétaro":"queretaro.png",
-  "Cruz Azul":"cruzazul.png",
-  "América":"america.png",
+  "Puebla":"puebla.png",
+  "Pumas":"pumas.png",
   "Pachuca":"pachuca.png",
+  "Tigres":"tigres.png",
+  "Rayados":"rayados.png",
   "Tijuana":"tijuana.png",
-  "Santos":"santos.png"
+  "Chivas":"chivas.png",
+  "Atlante":"atlante.png",
+  "América":"america.png",
+  "Toluca":"toluca.png",
+  "Santos":"santos.png",
+  "Necaxa":"necaxa.png",
+  "Cruz Azul":"cruzazul.png",
+  "León":"leon.png"
 };
-
 const games = [
-  ["Juárez","Necaxa"],
-  ["Atlante","San Luis"],
-  ["León","Toluca"],
-  ["Rayados","Chivas"],
-  ["Pumas","Tigres"],
-  ["Atlas","Puebla"],
-  ["Querétaro","Cruz Azul"],
-  ["América","Pachuca"],
-  ["Tijuana","Santos"]
+  ["San Luis","Atlas"],
+  ["Juárez","Querétaro"],
+  ["Puebla","Pumas"],
+  ["Pachuca","Tigres"],
+  ["Rayados","Tijuana"],
+  ["Chivas","Atlante"],
+  ["América","Toluca"],
+  ["Santos","Necaxa"],
+  ["Cruz Azul","León"]
 ];
 
 let html="";
 games.forEach((g,i)=>{
   const imgL=teamsImg[g[0]], imgV=teamsImg[g[1]];
   html+=`<div class="match">
-    <div><img class="crest" src="${imgL}" onerror="this.style.display='none'"></div>
-    <div class="team-label">${g[0]}</div>
+    <div><img class="crest" src="${imgL}" onerror="this.style.display='none'"><div class="team‑label">${g[0]}</div></div>
+    <div></div>
     <input class="score" id="l${i}" type="number" min="0" value="">
     <div class="divider"></div>
     <input class="score" id="v${i}" type="number" min="0" value="">
-    <div class="team-label">${g[1]}</div>
-    <div><img class="crest" src="${imgV}" onerror="this.style.display='none'"></div>
+    <div></div>
+    <div><img class="crest" src="${imgV}" onerror="this.style.display='none'"><div class="team‑label">${g[1]}</div></div>
   </div>`;
 });
 document.getElementById("matches").innerHTML=html;
@@ -95,7 +98,6 @@ document.getElementById("matches").innerHTML=html;
 function mostrarTarjeta(){
   navigator.clipboard.writeText(NUM_TARJETA).then(()=>alert("Número copiado:\n"+NUM_TARJETA));
 }
-
 function todosLlenos(){
   const nom=document.getElementById("nombre").value.trim();
   if(nom==="") return false;
@@ -106,7 +108,6 @@ function todosLlenos(){
   }
   return true;
 }
-
 function armarTexto(){
   const nom=document.getElementById("nombre").value.trim();
   let mensaje = nom + "\n";
@@ -115,9 +116,9 @@ function armarTexto(){
     const vg=document.getElementById(`v${i}`).value;
     mensaje += `${g[0]} ${lg}‑${vg} ${g[1]}\n`;
   });
+  mensaje += `\nlisto (${nom}) copiado y anotado, mucha suerte y gracias por participar!!!`;
   return mensaje;
 }
-
 function enviarWhats(){
   if(!todosLlenos()){
     alert("Falta escribir el nombre o algún gol");
@@ -127,7 +128,6 @@ function enviarWhats(){
   const t=encodeURIComponent(armarTexto());
   window.open(`https://wa.me/${num}?text=${t}`);
 }
-
 function limpiar(){
   document.getElementById("nombre").value="";
   games.forEach((g,i)=>{
@@ -137,4 +137,5 @@ function limpiar(){
 }
 </script>
 </body>
-</html>
+  </html>
+  
