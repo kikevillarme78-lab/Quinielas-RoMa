@@ -52,12 +52,14 @@ body{
   font-size:20px;
   font-weight:900;
   margin:0 0 2px;
+  text-transform: uppercase;
 }
 .subtitle{
   text-align:center;
   font-size:12px;
   margin:0 0 7px;
   color:var(--azul-fuerte);
+  text-transform: uppercase;
 }
 .header-name{
   display:block;
@@ -111,6 +113,7 @@ body{
   line-height:1.08;
   font-weight:800;
   overflow-wrap:anywhere;
+  text-transform: uppercase;
 }
 .score{
   display:block;
@@ -154,6 +157,7 @@ body{
   font-size:13px;
   font-weight:800;
   cursor:pointer;
+  text-transform: uppercase;
 }
 .btn-card{background:#3357b3}
 .send{background:#168b43}
@@ -171,61 +175,61 @@ body{
 <div class="page">
   <div class="header-logos">
     <div class="logo-roma">
-      <img src="logo.png" alt="Quinielas RoMa" onerror="this.parentNode.innerHTML='QUINIELAS RoMa';">
+      <img src="logo.png" alt="QUINIELAS ROMA" onerror="this.parentNode.innerHTML='QUINIELAS ROMA';">
     </div>
     <div class="logo-liga">
-      <img src="mx.png" alt="Liga MX" onerror="this.parentNode.innerHTML='LIGA MX';">
+      <img src="mx.png" alt="LIGA MX" onerror="this.parentNode.innerHTML='LIGA MX';">
     </div>
   </div>
 
-  <div class="main-title">QUINIELAS RoMa — JORNADA 17</div>
-  <div class="subtitle">⚽ JORNADA 17 LIGA MX ⚽ | $30 pesos</div>
+  <div class="main-title">QUINIELAS ROMA — JORNADA 17</div>
+  <div class="subtitle">⚽ JORNADA 17 LIGA MX ⚽ | $30 PESOS</div>
 
-  <input id="nombre" class="header-name" type="text" autocomplete="off" maxlength="80" placeholder="Tu nombre aquí…">
+  <input id="nombre" class="header-name" type="text" autocomplete="off" maxlength="80" placeholder="TU NOMBRE AQUÍ…">
 
   <div id="matches"></div>
 
   <section class="actions">
-    <button class="btn btn-card" type="button" onclick="mostrarTarjeta()">Copiar tarjeta Spin</button>
-    <button class="btn send" type="button" onclick="enviarWhats()">Enviar por WhatsApp</button>
-    <button class="btn clear" type="button" onclick="limpiar()">Borrar todo</button>
+    <button class="btn btn-card" type="button" onclick="mostrarTarjeta()">COPIAR TARJETA SPIN</button>
+    <button class="btn send" type="button" onclick="enviarWhats()">ENVIAR POR WHATSAPP</button>
+    <button class="btn clear" type="button" onclick="limpiar()">BORRAR TODO</button>
   </section>
 </div>
 
 <script>
 "use strict";
 const NUM_TARJETA = "4217 4702 7509 9253";
-const WHATSAPP = "529342771745";
+const WHATSAPP = "526678248973";
 const teamsImg = {
-  "Necaxa":"necaxa.png",
-  "Tijuana":"tijuana.png",
-  "San Luis":"sanluis.png",
-  "Juárez":"juarez.png",
-  "Atlante":"atlante.png",
-  "Santos":"santos.png",
-  "Tigres":"tigres.png",
-  "Cruz Azul":"cruzazul.png",
-  "Atlas":"atlas.png",
-  "Pachuca":"pachuca.png",
-  "Toluca":"toluca.png",
-  "Rayados":"rayados.png",
-  "Pumas":"pumas.png",
-  "América":"america.png",
-  "Querétaro":"queretaro.png",
-  "Puebla":"puebla.png",
-  "León":"leon.png",
-  "Chivas":"chivas.png"
+  "NECAXA":"necaxa.png",
+  "TIJUANA":"tijuana.png",
+  "SAN LUIS":"sanluis.png",
+  "JUÁREZ":"juarez.png",
+  "ATLANTE":"atlante.png",
+  "SANTOS":"santos.png",
+  "TIGRES":"tigres.png",
+  "CRUZ AZUL":"cruzazul.png",
+  "ATLAS":"atlas.png",
+  "PACHUCA":"pachuca.png",
+  "TOLUCA":"toluca.png",
+  "RAYADOS":"rayados.png",
+  "PUMAS":"pumas.png",
+  "AMÉRICA":"america.png",
+  "QUERÉTARO":"queretaro.png",
+  "PUEBLA":"puebla.png",
+  "LEÓN":"leon.png",
+  "CHIVAS":"chivas.png"
 };
 const games = [
-  ["Puebla","San Luis"],
-  ["Tijuana","Atlante"],
-  ["Juárez","Atlas"],
-  ["Santos","León"],
-  ["Pachuca","Toluca"],
-  ["Pumas","Rayados"],
-  ["Tigres","América"],
-  ["Chivas","Cruz Azul"],
-  ["Querétaro","Necaxa"]
+  ["PUEBLA","SAN LUIS"],
+  ["TIJUANA","ATLANTE"],
+  ["JUÁREZ","ATLAS"],
+  ["SANTOS","LEÓN"],
+  ["PACHUCA","TOLUCA"],
+  ["PUMAS","RAYADOS"],
+  ["TIGRES","AMÉRICA"],
+  ["CHIVAS","CRUZ AZUL"],
+  ["QUERÉTARO","NECAXA"]
 ];
 const matches = document.getElementById("matches");
 games.forEach((game,i)=>{
@@ -270,22 +274,22 @@ games.forEach((game,i)=>{
 async function mostrarTarjeta(){
   try{
     await navigator.clipboard.writeText(NUM_TARJETA);
-    alert("Número de tarjeta copiado:\n"+NUM_TARJETA);
+    alert("NÚMERO DE TARJETA COPIADO:\n"+NUM_TARJETA);
   }
   catch(e){
-    window.prompt("Copia el número de tarjeta Spin:",NUM_TARJETA);
+    window.prompt("COPIA EL NÚMERO DE TARJETA SPIN:",NUM_TARJETA);
   }
 }
 function todosLlenos(){
   const nombre=document.getElementById("nombre").value.trim();
   if(!nombre){
-    alert("Escribe tu nombre.");
+    alert("ESCRIBE TU NOMBRE.");
     return false;
   }
   for(let i=0;i<games.length;i++){
     const l=document.getElementById("l"+i).value, v=document.getElementById("v"+i).value;
     if(l===""||v===""||Number(l)<0||Number(l)>99||Number(v)<0||Number(v)>99){
-      alert("Completa los goles de los 9 partidos.");
+      alert("COMPLETA LOS GOLES DE LOS 9 PARTIDOS.");
       return false;
     }
   }
@@ -293,7 +297,7 @@ function todosLlenos(){
 }
 function armarTexto(){
   const nombre=document.getElementById("nombre").value.trim();
-  let mensaje="*"+nombre+"*\n";
+  let mensaje="*"+nombre.toUpperCase()+"*\n";
   games.forEach((game,i)=>{
     const l=document.getElementById("l"+i).value, v=document.getElementById("v"+i).value;
     mensaje+="*"+game[0]+"* "+l+"-"+v+" *"+game[1]+"*\n";
@@ -301,7 +305,7 @@ function armarTexto(){
   return mensaje.trim();
 }
 function generarRecado(nombre){
-  return "Listo, "+nombre+", recibido y anotado, mucha suerte!! gracias por participar";
+  return "LISTO, "+nombre.toUpperCase()+", RECIBIDO Y ANOTADO, MUCHA SUERTE!! GRACIAS POR PARTICIPAR";
 }
 function enviarWhats(){
   if(!todosLlenos()) return;
@@ -310,7 +314,7 @@ function enviarWhats(){
   window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(mensajeCompleto),"_blank");
 }
 function limpiar(){
-  if(!confirm("¿Quieres borrar todo?")) return;
+  if(!confirm("¿QUIERES BORRAR TODO?")) return;
   document.getElementById("nombre").value="";
   games.forEach((_,i)=>{
     document.getElementById("l"+i).value="";
