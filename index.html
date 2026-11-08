@@ -11,75 +11,190 @@
 :root{--azul-fuerte:#1a4094;--fondo-blanco:#ffffff}
 html,body{width:100%;min-height:100%;font-family:Arial,Helvetica,sans-serif}
 body{
-  position:relative;isolation:isolate;color:#222;max-width:560px;
-  margin:0 auto;padding:5px 8px 7px;background:var(--fondo-blanco);
+  position:relative;
+  isolation:isolate;
+  color:#222;
+  max-width:560px;
+  margin:0 auto;
+  padding:5px 8px 7px;
+  background:var(--fondo-blanco);
 }
 body::before{
-  display: none;
+  display:none;
 }
-.page{min-height:calc(100svh - 12px);display:flex;flex-direction:column}
+.page{
+  min-height:calc(100svh - 12px);
+  display:flex;
+  flex-direction:column;
+}
 .header-logos{
-  display:flex;justify-content:center;align-items:center;gap:12px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
   margin:2px 0 3px;
 }
 .logo-roma,.logo-liga{
-  display:flex;align-items:center;justify-content:center;
-  width:92px;height:62px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:92px;
+  height:62px;
 }
 .logo-roma img,.logo-liga img{
-  display:block;width:100%;height:100%;object-fit:contain;
-  filter:drop-shadow(0 2px 3px #000);
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  filter:none;
 }
 .main-title{
-  text-align:center;color:var(--azul-fuerte);font-size:20px;font-weight:900;
-  margin:0 0 2px;text-shadow:0 1px 2px rgba(0,0,0,0.15);
+  text-align:center;
+  color:var(--azul-fuerte);
+  font-size:20px;
+  font-weight:900;
+  margin:0 0 2px;
+  text-shadow:0 1px 2px rgba(0,0,0,0.15);
 }
-.subtitle{text-align:center;font-size:12px;margin:0 0 7px;color:var(--azul-fuerte)}
+.subtitle{
+  text-align:center;
+  font-size:12px;
+  margin:0 0 7px;
+  color:var(--azul-fuerte);
+}
 .header-name{
-  display:block;width:100%;height:41px;padding:5px 10px;margin:0 0 8px;
-  border:2px solid var(--azul-fuerte);border-radius:14px;background:#fff;color:#222;
-  font-size:17px;outline:none;
+  display:block;
+  width:100%;
+  height:41px;
+  padding:5px 10px;
+  margin:0 0 8px;
+  border:2px solid var(--azul-fuerte);
+  border-radius:14px;
+  background:#fff;
+  color:#222;
+  font-size:17px;
+  outline:none;
 }
-#matches{display:grid;grid-template-rows:repeat(9,minmax(0,1fr));gap:5px;flex:1;min-height:0}
+#matches{
+  display:grid;
+  grid-template-rows:repeat(9,minmax(0,1fr));
+  gap:5px;
+  flex:1;
+  min-height:0;
+}
 .match{
-  display:grid;grid-template-columns:minmax(0,1fr) 49px 4px 49px minmax(0,1fr);
-  gap:5px;align-items:center;min-height:0;padding:4px 6px;
-  border:1px solid var(--azul-fuerte);border-radius:14px;
-  background:rgba(255,255,255,.95);box-shadow:0 3px 8px rgba(26,64,148,.28);
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 49px 4px 49px minmax(0,1fr);
+  gap:5px;
+  align-items:center;
+  min-height:0;
+  padding:4px 6px;
+  border:1px solid var(--azul-fuerte);
+  border-radius:14px;
+  background:rgba(255,255,255,.95);
+  box-shadow:0 3px 8px rgba(26,64,148,.28);
 }
-.team{min-width:0;text-align:center;color:var(--azul-fuerte)}
+.team{
+  min-width:0;
+  text-align:center;
+  color:var(--azul-fuerte);
+}
 .crest{
-  display:block;width:clamp(30px,5.2vh,48px);height:clamp(30px,5.2vh,48px);
-  object-fit:contain;margin:0 auto 2px;filter:drop-shadow(0 1px 2px #000);
-  background:#fff;border-radius:6px;padding:2px;
+  display:block;
+  width:clamp(30px,5.2vh,48px);
+  height:clamp(30px,5.2vh,48px);
+  object-fit:contain;
+  margin:0 auto 2px;
+  filter:none;
+  background:#fff;
+  border-radius:6px;
+  padding:2px;
 }
 .team-label{
-  font-size:clamp(9px,1.45vh,12px);line-height:1.08;font-weight:800;
+  font-size:clamp(9px,1.45vh,12px);
+  line-height:1.08;
+  font-weight:800;
   overflow-wrap:anywhere;
 }
 .score{
-  display:block;width:100%;min-width:0;height:clamp(30px,5.3vh,45px);
-  padding:0;border:2px solid var(--azul-fuerte);border-radius:10px;background:#fff;
-  color:var(--azul-fuerte);font-size:20px;font-weight:900;text-align:center;outline:none;
-  appearance:textfield;-moz-appearance:textfield;
+  display:block;
+  width:100%;
+  min-width:0;
+  height:clamp(30px,5.3vh,45px);
+  padding:0;
+  border:2px solid var(--azul-fuerte);
+  border-radius:10px;
+  background:#fff;
+  color:var(--azul-fuerte);
+  font-size:20px;
+  font-weight:900;
+  text-align:center;
+  outline:none;
+  appearance:textfield;
+  -moz-appearance:textfield;
 }
-.score::-webkit-inner-spin-button,.score::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
-.score:focus{border-color:var(--azul-fuerte);box-shadow:0 0 7px rgba(26,64,148,0.6)}
-.divider{height:4px;border-radius:3px;background:var(--azul-fuerte)}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}
+.score::-webkit-inner-spin-button,
+.score::-webkit-outer-spin-button{
+  -webkit-appearance:none;
+  margin:0;
+}
+.score:focus{
+  border-color:var(--azul-fuerte);
+  box-shadow:0 0 7px rgba(26,64,148,0.6);
+}
+.divider{
+  height:4px;
+  border-radius:3px;
+  background:var(--azul-fuerte);
+}
+.actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:9px;
+}
 .btn{
-  min-width:0;min-height:43px;padding:9px 5px;border:0;border-radius:12px;
-  color:#fff;font-size:13px;font-weight:800;line-height:1.15;cursor:pointer;
+  min-width:0;
+  min-height:43px;
+  padding:9px 5px;
+  border:0;
+  border-radius:12px;
+  color:#fff;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.15;
+  cursor:pointer;
 }
-.btn-card{background:#3357b3;box-shadow:0 0 6px #3357b3}
-.send{background:#168b43;box-shadow:0 0 6px #168b43}
-.clear{grid-column:1/-1;background:#aa2222}
+.btn-card{
+  background:#3357b3;
+  box-shadow:0 0 6px #3357b3;
+}
+.send{
+  background:#168b43;
+  box-shadow:0 0 6px #168b43;
+}
+.clear{
+  grid-column:1/-1;
+  background:#aa2222;
+}
 @media(max-height:650px){
-  .page{min-height:calc(100svh - 12px)}
-  .logo-roma,.logo-liga{height:48px;width:78px}
-  .header-name{height:36px;margin-bottom:5px}
-  #matches{gap:3px}
-  .match{padding:2px 4px}
+  .page{
+    min-height:calc(100svh - 12px);
+  }
+  .logo-roma,.logo-liga{
+    height:48px;
+    width:78px;
+  }
+  .header-name{
+    height:36px;
+    margin-bottom:5px;
+  }
+  #matches{
+    gap:3px;
+  }
+  .match{
+    padding:2px 4px;
+  }
 }
 </style>
 </head>
@@ -87,7 +202,7 @@ body::before{
 <div class="page">
   <div class="header-logos">
     <div class="logo-roma">
-      <img src="logo.png" alt="Quinielas RoMa" onerror="this.style.display='none'; this.parentNode.innerHTML='QUINIELAS RoMa';">
+      <img src="logo.prng" alt="Quinielas RoMa" onerror="this.style.display='none'; this.parentNode.innerHTML='QUINIELAS RoMa';">
     </div>
     <div class="logo-liga">
       <img src="mx.png" alt="Liga MX" onerror="this.style.display='none'; this.parentNode.innerHTML='LIGA MX';">
@@ -97,8 +212,7 @@ body::before{
   <div class="main-title">QUINIELAS RoMa — JORNADA 17</div>
   <div class="subtitle">⚽ JORNADA 17 LIGA MX ⚽ | $30 pesos</div>
 
-  <input id="nombre" class="header-name" type="text" autocomplete="off"
-    maxlength="80" placeholder="Tu nombre aquí...">
+  <input id="nombre" class="header-name" type="text" autocomplete="off" maxlength="80" placeholder="Tu nombre aquí...">
 
   <div id="matches"></div>
 
@@ -114,79 +228,135 @@ body::before{
 const NUM_TARJETA = "4217 4702 7509 9253";
 const WHATSAPP = "529342771745";
 const teamsImg = {
-  "Necaxa":"necaxa.png","Tijuana":"tijuana.png","San Luis":"sanluis.png",
-  "Juárez":"juarez.png","Atlante":"atlante.png","Santos":"santos.png",
-  "Tigres":"tigres.png","Cruz Azul":"cruzazul.png","Atlas":"atlas.png",
-  "Pachuca":"pachuca.png","Toluca":"toluca.png","Rayados":"rayados.png",
-  "Pumas":"pumas.png","América":"america.png","Querétaro":"queretaro.png",
-  "Puebla":"puebla.png","León":"leon.png","Chivas":"chivas.png"
+  "Necaxa":"necaxa.png",
+  "Tijuana":"tijuana.png",
+  "San Luis":"sanluis.png",
+  "Juárez":"juarez.png",
+  "Atlante":"atlante.png",
+  "Santos":"santos.png",
+  "Tigres":"tigres.png",
+  "Cruz Azul":"cruzazul.png",
+  "Atlas":"atlas.png",
+  "Pachuca":"pachuca.png",
+  "Toluca":"toluca.png",
+  "Rayados":"rayados.png",
+  "Pumas":"pumas.png",
+  "América":"america.png",
+  "Querétaro":"queretaro.png",
+  "Puebla":"puebla.png",
+  "León":"leon.png",
+  "Chivas":"chivas.png"
 };
 const games = [
-  ["Puebla","San Luis"],["Tijuana","Atlante"],["Juárez","Atlas"],
-  ["Santos","León"],["Pachuca","Toluca"],["Pumas","Rayados"],
-  ["Tigres","América"],["Chivas","Cruz Azul"],["Querétaro","Necaxa"]
+  ["Puebla","San Luis"],
+  ["Tijuana","Atlante"],
+  ["Juárez","Atlas"],
+  ["Santos","León"],
+  ["Pachuca","Toluca"],
+  ["Pumas","Rayados"],
+  ["Tigres","América"],
+  ["Chivas","Cruz Azul"],
+  ["Querétaro","Necaxa"]
 ];
 const matches = document.getElementById("matches");
 games.forEach((game,i)=>{
-  const card=document.createElement("div");card.className="match";
+  const card=document.createElement("div");
+  card.className="match";
+
   function crearEquipo(nombre){
-    const team=document.createElement("div");team.className="team";
-    const img=document.createElement("img");img.className="crest";
-    img.src=teamsImg[nombre];img.alt=nombre;
+    const team=document.createElement("div");
+    team.className="team";
+    const img=document.createElement("img");
+    img.className="crest";
+    img.src=teamsImg[nombre];
+    img.alt=nombre;
     img.onerror=function(){
       this.style.display="none";
       const fb=document.createElement("div");
       fb.style.cssText="width:30px;height:30px;margin:0 auto 2px;border-radius:6px;background:#fff;border:1px solid #1a4094;display:grid;place-items:center;font-size:9px;font-weight:900;color:#1a4094";
-      fb.textContent=nombre.substring(0,3).toUpperCase();this.parentNode.insertBefore(fb,this);
+      fb.textContent=nombre.substring(0,3).toUpperCase();
+      this.parentNode.insertBefore(fb,this);
     };
-    const label=document.createElement("div");label.className="team-label";label.textContent=nombre;
-    team.append(img,label);return team;
+    const label=document.createElement("div");
+    label.className="team-label";
+    label.textContent=nombre;
+    team.append(img,label);
+    return team;
   }
+
   function crearMarcador(id){
-    const input=document.createElement("input");input.className="score";
-    input.id=id+i;input.type="number";input.min="0";input.max="99";input.inputMode="numeric";
+    const input=document.createElement("input");
+    input.className="score";
+    input.id=id+i;
+    input.type="number";
+    input.min="0";
+    input.max="99";
+    input.inputMode="numeric";
     return input;
   }
-  const sep=document.createElement("div");sep.className="divider";
+
+  const sep=document.createElement("div");
+  sep.className="divider";
   card.append(crearEquipo(game[0]),crearMarcador("l"),sep,crearMarcador("v"),crearEquipo(game[1]));
   matches.appendChild(card);
 });
+
 async function mostrarTarjeta(){
-  try{await navigator.clipboard.writeText(NUM_TARJETA);alert("Número de tarjeta copiado:\n"+NUM_TARJETA)}
-  catch(e){window.prompt("Copia el número de tarjeta Spin:",NUM_TARJETA)}
+  try{
+    await navigator.clipboard.writeText(NUM_TARJETA);
+    alert("Número de tarjeta copiado:\n"+NUM_TARJETA);
+  }catch(e){
+    window.prompt("Copia el número de tarjeta Spin:",NUM_TARJETA);
+  }
 }
+
 function todosLlenos(){
   const nombre=document.getElementById("nombre").value.trim();
-  if(!nombre){alert("Escribe tu nombre.");return false}
+  if(!nombre){
+    alert("Escribe tu nombre.");
+    return false;
+  }
   for(let i=0;i<games.length;i++){
-    const l=document.getElementById("l"+i).value,v=document.getElementById("v"+i).value;
+    const l=document.getElementById("l"+i).value,
+          v=document.getElementById("v"+i).value;
     if(l===""||v===""||Number(l)<0||Number(l)>99||Number(v)<0||Number(v)>99){
-      alert("Completa los goles de los 9 partidos.");return false;
+      alert("Completa los goles de los 9 partidos.");
+      return false;
     }
   }
   return true;
 }
+
 function armarTexto(){
-  const nombre=document.getElementById("nombre").value.trim();let mensaje="*"+nombre+"*\n";
+  const nombre=document.getElementById("nombre").value.trim();
+  let mensaje="*"+nombre+"*\n";
   games.forEach((game,i)=>{
-    const l=document.getElementById("l"+i).value,v=document.getElementById("v"+i).value;
+    const l=document.getElementById("l"+i).value,
+          v=document.getElementById("v"+i).value;
     mensaje+="*"+game[0]+"* "+l+"-"+v+" *"+game[1]+"*\n";
   });
   return mensaje.trim();
 }
-function generarRecado(nombre){return "Listo, "+nombre+", recibido y anotado, mucha suerte!! gracias por participar"}
+
+function generarRecado(nombre){
+  return "Listo, "+nombre+", recibido y anotado, mucha suerte!! gracias por participar";
+}
+
 function enviarWhats(){
   if(!todosLlenos())return;
   const nombre=document.getElementById("nombre").value.trim();
   const mensajeCompleto=armarTexto()+"\n\n"+generarRecado(nombre);
   window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(mensajeCompleto),"_blank");
 }
+
 function limpiar(){
   if(!confirm("¿Quieres borrar todo?"))return;
   document.getElementById("nombre").value="";
-  games.forEach((_,i)=>{document.getElementById("l"+i).value="";document.getElementById("v"+i).value=""});
+  games.forEach((_,i)=>{
+    document.getElementById("l"+i).value="";
+    document.getElementById("v"+i).value="";
+  });
 }
 </script>
 </body>
-  </html>
-  
+</html>
